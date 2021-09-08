@@ -1,4 +1,8 @@
-
+" No arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 " Vim-Plug remaps
 nnoremap <leader>pi :PlugInstall<CR>
 nnoremap <leader>pc :PlugClean<CR>
@@ -17,15 +21,16 @@ nnoremap <leader>pu :PlugUpdate<CR>
 " nnoremap <silent> <C-d> :Lspsaga open_floaterm<CR>
 " tnoremap <silent> <C-d> <C-\><C-n>:Lspsaga close_floaterm<CR>
 " NERDTree remaps
-" nnoremap <leader><TAB> :NERDTreeToggle<CR>
+nnoremap <leader><TAB> :NERDTreeToggle<CR>
 "Telescope remaps
-" nnoremap <leader>ff <cmd>Telescope find_files<cr>
-" nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 " nnoremap <leader>fb <cmd>Telescope buffers<cr>
 " nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " open vimrc
-" nnoremap <leader>vimrc :tabnew ~/.config/nvim/init.vim<CR>
+nnoremap <leader>vimrc :tabnew ~/.config/nvim/init.vim<CR>
+nnoremap <leader>sovim source %<CR>
 " Better nav for omnicomplete
 " inoremap <expr> <c-j> ("\<C-n>")
 " inoremap <expr> <c-k> ("\<C-p>")
@@ -56,3 +61,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>

@@ -1,0 +1,8 @@
+import:
+  - $HOME/.config/alacritty/nord.yml
+  - $HOME/.config/alacritty/fonts.yml
+decorations: full
+dynamic_title: true 
+font:
+  normal:
+    family: 'MesloLGS NF'

@@ -45,28 +45,26 @@ set shortmess+=c
 set colorcolumn=80
 set completeopt=menuone,noselect
 
-" colorscheme gruvbox
-" highlight Normal guibg=none
-" highlight ColorColumn ctermbg=red guibg=red
 
 call plug#begin('~/.vim/plugged')
-" Plug 'neovim/nvim-lspconfig'
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate all'}
-" " Plug 'nvim-lua/completion-nvim'
-" Plug 'hrsh7th/nvim-compe'
-" Plug 'hrsh7th/vim-vsnip'
-" Plug 'glepnir/lspsaga.nvim'
-" Plug 'nvim-lua/popup.nvim'
-" Plug 'nvim-lua/plenary.nvim'
-" Plug 'nvim-telescope/telescope.nvim'
-" Plug 'nvim-telescope/telescope-fzy-native.nvim'
-" Plug 'hoob3rt/lualine.nvim'
-" Plug 'kyazdani42/nvim-web-devicons'
-" Plug 'ryanoasis/vim-devicons'
-" Plug 'tpope/vim-commentary'
-" Plug 'puremourning/vimspector'
-" Plug 'preservim/nerdtree'
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-" Plug 'morhetz/gruvbox'
-" Plug 'sagi-z/vimspectorpy', { 'do': { -> vimspectorpy#update() } }
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate all'}
+Plug 'nvim-lua/completion-nvim'
+Plug 'hrsh7th/nvim-compe'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'glepnir/lspsaga.nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'hoob3rt/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tpope/vim-commentary'
+Plug 'puremourning/vimspector'
+Plug 'preservim/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'morhetz/gruvbox'
+Plug 'sagi-z/vimspectorpy', { 'do': { -> vimspectorpy#update() } }
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
