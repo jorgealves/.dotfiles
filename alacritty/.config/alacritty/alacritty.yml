@@ -1,8 +1,22 @@
 import:
-  - $HOME/.config/alacritty/nord.yml
-  - $HOME/.config/alacritty/fonts.yml
-decorations: full
+  - ~/.config/alacritty/nord.yml
+  - ~/.config/alacritty/fonts.yml
 dynamic_title: true 
-font:
-  normal:
-    family: 'MesloLGS NF'
+window:
+  padding:
+    x: 0
+    y: 0
+   
+  dynamic_padding: true
+  decorations: full
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "~/tat"

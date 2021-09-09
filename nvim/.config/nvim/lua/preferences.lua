@@ -1,0 +1,44 @@
+vim.g.mapleader=' '
+vim.g.filetype=[[ plugin indent on ]]
+vim.opt.number=true
+vim.opt.relativenumber=true
+vim.opt.autoindent=true
+vim.opt.backspace = [[indent,eol,start]]
+vim.opt.backup=false
+vim.opt.clipboard=[[unnamed,unnamedplus]]
+vim.opt.cmdheight=2
+vim.opt.colorcolumn='80'
+vim.opt.compatible=false
+vim.opt.completeopt=[[menuone,noinsert,noselect]]
+vim.opt.cursorline=true
+vim.opt.expandtab=true
+vim.opt.foldmethod='indent'
+vim.opt.hidden=true
+vim.opt.ignorecase=true
+vim.opt.incsearch=true
+vim.opt.mouse='a'
+vim.opt.scrolloff=10
+vim.opt.shiftwidth=4
+vim.opt.showcmd=true
+vim.opt.showmode=true
+vim.opt.showtabline=4
+vim.opt.signcolumn='yes'
+vim.opt.smartcase=true
+vim.opt.smartindent=true
+vim.opt.smarttab=true
+vim.opt.softtabstop=4
+vim.opt.splitbelow=true
+vim.opt.splitright=true
+vim.opt.swapfile=false
+vim.opt.tabstop=4
+vim.opt.termguicolors=true
+vim.opt.timeoutlen=300
+vim.opt.undofile=true
+vim.opt.updatetime=200
+vim.opt.wildmenu=true
+vim.opt.wildmode=[[longest,list,full]]
+vim.opt.wrap=false
+vim.opt.shortmess:append('c')
+vim.opt.listchars={eol = '↲', tab = '▸ ', trail = '·'}
+vim.opt.path:append('*/**')
+-- vim.g.dap_virtual_text=true

@@ -1,13 +1,13 @@
 font:
   normal:
-    family: Menlo 
+    family: 'MesloLGS NF' 
     style: Regular
-      #bold:
-      #family: 'MesloLGS NF'
-      #style: Bold
-      #italic:
-      #family: 'MesloLGS NF'
-      #style: Italic
-      #bold_italic:
-      #family: 'MesloLGS NF'
-      #style: Bold Italic 
+  size: 13.0   
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+  use_thin_strokes: true
+draw_bold_text_with_bright_colors: true

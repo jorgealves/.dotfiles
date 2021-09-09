@@ -228,8 +228,6 @@ alias brew_update_all="brew upgrade && brew cu -yaf && brew cleanup" # Update an
 alias l="exa --icons -s type -lha" # Fancy ls
 eval "$(pyenv init -)"
 
-source /Users/jorgealves/.config/broot/launcher/bash/br
-
 # NVIM default editor
 alias vim='nvim'
 

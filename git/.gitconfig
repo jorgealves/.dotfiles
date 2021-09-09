@@ -1,0 +1,17 @@
+[user]
+	name = Jorge Alves
+	email = jorgeandrealves@gmail.com
+	signingkey = 6B27C79EA17A10BBE2A5F153FA90716623D03E19
+[core]    
+    	editor = nvim
+	excludesfile = /Users/jorgealves/.gitignore_global
+[commit]
+	gpgsign = true
+	template = /Users/jorgealves/.stCommitMsg
+[gpg]
+	program = gpg
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
