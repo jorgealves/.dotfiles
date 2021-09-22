@@ -73,13 +73,37 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/DAPInstall.nvim"
   },
-  ["completion-nvim"] = {
+  gruvbox = {
     loaded = true,
-    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/completion-nvim"
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/gruvbox"
+  },
+  ["gruvbox-material"] = {
+    loaded = true,
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/gruvbox-material"
+  },
+  kommentary = {
+    loaded = true,
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/kommentary"
+  },
+  ["lsp-status.nvim"] = {
+    loaded = true,
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/lsp-status.nvim"
+  },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
+  },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+  },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
   ["nvim-dap"] = {
     loaded = true,
@@ -89,9 +113,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/nvim-dap-ui"
   },
-  ["nvim-dap-virtual-text"] = {
+  ["nvim-gdb"] = {
     loaded = true,
-    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text"
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/nvim-gdb"
+  },
+  ["nvim-lightbulb"] = {
+    loaded = true,
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/nvim-lightbulb"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -101,13 +129,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
-  ["nvim-tree.lua"] = {
+  ["nvim-lsputils"] = {
     loaded = true,
-    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/nvim-lsputils"
   },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
+  ["nvim-treesitter-context"] = {
+    loaded = true,
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -121,29 +153,25 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/plenary.nvim"
   },
-  ["popup.nvim"] = {
+  popfix = {
     loaded = true,
-    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/popup.nvim"
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/popfix"
   },
-  ["telescope-dap.nvim"] = {
+  ["symbols-outline.nvim"] = {
     loaded = true,
-    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim"
-  },
-  ["telescope-fzy-native.nvim"] = {
-    loaded = true,
-    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
-  ["vim-commentary"] = {
+  ["todo-comments.nvim"] = {
     loaded = true,
-    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/vim-commentary"
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/todo-comments.nvim"
   },
-  ["vim-devicons"] = {
+  ["which-key.nvim"] = {
     loaded = true,
-    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/vim-devicons"
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/which-key.nvim"
   }
 }
 
