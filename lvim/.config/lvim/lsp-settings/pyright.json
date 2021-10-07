@@ -1,0 +1,27 @@
+{
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportAssertAlwaysTrue": "warning",
+    "reportDuplicateImport": "error",
+    "reportGeneralTypeIssues": "warning",
+    "reportPropertyTypeMismatch": "error",
+    "reportImportCycles": "warning",
+    "reportIncompatibleMethodOverride": "warning",
+    "reportIncompatibleVariableOverride": "warning",
+    "reportMissingImports": "warning",
+    "reportUnusedClass": "warning",
+    "reportUnusedImport": "warning",
+    "reportUnusedFunction": "warning",
+    "reportUnusedVariable": "warning",
+    "reportUnusedCoroutine": "warning",
+    "reportUnsupportedDunderAll": "error",
+    "reportUnusedCallResult": "warning",
+    "reportMissingTypeStubs": "warning",
+    "reportMissingModuleSource": "warning",
+    "reportMissingTypeArgument": "information",
+    "reportMissingParameterType": "information"
+  },
+  "python.analysis.typeCheckingMode": "strict"
+}

@@ -85,7 +85,6 @@ plugins=(
   common-aliases
   dash
   direnv
-  django
   docker
   docker-compose
   docker-machine
@@ -160,7 +159,6 @@ plugins=(
   z
   zsh-interactive-cd
   zsh-navigation-tools
-  zsh_reload
   wakatime
 )
 
@@ -223,6 +221,7 @@ if [ -f '/Users/jorgealves/google-cloud-sdk/completion.zsh.inc' ]; then . '/User
 
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/.pyenv:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PYENV_ROOT="$(pyenv root)"
 alias brew_update_all="brew upgrade && brew cu -yaf && brew cleanup" # Update and clean all apps
 alias l="exa --icons -s type -lha" # Fancy ls
