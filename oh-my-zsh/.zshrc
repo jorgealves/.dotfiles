@@ -128,10 +128,9 @@ plugins=(
   nomad
   npm
   nvm
-  osx
+  macos
   pep8
   pip
-  pipenv
   postgres
   profiles
   pylint
