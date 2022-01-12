@@ -222,11 +222,12 @@ export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/.pyenv:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PYENV_ROOT="$(pyenv root)"
-alias brew_update_all="brew upgrade && brew cu -yaf && brew cleanup" # Update and clean all apps
+alias brew_update_all="brew upgrade && brew cu -yaf && brew cleanup && brew doctor" # Update and clean all apps
 alias l="exa --icons -s type -lha" # Fancy ls
 eval "$(pyenv init -)"
-
+eval "$(flux completion zsh)"
 # NVIM default editor
 alias vim='nvim'
 
 
+module_init
