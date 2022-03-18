@@ -18,12 +18,37 @@ end
 
 vscode_snippets.load()
 
-cmp.setup({
-  snippet = {
-      -- REQUIRED - you must specify a snippet engine
-      expand = function(args)
-        luasnip.lsp_expand(args.body) -- For `luasnip` users.
-      end,
+cmp.setup {
+    -- formatting = {
+    --   format = function(entry, vim_item)
+    --     -- fancy icons and a name of kind
+    --     vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
+    --     -- set a name for each source
+    --     vim_item.menu = ({
+    --       buffer = "[Buffer]",
+    --       nvim_lua = "[Lua]",
+    --       nvim_lsp = "[LSP]",
+    --       luasnip = "[Luasnip]",
+    --       path = "[Path]",
+    --       look = "[Look]",
+    --       spell = "[Spell]",
+    --       calc = "[Calc]",
+    --       emoji = "[Emoji]"
+    --     })[entry.source.name]
+    --     return vim_item
+    --   end
+    -- },
+    snippet = {expand = function(args) luasnip.lsp_expand(args.body) end},
+    sources = {
+        {name = "nvim_lua"},
+        {name = 'nvim_lsp'},
+        {name = "luasnip"},
+        {name = 'buffer', keyword_length=4},
+        {name = "path"},
+        {name = "look", max_item_count = 5, keyword_length=4},
+        {name = "calc"},
+        {name = "spell", max_item_count = 5, keyword_length=4},
+        {name = "emoji"}
     },
     mapping = {
       ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
@@ -36,39 +61,14 @@ cmp.setup({
       }),
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     },
-    sources = cmp.config.sources({
-      { name = 'nvim_lsp' },
-      { name = 'luasnip' }, -- For luasnip users.
-    }, {
-      { name = 'buffer' },
-    })
-  })
-
-  -- Set configuration for specific filetype.
-  cmp.setup.filetype('gitcommit', {
-    sources = cmp.config.sources({
-      { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it. 
-    }, {
-      { name = 'buffer' },
-    })
-  })
-
-  -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline('/', {
-    sources = {
-      { name = 'buffer' }
+    completion = {completeopt = 'menu,menuone,noinsert'},
+    view = {
+      entries = 'native',
+    },
+    experimental = {
+      ghost_text=true,
     }
-  })
+}
 
-  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline(':', {
-    sources = cmp.config.sources({
-      { name = 'path' }
-    }, {
-      { name = 'cmdline' }
-    })
-  })
-
-  -- Setup lspconfig.
-  --local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+local ok, autopairs_completion = pcall(require, 'nvim-autopairs.completion.cmp')
+cmp.event:on('confirm_done',autopairs_completion.on_confirm_done({map_char = {text = ''}}))

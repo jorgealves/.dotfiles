@@ -228,6 +228,3 @@ eval "$(pyenv init -)"
 eval "$(flux completion zsh)"
 # NVIM default editor
 alias vim='nvim'
-
-
-module_init

@@ -4,6 +4,7 @@ if not ok then
 end
 
 local formatting = nullls.builtins.formatting
+local completion = nullls.builtins.completion
 local diagnostics = nullls.builtins.diagnostics
 local code_actions = nullls.builtins.code_actions
 local hover = nullls.builtins.hover
@@ -14,11 +15,19 @@ nullls.setup({
     sources = {
         code_actions.gitrebase,
         code_actions.gitsigns,
-        code_actions.refactoring,
         code_actions.shellcheck,
+        code_actions.eslint,
+        
+        completion.luasnip,
+        completion.spell,
 
         diagnostics.cppcheck,
-        diagnostics.editorconfig_checker,
+        diagnostics.eslint,
+        diagnostics.luacheck,
+        diagnostics.shellcheck,
+        diagnostics.yamllint,
+        diagnostics.vint,
+        diagnostics.zsh,
         diagnostics.flake8,
         diagnostics.jsonlint,
         diagnostics.mypy,
@@ -27,9 +36,12 @@ nullls.setup({
         formatting.autopep8,
         formatting.black,
         formatting.clang_format,
-        formatting.cmake_format,
         formatting.isort,
-        formatting.lua_format,
+        formatting.djhtml,
+        formatting.djlint,
+        formatting.eslint,
+        formatting.luaformat,
+        formatting.stylua,
 
         hover.dictionary,
     }

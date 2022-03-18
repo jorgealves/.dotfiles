@@ -48,4 +48,4 @@ vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 
 vim.opt.termguicolors = true
-vim.cmd("colorscheme nightfox")
+vim.cmd("colorscheme gruvbox-material")

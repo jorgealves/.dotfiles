@@ -3,13 +3,15 @@
 	email = jorgeandrealves@gmail.com
 	signingkey = 6B27C79EA17A10BBE2A5F153FA90716623D03E19
 [core]    
-    	editor = nvim
+  editor = nvim
 	excludesfile = /Users/jorgealves/.gitignore_global
 [commit]
 	gpgsign = true
 	template = /Users/jorgealves/.stCommitMsg
 [gpg]
 	program = gpg
+[help]
+  autocorrect = 30
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
