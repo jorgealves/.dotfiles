@@ -98,8 +98,6 @@ return packer.startup(function(use)
     "jose-elias-alvarez/null-ls.nvim",
   }
 
-  
-
   -- Editor utilities
 	use {
     "lewis6991/gitsigns.nvim",
@@ -114,6 +112,7 @@ return packer.startup(function(use)
     "yamatsum/nvim-cursorline",
     "editorconfig/editorconfig-vim",
     "j-hui/fidget.nvim",
+    "github/copilot.vim",
   }
 
 	-- Colorschemes
@@ -125,12 +124,15 @@ return packer.startup(function(use)
     'EdenEast/nightfox.nvim',
   }
 
-
 	-- Telescope
 	use "nvim-telescope/telescope.nvim"
 	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	use 'nvim-telescope/telescope-dap.nvim'
 
+  -- Python
+  use {
+    'psf/black',
+  }
 	-- DAP
 	use {
     'mfussenegger/nvim-dap',

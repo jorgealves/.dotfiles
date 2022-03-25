@@ -17,9 +17,10 @@ nullls.setup({
         code_actions.gitsigns,
         code_actions.shellcheck,
         code_actions.eslint,
-        
+
         completion.luasnip,
         completion.spell,
+        completion.tags,
 
         diagnostics.cppcheck,
         diagnostics.eslint,

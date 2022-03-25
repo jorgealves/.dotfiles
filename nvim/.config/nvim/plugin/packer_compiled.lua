@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/better-escape.nvim",
     url = "https://github.com/max397574/better-escape.nvim"
   },
+  black = {
+    loaded = true,
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/black",
+    url = "https://github.com/psf/black"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -133,6 +138,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/colorschemes",
     url = "https://github.com/lunarvim/colorschemes"
+  },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
   },
   ["darkplus.nvim"] = {
     loaded = true,

@@ -19,7 +19,7 @@ local ok, dap_python = pcall(require,'dap-python')
 
 if not ok then
   error('error loading dap python plugin')
-  return 
+  return
 end
 
 dap_python.setup()

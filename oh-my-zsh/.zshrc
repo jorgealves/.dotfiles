@@ -228,3 +228,4 @@ eval "$(pyenv init -)"
 eval "$(flux completion zsh)"
 # NVIM default editor
 alias vim='nvim'
+alias python="$(which python3)"
