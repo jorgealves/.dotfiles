@@ -54,7 +54,7 @@ return packer.startup(function(use)
   -- UI
   use {
     "ryanoasis/vim-devicons",
-    "akinsho/bufferline.nvim",
+    {"akinsho/bufferline.nvim", tag="v2.*" },
     "moll/vim-bbye",
     "kyazdani42/nvim-tree.lua",
     "nvim-lualine/lualine.nvim",

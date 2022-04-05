@@ -34,7 +34,7 @@ local options = {
 	wrap = false, -- display lines as one long line
 	scrolloff = 8, -- is one of my fav
 	sidescrolloff = 8,
-  foldmethod="expr",
+  foldmethod="indent",
   foldexpr="nvim_treesitter#foldexpr()"
 }
 
@@ -48,4 +48,4 @@ vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 
 vim.opt.termguicolors = true
-vim.cmd("colorscheme gruvbox-material")
+vim.cmd("colorscheme nordfox")

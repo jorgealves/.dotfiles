@@ -41,7 +41,7 @@ nullls.setup({
         formatting.djhtml,
         formatting.djlint,
         formatting.eslint,
-        formatting.luaformat,
+        -- formatting.luaformat,
         formatting.stylua,
 
         hover.dictionary,

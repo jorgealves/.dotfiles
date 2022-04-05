@@ -1,7 +1,7 @@
 [user]
 	name = Jorge Alves
 	email = jorgeandrealves@gmail.com
-	signingkey = 6B27C79EA17A10BBE2A5F153FA90716623D03E19
+	signingkey = b26c70149698c2b5b5d4ebc47be916c38c97d250
 [core]    
   editor = nvim
 	excludesfile = /Users/jorgealves/.gitignore_global

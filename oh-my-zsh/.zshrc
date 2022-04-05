@@ -209,7 +209,6 @@ export JAVA_HOME="/usr/local/opt/openjdk@11/"
 
 # >>>> Vagrant command completion (start)
 fpath=(/opt/vagrant/embedded/gems/2.2.14/gems/vagrant-2.2.14/contrib/zsh $fpath)
-compinit
 # <<<<  Vagrant command completion (end)
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -218,14 +217,27 @@ if [ -f '/Users/jorgealves/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jorg
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jorgealves/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jorgealves/google-cloud-sdk/completion.zsh.inc'; fi
 
-export PATH="$HOME/.poetry/bin:$PATH"
-export PATH="$HOME/.pyenv:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PYENV_ROOT="$(pyenv root)"
 alias brew_update_all="brew upgrade && brew cu -yaf && brew cleanup && brew doctor" # Update and clean all apps
 alias l="exa --icons -s type -lha" # Fancy ls
-eval "$(pyenv init -)"
 eval "$(flux completion zsh)"
 # NVIM default editor
 alias vim='nvim'
-alias python="$(which python3)"
+
+#PYENV
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+#POETRY
+export PATH="$HOME/.poetry/bin:$PATH"
+mkdir -p $HOME/.zfunc
+fpath+=($HOME/.zfunc)
+poetry completions zsh > $HOME/.zfunc/_poetry
+
+autoload bashcompinit
+bashcompinit
+eval "$(register-python-argcomplete coala)"
+
+compinit
+
