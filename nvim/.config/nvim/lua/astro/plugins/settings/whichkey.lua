@@ -81,6 +81,7 @@ local opts = {
 }
 
 local mappings = {
+  W = {"<cmd>Bdelete!<cr>", "Force close buffer"},
 	c = {
 		name = "+Code",
 		f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
@@ -93,11 +94,6 @@ local mappings = {
 		  p = { "<cmd>Lspsaga preview_signature<cr>", "Preview" },
 		  r = { "<cmd>Lspsaga rename<cr>", "Rename" },
     },
-    d = {
-      name = "+DAP",
-		  b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "BreakPoint" },
-      l = {"<cmd>lua require'dap'.continue()<cr>", "Launch"}
-    }
 	},
 	T = {
 		name = "+ToggleTerm",
@@ -135,16 +131,11 @@ local mappings = {
 		name = "+Packer",
 		s = { "<cmd>PackerSync<cr>", "Sync" },
 	},
-	w = { "<cmd>w<cr>", "Save" },
 	e = { "<cmd>NvimTreeToggle<cr>", "Toggle File Explorer" },
 	C = {
 		name = "+NvimConfig",
 		r = { "<cmd>so ~/.config/nvim/init.lua<cr>", "Reload Config" },
 		o = { "<cmd>tabnew ~/.config/nvim/init.lua<cr>", "Open Config" },
-	},
-	b = {
-		name = "+Buffer",
-		c = { "<cmd>bdelete!<CR>", "Close Buffer" },
 	},
 }
 

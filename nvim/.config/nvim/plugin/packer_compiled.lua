@@ -244,11 +244,6 @@ _G.packer_plugins = {
     path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
   },
-  ["nvim-dap-go"] = {
-    loaded = true,
-    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/nvim-dap-go",
-    url = "https://github.com/leoluz/nvim-dap-go"
-  },
   ["nvim-dap-python"] = {
     loaded = true,
     path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/nvim-dap-python",
@@ -273,6 +268,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -299,6 +299,11 @@ _G.packer_plugins = {
     path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
     url = "https://github.com/p00f/nvim-ts-rainbow"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -309,10 +314,20 @@ _G.packer_plugins = {
     path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["poet-v"] = {
+    loaded = true,
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/poet-v",
+    url = "https://github.com/petobens/poet-v"
+  },
   ["popup.nvim"] = {
     loaded = true,
     path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  ["python-mode"] = {
+    loaded = true,
+    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/python-mode",
+    url = "https://github.com/python-mode/python-mode"
   },
   ["symbols-outline.nvim"] = {
     loaded = true,
@@ -343,11 +358,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
-  },
-  ["vim-devicons"] = {
-    loaded = true,
-    path = "/Users/jorgealves/.local/share/nvim/site/pack/packer/start/vim-devicons",
-    url = "https://github.com/ryanoasis/vim-devicons"
   },
   ["which-key.nvim"] = {
     loaded = true,

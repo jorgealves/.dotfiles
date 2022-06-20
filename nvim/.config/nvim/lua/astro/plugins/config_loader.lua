@@ -16,11 +16,13 @@
     'lsp',
     'lualine',
     'neoscroll',
+    'notify' ,
     'nullls',
     'nvimcolorizer',
     'nvimcursorline',
     'nvimtree',
     'nvimtreesitter',
+    'pymode',
     'telescope',
     'toggleterm',
     'whichkey'

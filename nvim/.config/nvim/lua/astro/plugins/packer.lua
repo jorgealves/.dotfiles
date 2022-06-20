@@ -53,7 +53,7 @@ return packer.startup(function(use)
 
   -- UI
   use {
-    "ryanoasis/vim-devicons",
+    "kyazdani42/nvim-web-devicons",
     {"akinsho/bufferline.nvim", tag="v2.*" },
     "moll/vim-bbye",
     "kyazdani42/nvim-tree.lua",
@@ -113,6 +113,7 @@ return packer.startup(function(use)
     "editorconfig/editorconfig-vim",
     "j-hui/fidget.nvim",
     "github/copilot.vim",
+    "rcarriga/nvim-notify"
   }
 
 	-- Colorschemes
@@ -132,6 +133,8 @@ return packer.startup(function(use)
   -- Python
   use {
     'psf/black',
+    'petobens/poet-v',
+    'python-mode/python-mode',
   }
 	-- DAP
 	use {
@@ -142,7 +145,7 @@ return packer.startup(function(use)
       'nvim-telescope/telescope-dap.nvim',
       'theHamsta/nvim-dap-virtual-text',
       'mfussenegger/nvim-dap-python',
-      'leoluz/nvim-dap-go',
+      -- 'leoluz/nvim-dap-go',
     }
   }
 	if PACKER_BOOTSTRAP then
