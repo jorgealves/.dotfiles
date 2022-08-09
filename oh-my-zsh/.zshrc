@@ -226,9 +226,8 @@ eval "$(flux completion zsh)"
 alias vim='nvim'
 
 #PYENV
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
+export PATH="$(pyenv root)/shims:$PATH"
 
 #POETRY
 export PATH="$HOME/.poetry/bin:$PATH"
@@ -258,3 +257,10 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+# bun completions
+[ -s "/Users/jorgealves/.bun/_bun" ] && source "/Users/jorgealves/.bun/_bun"
+
+# bun
+export BUN_INSTALL="/Users/jorgealves/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

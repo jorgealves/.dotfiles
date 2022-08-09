@@ -3,7 +3,7 @@ local ok, cmp = pcall(require, 'cmp')
 if not ok then
   error('error loading cmp plugin')
   return
-end 
+end
 
 local ok, luasnip = pcall(require, 'luasnip')
 if not ok then
@@ -18,37 +18,38 @@ end
 
 vscode_snippets.load()
 
+local cmp_source_opts = {
+  max_item_count = 5,
+}
 cmp.setup {
-    -- formatting = {
-    --   format = function(entry, vim_item)
-    --     -- fancy icons and a name of kind
-    --     vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
-    --     -- set a name for each source
-    --     vim_item.menu = ({
-    --       buffer = "[Buffer]",
-    --       nvim_lua = "[Lua]",
-    --       nvim_lsp = "[LSP]",
-    --       luasnip = "[Luasnip]",
-    --       path = "[Path]",
-    --       look = "[Look]",
-    --       spell = "[Spell]",
-    --       calc = "[Calc]",
-    --       emoji = "[Emoji]"
-    --     })[entry.source.name]
-    --     return vim_item
-    --   end
-    -- },
+    formatting = {
+      format = function(entry, vim_item)
+        -- set a name for each source
+        vim_item.menu = ({
+          buffer = "[Buffer]",
+          nvim_lua = "[Lua]",
+          nvim_lsp = "[LSP]",
+          luasnip = "[Luasnip]",
+          path = "[Path]",
+          look = "[Look]",
+          spell = "[Spell]",
+          calc = "[Calc]",
+          emoji = "[Emoji]"
+        })[entry.source.name]
+        return vim_item
+      end
+    },
     snippet = {expand = function(args) luasnip.lsp_expand(args.body) end},
     sources = {
-        {name = "nvim_lua"},
-        {name = 'nvim_lsp'},
-        {name = "luasnip"},
-        {name = 'buffer', keyword_length=4},
-        {name = "path"},
-        {name = "look", max_item_count = 5, keyword_length=4},
-        {name = "calc"},
-        {name = "spell", max_item_count = 5, keyword_length=4},
-        {name = "emoji"}
+        {name = 'buffer', cmp_source_opts},
+        {name = "path", cmp_source_opts},
+        {name = "nvim_lua",cmp_source_opts},
+        {name = 'nvim_lsp',cmp_source_opts},
+        {name = "luasnip", cmp_source_opts},
+        {name = "look", cmp_source_opts},
+        {name = "calc", cmp_source_opts},
+        {name = "spell", cmp_source_opts},
+        {name = "emoji", cmp_source_opts}
     },
     mapping = {
       ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
@@ -59,7 +60,7 @@ cmp.setup {
         i = cmp.mapping.abort(),
         c = cmp.mapping.close(),
       }),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     },
     completion = {completeopt = 'menu,menuone,noinsert'},
     view = {
