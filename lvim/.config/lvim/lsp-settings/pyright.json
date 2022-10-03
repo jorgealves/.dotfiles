@@ -1,8 +1,0 @@
-{
-  "python.analysis.autoImportCompletions": true,
-  "python.analysis.autoSearchPaths": true,
-  "python.analysis.typeCheckingMode": "basic",
-  "python.analysis.logLevel": "Information",
-  "python.analysis.diagnosticMode": "workspace",
-  "python.analysis.useLibraryCodeForTypes": true
-}
