@@ -230,7 +230,6 @@ eval "$(pyenv init --path)"
 export PATH="$(pyenv root)/shims:$PATH"
 
 #POETRY
-export PATH="$HOME/.poetry/bin:$PATH"
 mkdir -p $HOME/.zfunc
 fpath+=($HOME/.zfunc)
 poetry completions zsh > $HOME/.zfunc/_poetry
@@ -264,3 +263,5 @@ unset __conda_setup
 # bun
 export BUN_INSTALL="/Users/jorgealves/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+source /Users/jorgealves/Library/Application\ Support/org.dystroy.broot/launcher/bash/br
