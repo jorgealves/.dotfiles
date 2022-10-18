@@ -38,6 +38,8 @@ require('packer').startup({
     use {
       'williamboman/mason.nvim',
       requires = {
+        {'WhoIsSethDaniel/mason-tool-installer.nvim'},
+        {'jayp0521/mason-null-ls.nvim'},
         -- LSP
         {'neovim/nvim-lspconfig'},
         {'williamboman/mason-lspconfig.nvim'},
@@ -61,8 +63,7 @@ require('packer').startup({
     -- UI
     use {'rcarriga/nvim-notify'}
     -- telescope
-    8
-    use {
+      use {
       "nvim-telescope/telescope.nvim",
       requires = {
         {'nvim-lua/plenary.nvim'},
@@ -74,19 +75,6 @@ require('packer').startup({
         --{'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
 
       },
-      config=function()
-        local telescope = require('telescope')
-        telescope.setup{
-          extensions={
-            file_browser = {
-              hijack_netrw=true
-            }
-          }
-        }
-        telescope.load_extension('file_browser')
-        telescope.load_extension('dap')
-        telescope.load_extension('packer')
-      end,
     }
 
     -- nvimTree

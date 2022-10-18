@@ -18,6 +18,11 @@ vim.o.tabstop=2
 vim.o.shiftwidth=2
 vim.o.expandtab=true
 
+--statusline
+vim.o.laststatus=3
+
+-- winbar
+vim.o.winbar="%=%m %f"
 
 --theme
 vim.o.termguicolors=true

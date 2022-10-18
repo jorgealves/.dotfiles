@@ -1,7 +1,8 @@
 modules = {
 	'configs.treesitter',
   'configs.whichkey',
-  'configs.comment'
+  'configs.comment',
+  'configs.lsp',
 }
 
 for _, mod in pairs(modules) do 
