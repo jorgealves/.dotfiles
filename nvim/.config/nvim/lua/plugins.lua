@@ -33,16 +33,33 @@ require('packer').startup({
     }
 
     -- Code (Mason + LSP + DAP + Linters + Formatters)
+    -- -- comment
     use {'numToStr/Comment.nvim'}
-    use {'L3MON4D3/LuaSnip'}
+    -- -- Completion
+    use {
+      'hrsh7th/nvim-cmp',
+      requires = {
+        'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
+        'L3MON4D3/LuaSnip', -- Snippet engine
+        'saadparwaiz1/cmp_luasnip', -- Snippets source for nvim-cmp
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-cmdline',
+        'hrsh7th/cmp-nvim-lua',
+        
+      }
+
+    }
     use {
       'williamboman/mason.nvim',
       requires = {
         {'WhoIsSethDaniel/mason-tool-installer.nvim'},
         {'jayp0521/mason-null-ls.nvim'},
+        {'RubixDev/mason-update-all' },
         -- LSP
         {'neovim/nvim-lspconfig'},
         {'williamboman/mason-lspconfig.nvim'},
+        {'onsails/lspkind.nvim'},
         -- DAP
         {
           'mfussenegger/nvim-dap',
@@ -51,6 +68,7 @@ require('packer').startup({
             'theHamsta/nvim-dap-virtual-text',
             'mfussenegger/nvim-dap-python',
             'leoluz/nvim-dap-go',
+            'jayp0521/mason-nvim-dap.nvim'
           },
         },
         -- Linters + Formatters

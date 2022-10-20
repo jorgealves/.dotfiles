@@ -14,6 +14,10 @@ whichkey.setup({
 whichkey.register({
   [" "] = {
     ["<tab>"] = {"<cmd>NvimTreeToggle<cr>","NvimTree"},
+    P = {
+      name = "+Packer",
+      s = {"<cmd>PackerSync<cr>","PackerSync"},
+    },
     f = {
       name = "+file",
       F = {'<cmd>Telescope file_browser<cr>', "File Browser"},

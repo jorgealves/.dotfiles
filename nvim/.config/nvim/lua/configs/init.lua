@@ -2,6 +2,9 @@ modules = {
 	'configs.treesitter',
   'configs.whichkey',
   'configs.comment',
+  'configs.nvimtree',
+  'configs.cmp',
+  'configs.notify',
   'configs.lsp',
 }
 
