@@ -24,8 +24,12 @@ vim.o.laststatus=3
 -- winbar
 vim.o.winbar="%=%m %f"
 
+-- completion
+vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+
 --theme
 vim.o.termguicolors=true
 vim.o.background='dark'
-vim.cmd('colorscheme kanagawa')
-print('settings loaded')
+vim.cmd('colorscheme gruvbox')
+
+vim.notify('settings loaded')

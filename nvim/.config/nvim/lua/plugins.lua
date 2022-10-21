@@ -46,7 +46,6 @@ require('packer').startup({
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
         'hrsh7th/cmp-nvim-lua',
-        
       }
 
     }
@@ -124,4 +123,4 @@ require('packer').startup({
   }
 })
 
-print('plugins loaded')
+vim.notify('plugins loaded')

@@ -18,9 +18,10 @@ whichkey.register({
       name = "+Packer",
       s = {"<cmd>PackerSync<cr>","PackerSync"},
     },
+    s  = {}, 
     f = {
-      name = "+file",
-      F = {'<cmd>Telescope file_browser<cr>', "File Browser"},
+      name = "+File",
+      b = {'<cmd>Telescope file_browser<cr>', "File Browser"},
       f = { "<cmd>Telescope find_files<cr>", "Find File" },
       r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
       n = { "<cmd>enew<cr>", "New File" },

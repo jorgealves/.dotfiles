@@ -1,17 +1,19 @@
-modules = {
-	'configs.treesitter',
-  'configs.whichkey',
-  'configs.comment',
+local modules = {
   'configs.nvimtree',
-  'configs.cmp',
+  'configs.whichkey',
   'configs.notify',
+  'configs.comment',
+  'configs.telescope',
+	'configs.treesitter',
+  'configs.cmp',
   'configs.lsp',
+  'configs.nulls',
 }
 
-for _, mod in pairs(modules) do 
-	local ok, module=pcall(require,mod)
+for _, mod in pairs(modules) do
+	local ok, config=pcall(require,mod)
 	if not ok then
-		error(mod..' not loaded')
+		vim.notify(mod..' not loaded', 'ERROR')
 	end
-  print(mod..' loaded')
+  vim.notify(mod..' loaded')
 end
