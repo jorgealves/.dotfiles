@@ -15,4 +15,4 @@ lspconfig.pyright.setup{
   }
 }
 
-vim.notify('pyright loaded')
+print('pyright loaded')

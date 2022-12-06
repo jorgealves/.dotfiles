@@ -13,18 +13,25 @@ whichkey.setup({
 
 whichkey.register({
   [" "] = {
+    [" "] = {
+      name = "+Others",
+      t = {"<cmd>Telescope<cr>", "Telescope"},
+      m = {"<cmd>Mason<cr>","Mason"}
+    },
     ["<tab>"] = {"<cmd>NvimTreeToggle<cr>","NvimTree"},
-    P = {
+    t = {"<cmd>ToggleTerm<cr>", "Terminal"},
+    p = {
       name = "+Packer",
       s = {"<cmd>PackerSync<cr>","PackerSync"},
     },
-    s  = {}, 
     f = {
-      name = "+File",
-      b = {'<cmd>Telescope file_browser<cr>', "File Browser"},
-      f = { "<cmd>Telescope find_files<cr>", "Find File" },
-      r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-      n = { "<cmd>enew<cr>", "New File" },
+      name = "+Find",
+      g = {"<cmd>Telescope live_grep<cr>","Live Grep"},
+      s = {"<cmd>Telescope grep_string<cr>","Search string"},
+      f = {"<cmd>Telescope find_files<cr>", "Find File" },
+      b = {"<cmd>Telescope file_browser<cr>", "File Browser"},
+      r = {"<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+      n = {"<cmd>enew<cr>", "New File" },
     },
   },
 })

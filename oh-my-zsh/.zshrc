@@ -226,8 +226,9 @@ eval "$(flux completion zsh)"
 alias vim='nvim'
 
 #PYENV
-eval "$(pyenv init --path)"
-export PATH="$(pyenv root)/shims:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 #POETRY
 mkdir -p $HOME/.zfunc

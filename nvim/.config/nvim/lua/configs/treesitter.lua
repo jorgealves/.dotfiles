@@ -6,11 +6,17 @@ end
 
 treesitter.setup {
   ensure_installed='all',
-  auto_install=true,
+  auto_install=true, 
   highlight = {
-    enable=true
+    enable=true,
+    additional_vim_regex_highlighting = true,
   },
-  additional_vim_regex_highlighting = true,
+  incremental_selection = {
+    enable = true
+  },
+  indent={
+    enable = true,
+  },
   -- textobjects
   textobjects = {
     select = {
@@ -30,10 +36,18 @@ treesitter.setup {
   }
 }
 
-
 local ok, tscontext = pcall(require,'treesitter-context')
 if not ok then
   error('treesitter-context not loaded')
 end
 
 tscontext.setup()
+
+
+local ok, filetype = pcall(require, 'filetype')
+
+if not ok then
+  error('filetype not loaded')
+end
+filetype.setup()
+print('filetype loaded')

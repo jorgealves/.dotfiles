@@ -26,4 +26,4 @@ lspconfig.sumneko_lua.setup({
   },
 })
 
-vim.notify('lua loaded')
+print('lua loaded')

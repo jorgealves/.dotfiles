@@ -16,6 +16,7 @@ require('packer').startup({
     use {'wbthomason/packer.nvim'} -- packer
     -- helpers
     use {'nvim-lua/plenary.nvim'}
+    use {'nvim-lua/popup.nvim'}
     -- themes
     use { 
       "ellisonleao/gruvbox.nvim",
@@ -26,9 +27,11 @@ require('packer').startup({
     --Treesitter
     use {
       'nvim-treesitter/nvim-treesitter',
+      run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
       requires = {
         'nvim-treesitter/nvim-treesitter-context',
-        'nvim-treesitter/nvim-treesitter-textobjects'
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        'nathom/filetype.nvim',
       }
     }
 
@@ -79,6 +82,25 @@ require('packer').startup({
 
     -- UI
     use {'rcarriga/nvim-notify'}
+    use {
+      "akinsho/toggleterm.nvim",
+      tag = '*',
+      config = function()
+        require("toggleterm").setup()
+      end
+    }
+    -- lualine
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    }
+    -- nvimTree
+    use {
+      'nvim-tree/nvim-tree.lua',
+      requires = {
+        'nvim-tree/nvim-web-devicons', -- optional, for file icons
+      },
+    }
     -- telescope
       use {
       "nvim-telescope/telescope.nvim",
@@ -87,26 +109,16 @@ require('packer').startup({
         {'nvim-telescope/telescope-file-browser.nvim'},
         {'nvim-telescope/telescope-dap.nvim'},
         {'nvim-telescope/telescope-packer.nvim'},
+        {'nvim-telescope/telescope-project.nvim'},
+        {'nvim-telescope/telescope-media-files.nvim'},
+        {'nvim-telescope/telescope-fzf-writer.nvim'},
+        {'gbrlsnchs/telescope-lsp-handlers.nvim'},
+        { 'adoyle-h/lsp-toggle.nvim' },
         --'nvim-telescope/telescope-frecency.nvim',
         --'kkharji/sqlite.lua',
-        --{'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+        {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
 
       },
-    }
-
-    -- nvimTree
-    use {
-      'nvim-tree/nvim-tree.lua',
-      requires = {
-        'nvim-tree/nvim-web-devicons', -- optional, for file icons
-      },
-    }
-
-
-    -- lualine
-    use {
-      'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true },
     }
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

@@ -57,22 +57,21 @@ end
 mason_null_ls.setup_handlers {
   function(source_name)
     local to_register = {
-
-    nulls.builtins.code_actions.cspell,
-    nulls.builtins.code_actions.refactoring,
-    nulls.builtins.code_actions.proselint,
-    nulls.builtins.code_actions.shellcheck,
-    nulls.builtins.diagnostics.gitlint,
-    nulls.builtins.diagnostics.hadolint,
-    nulls.builtins.diagnostics.jsonlint,
-    nulls.builtins.diagnostics.markdownlint,
-    nulls.builtins.completion.luasnip,
-    nulls.builtins.diagnostics.zsh
+      nulls.builtins.code_actions.cspell,
+      nulls.builtins.code_actions.refactoring,
+      nulls.builtins.code_actions.proselint,
+      nulls.builtins.code_actions.shellcheck,
+      nulls.builtins.diagnostics.gitlint,
+      nulls.builtins.diagnostics.hadolint,
+      nulls.builtins.diagnostics.jsonlint,
+      nulls.builtins.diagnostics.markdownlint,
+      nulls.builtins.completion.luasnip,
+      nulls.builtins.diagnostics.zsh,
     }
     register_to_null_ls(to_register)
   end,
-  python = function()
-    local register={
+  python = function ()
+    local register = {
       nulls.builtins.diagnostics.flake8,
       nulls.builtins.diagnostics.mypy,
       nulls.builtins.diagnostics.pycodestyle,
@@ -99,7 +98,6 @@ mason_null_ls.setup_handlers {
       nulls.builtins.diagnostics.selene,
       nulls.builtins.formatting.lua_format,
       nulls.builtins.formatting.stylua,
-      nulls.builtins.formatting
     }
     register_to_null_ls(register)
   end
@@ -107,5 +105,5 @@ mason_null_ls.setup_handlers {
 
 nulls.setup()
 
-vim.notify('nulls loaded')
+print('nulls loaded')
 

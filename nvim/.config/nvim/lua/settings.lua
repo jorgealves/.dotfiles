@@ -3,10 +3,19 @@
 -- line number
 vim.o.number=true
 vim.o.relativenumber=true
+vim.o.scrolloff = 8
+-- code folding 
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldlevel= 99
 
 -- mouse
 vim.o.mouse = 'a'
 
+-- swapfile and undofile and undodir 
+vim.g.backup = false
+vim.g.swapfile = false
+vim.g.undofile = false
 -- search
 vim.o.ignorecase=true
 vim.o.smartcase=true
@@ -32,4 +41,4 @@ vim.o.termguicolors=true
 vim.o.background='dark'
 vim.cmd('colorscheme gruvbox')
 
-vim.notify('settings loaded')
+print('settings loaded')

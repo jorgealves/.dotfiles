@@ -1,4 +1,5 @@
 local modules = {
+  'configs.lualine',
   'configs.nvimtree',
   'configs.whichkey',
   'configs.notify',
@@ -15,5 +16,5 @@ for _, mod in pairs(modules) do
 	if not ok then
 		vim.notify(mod..' not loaded', 'ERROR')
 	end
-  vim.notify(mod..' loaded')
+  print(mod..' loaded')
 end
