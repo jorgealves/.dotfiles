@@ -472,3 +472,7 @@ if [ "$funcstack[1]" = "_helm" ]; then
     _helm
 fi
 compdef _helm helm
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/jorgealves/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
