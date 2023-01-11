@@ -13,16 +13,16 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use {
-	'nvim-telescope/telescope.nvim', 
+	'nvim-telescope/telescope.nvim',
 	tag='0.1.0',
 	requires={{'nvim-lua/plenary.nvim'}}
   }
-  use {
-	'rose-pine/neovim',
-	as  = 'rose-pine',
-	config = function()
-		vim.cmd('colorscheme rose-pine')
-	end
+  use { 'rose-pine/neovim',	as  = 'rose-pine'}
+  use{
+      "folke/tokyonight.nvim",
+      config = function ()
+        vim.cmd("colorscheme tokyonight-night")
+      end
   }
   use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
   use('nvim-treesitter/playground')
@@ -51,6 +51,13 @@ return require('packer').startup(function(use)
   }
 
   use("folke/zen-mode.nvim")
+  use{
+      "numToStr/Comment.nvim",
+      config = function()
+          require('Comment').setup()
+      end
+  }
+  use("folke/which-key.nvim")
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
