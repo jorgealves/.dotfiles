@@ -70,90 +70,48 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  adb
-  alias-finder
-  ansible
-  asdf
   autopep8
   aws
-  battery
-  branch
   brew
-  celery
-  colored-man-pages
-  colorize
   command-not-found
   common-aliases
-  dash
-  direnv
   docker
   docker-compose
   docker-machine
   dotenv
-  emoji
-  emoji-clock
   encode64
-  extract
   fancy-ctrl-z
   fd
-  flutter
   fzf
-  gem
   git
-  git-auto-fetch
-  git-escape-magic
-  git-extras
-  gitfast
-  git-flow
-  git-flow-avh
-  github
-  git-hubflow
   gitignore
-  git-prompt
   golang
   gpg-agent
   helm
   history
   history-substring-search
-  iterm2
-  jira
-  kops
   kubectl
   kube-ps1
   lein
   man
-  microk8s
-  minikube
   nmap
-  node
-  nomad
   npm
-  nvm
   macos
   pep8
   pip
-  postgres
-  profiles
   pylint
   python
-  redis-cli
   ripgrep
-  rsync
-  sdk
   ssh-agent
-  stack
   sudo
-  supervisor
   terraform
   vagrant
-  vagrant-prompt
   vault
   vim-interaction
   vi-mode
   virtualenv
   virtualenvwrapper
   vscode
-  vundle
   xcode
   yarn
   z
