@@ -17,13 +17,8 @@ return require('packer').startup({ function(use)
         tag = '0.1.0',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
-    use { 'rose-pine/neovim', as = 'rose-pine' }
-    use {
-        "folke/tokyonight.nvim",
-        config = function()
-            vim.cmd("colorscheme tokyonight-night")
-        end
-    }
+    use { "folke/tokyonight.nvim" }
+    use { "ellisonleao/gruvbox.nvim" }
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
     use('nvim-treesitter/playground')
     use('mbbill/undotree')
@@ -69,6 +64,8 @@ return require('packer').startup({ function(use)
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
         },
     }
+
+    use {'akinsho/toggleterm.nvim'}
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
