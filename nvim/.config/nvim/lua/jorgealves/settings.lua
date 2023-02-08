@@ -24,7 +24,7 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
-vim.o.background = true
+vim.o.background = 'dark'
 
 vim.cmd([[colorscheme gruvbox]])
 
