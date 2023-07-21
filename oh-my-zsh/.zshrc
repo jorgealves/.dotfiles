@@ -639,3 +639,4 @@ _kyverno()
 if [ "$funcstack[1]" = "_kyverno" ]; then
     _kyverno
 fi
+export PATH="${PATH}:${HOME}/.slim/bin"
