@@ -1,7 +1,6 @@
 [user]
 	name = Jorge Alves
 	email = jorgeandrealves@gmail.com
-	signingkey = 491BB20F6D6B058A9CCF594E6D0784EBB37647C2
 
 [includeIf "gitdir: ~/projects/worten"]
   path = ~/projects/worten/.gitconfig
@@ -10,7 +9,6 @@
   editor = nvim
 	excludesfile = /Users/jorgealves/.gitignore_global
 [commit]
-	gpgsign = true
 	template = /Users/jorgealves/.stCommitMsg
 [gpg]
 	program = gpg

@@ -78,7 +78,7 @@ whichkey.setup {
 
 whichkey.register({
     ["<leader>"] = {
-        ["<tab>"] = { "<cmd>:Telescope git_files<cr>", "Open File browser" },
+        ["<tab>"] = { "<cmd>:Telescope find_files<cr>", "Open File browser" },
         c = {
             name = "+Code",
             f = {"<cmd>:lua vim.lsp.buf.format()<cr>", "LSP [C]ode [F]ormat" },
@@ -87,7 +87,8 @@ whichkey.register({
             name = "+File",
             f = { "<cmd>:Telescope find_files<cr>", "[F]ind [F]iles" },
             g = { "<cmd>:Telescope live_grep<cr>", "[F]ind [G]rep" },
-            e = { "<cmd>:NvimTreeToggle<cr>", "[F]ile [E]xplorer" },
-        }
+        },
+        T = {"<cmd>:ToggleTerm<cr>", "Open Terminal"}
+        
     }
 })

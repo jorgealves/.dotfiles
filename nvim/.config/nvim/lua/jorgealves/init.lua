@@ -1,2 +1,3 @@
 require('jorgealves.settings')
-require("jorgealves.packer")
+require('jorgealves.lazyvim')
+-- require("jorgealves.packer")
