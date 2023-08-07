@@ -1,0 +1,6 @@
+[user]
+email = Jorge Alves <joralves@ext.worten.pt>
+signingKey = 242D6E7D014B2A71
+
+[commit]
+gpgsign = true

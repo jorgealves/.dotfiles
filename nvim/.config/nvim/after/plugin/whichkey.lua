@@ -1,20 +1,20 @@
-local ok, whichkey = pcall(require, "which-key")
-if not ok then
-    error("which key now loaded")
+local status_ok, which_key = pcall(require, "which-key")
+if not status_ok then
+    return
 end
 
-whichkey.setup {
+local setup = {
     plugins = {
         marks = true, -- shows a list of your marks on ' and `
         registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
         spelling = {
-            enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+            enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
             suggestions = 20, -- how many suggestions should be shown in the list?
         },
         -- the presets plugin, adds help for a bunch of default keybindings in Neovim
         -- No actual key bindings are created
         presets = {
-            operators = true, -- adds help for operators like d, y, ... and registers them for motion / text object completion
+            operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
             motions = true, -- adds help for motions
             text_objects = true, -- help for text objects triggered after entering an operator
             windows = true, -- default bindings on <c-w>
@@ -25,7 +25,7 @@ whichkey.setup {
     },
     -- add operators that will trigger motion and text object completion
     -- to enable all native operators, set the preset / operators plugin above
-    operators = { gc = "Comments" },
+    -- operators = { gc = "Comments" },
     key_labels = {
         -- override the label used to display some keys. It doesn't effect WK in any other way.
         -- For example:
@@ -39,15 +39,15 @@ whichkey.setup {
         group = "+", -- symbol prepended to a group
     },
     popup_mappings = {
-        scroll_down = '<c-d>', -- binding to scroll down inside the popup
-        scroll_up = '<c-u>', -- binding to scroll up inside the popup
+        scroll_down = "<c-d>", -- binding to scroll down inside the popup
+        scroll_up = "<c-u>", -- binding to scroll up inside the popup
     },
     window = {
-        border = "shadow", -- none, single, double, shadow
+        border = "rounded", -- none, single, double, shadow
         position = "bottom", -- bottom, top
         margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
         padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-        winblend = 0
+        winblend = 0,
     },
     layout = {
         height = { min = 4, max = 25 }, -- min and max height of the columns
@@ -55,10 +55,9 @@ whichkey.setup {
         spacing = 3, -- spacing between columns
         align = "left", -- align columns left, center or right
     },
-    ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
+    ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
     hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
     show_help = true, -- show help message on the command line when the popup is visible
-    show_keys = true, -- show the currently pressed key and its label as a message in the command line
     triggers = "auto", -- automatically setup triggers
     -- triggers = {"<leader>"} -- or specify a list manually
     triggers_blacklist = {
@@ -68,27 +67,60 @@ whichkey.setup {
         i = { "j", "k" },
         v = { "j", "k" },
     },
-    -- disable the WhichKey popup for certain buf types and file types.
-    -- Disabled by deafult for Telescope
-    disable = {
-        buftypes = {},
-        filetypes = { "TelescopePrompt" },
+}
+
+local opts = {
+    mode = "n", -- NORMAL mode
+    prefix = "<leader>",
+    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+    silent = true, -- use `silent` when creating keymaps
+    noremap = true, -- use `noremap` when creating keymaps
+    nowait = true, -- use `nowait` when creating keymaps
+}
+
+local mappings = {
+
+    ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
+    ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }, -- File Explorer
+    ["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" },  -- Close current file
+    ["m"] = { "<cmd>Mason<cr>", "Mason" }, -- LSP Manager
+    ["p"] = { "<cmd>Lazy<CR>", "Plugin Manager" }, -- Invoking plugin manager
+    ["q"] = { "<cmd>wqall!<CR>", "Quit" }, -- Quit Neovim after saving the file
+    ["r"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Reformat Code" },
+    ["w"] = { "<cmd>w!<CR>", "Save" }, -- Save current file
+
+    -- Language Support
+    l = {
+        name = "LSP",
+        i = { "<cmd>LspInfo<cr>", "Info" },
+        r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+        s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+        S = {
+            "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+            "Workspace Symbols",
+        },
+        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+        l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+    },
+
+    -- Telescope
+    f = {
+        name = "File Search",
+        c = { "<cmd>Telescope colorscheme preview=true<cr>", "Colorscheme" },
+        f = { "<cmd>Telescope find_files hidden=true<cr>", "Find files" },
+        t = { "<cmd>Telescope live_grep <cr>", "Find Text Pattern" },
+        r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
+    },
+
+    s = {
+        name = "Search",
+        h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
+        m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+        r = { "<cmd>Telescope registers<cr>", "Registers" },
+        k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+        c = { "<cmd>Telescope commands<cr>", "Commands" },
     },
 }
 
-whichkey.register({
-    ["<leader>"] = {
-        ["<tab>"] = { "<cmd>:Telescope find_files<cr>", "Open File browser" },
-        c = {
-            name = "+Code",
-            f = {"<cmd>:lua vim.lsp.buf.format()<cr>", "LSP [C]ode [F]ormat" },
-        },
-        f = {
-            name = "+File",
-            f = { "<cmd>:Telescope find_files<cr>", "[F]ind [F]iles" },
-            g = { "<cmd>:Telescope live_grep<cr>", "[F]ind [G]rep" },
-        },
-        T = {"<cmd>:ToggleTerm<cr>", "Open Terminal"}
-        
-    }
-})
+which_key.setup(setup)
+which_key.register(mappings, opts)

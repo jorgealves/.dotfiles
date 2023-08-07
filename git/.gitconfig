@@ -2,8 +2,8 @@
 	name = Jorge Alves
 	email = jorgeandrealves@gmail.com
 
-[includeIf "gitdir: ~/projects/worten"]
-  path = ~/projects/worten/.gitconfig
+[includeIf "hasconfig:remote.*.url:https://git.worten.net/**"]
+  path = ~/.gitconfig_wrt
 
 [core]    
   editor = nvim
@@ -21,3 +21,5 @@
 	process = git-lfs filter-process
 [init]
 	defaultBranch = main
+[credential]
+	helper = osxkeychain

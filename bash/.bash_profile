@@ -1,9 +1,3 @@
-export PATH=$PATH:/usr/local/share/dotnet
-
-. "$HOME/.cargo/env"
-
-source /Users/jorgealves/Library/Application\ Support/org.dystroy.broot/launcher/bash/br
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/jorgealves/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

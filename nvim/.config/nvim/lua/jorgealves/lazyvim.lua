@@ -14,83 +14,75 @@ vim.opt.rtp:prepend(lazypath)
 local lazyvim = require('lazy')
 
 lazyvim.setup({
+-- Colorscheme
+{
+  'folke/tokyonight.nvim',
+  config = function()
+    vim.cmd([[colorscheme tokyonight]])
+  end
+},
 
-  {
-    "folke/tokyonight.nvim",
-    lazy=false,
-    priority=1000,
-    config = function()
-      vim.cmd([[ colorscheme tokyonight ]])
-    end
+-- Lualine
+{
+  'nvim-lualine/lualine.nvim',
+  dependencies = {
+      'nvim-tree/nvim-web-devicons'
   },
-  {
-    "numToStr/Comment.nvim",
-    config = function()
-      require('Comment').setup()
-    end
-  },
-  {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    opts = {},
-  },
-  {
-    "folke/todo-comments.nvim",
-    dependencies = {'nvim-lua/plenary.nvim'},
-    opts={},
-  },
-  {
-    "williamboman/mason.nvim",
-    dependencies = {
-      {
-        "williamboman/mason-lspconfig.nvim",
-        opts={},
-      },
-      "neovim/nvim-lspconfig",
-      "mfussenegger/nvim-dap",
-      "rcarriga/nvim-dap-ui",
-      {
-        "mfussenegger/nvim-lint",
-        config = function()
-          vim.api.nvim_create_autocmd({"BufWritePost"},{
-            callback = function()
-              require('lint').try_lint()
-            end
-          })
-        end,
-      },
-      {
-        "mhartington/formatter.nvim",
-        opts={},
-      },
-    },
-    opts={},
-  },
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    init = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-    end,
-    opts = {}
-  },
-  { "folke/neodev.nvim", opts = {} },
-  {"lewis6991/gitsigns.nvim", opts = {}},
-  {
-    "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
-    opts={},
-  },
-  {"akinsho/toggleterm.nvim", version = "*", config = true},
-  {
-    "nvim-telescope/telescope.nvim", 
-    tag = '0.1.2',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-  },
-  {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    after = "nvim-treesitter",
-  },
-  {"nvim-treesitter/nvim-treesitter"},
+},
+
+-- Language Support
+-- Added this plugin.
+{
+  'VonHeikemen/lsp-zero.nvim',
+  branch = 'v1.x',
+  dependencies = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},             -- Required
+      {'williamboman/mason.nvim'},           -- Optional
+      {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},         -- Required
+      {'hrsh7th/cmp-nvim-lsp'},     -- Required
+      {'hrsh7th/cmp-buffer'},       -- Optional
+      {'hrsh7th/cmp-path'},         -- Optional
+      {'saadparwaiz1/cmp_luasnip'}, -- Optional
+      {'hrsh7th/cmp-nvim-lua'},     -- Optional
+
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},             -- Required
+      {'rafamadriz/friendly-snippets'}, -- Optional
+  }
+},
+
+
+-- Nvimtree (File Explorer)
+-- {
+--   'nvim-tree/nvim-tree.lua',
+--   lazy = true,
+--   dependencies = {
+--       'nvim-tree/nvim-web-devicons',
+--   },
+-- },
+
+-- Telescope (Fuzzy Finder)
+{
+  'nvim-telescope/telescope.nvim',
+  dependencies = {
+      {'nvim-lua/plenary.nvim'},
+  }
+},
+
+
+-- Treesitter
+{
+  "nvim-treesitter/nvim-treesitter",
+},
+
+-- Which-key
+{
+  'folke/which-key.nvim',
+  lazy = true,
+},
+
 })
