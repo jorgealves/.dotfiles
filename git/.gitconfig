@@ -2,7 +2,7 @@
 	name = Jorge Alves
 	email = jorgeandrealves@gmail.com
 
-[includeIf "hasconfig:remote.*.url:https://git.worten.net/**"]
+[includeIf "gitdir:~/projects/worten/**"]
   path = ~/.gitconfig_wrt
 
 [core]    
