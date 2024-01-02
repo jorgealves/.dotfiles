@@ -1,6 +1,7 @@
 [user]
 	name = Jorge Alves
 	email = jorgeandrealves@gmail.com
+  signingkey = 02835DE4E360E76A46B8AA6EE901E3B323F0D345
 
 [includeIf "gitdir:~/projects/worten/**"]
   path = ~/.gitconfig_wrt
@@ -23,3 +24,5 @@
 	defaultBranch = main
 [credential]
 	helper = osxkeychain
+[safe]
+	directory = /Users/jorgealves

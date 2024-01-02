@@ -1,6 +1,3 @@
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/jorgealves/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 
 export PYENV_ROOT="$HOME/.pyenv"
@@ -11,3 +8,7 @@ eval "$(pyenv init --path)"
 [ -f ~/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/jorgealves/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

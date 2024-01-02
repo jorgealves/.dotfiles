@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -74,80 +74,35 @@ plugins=(
 aliases
 alias-finder
 aws
-battery
 branch
 brew
 colored-man-pages
 colorize
 command-not-found
 common-aliases
-# compleat
-# copybuffer
-# copyfile
-# copypath
-# cp
+compleat
 docker
 docker-compose
-docker-machine
-# dotenv
-# emoji
-# emoji-clock
-# extract
-fancy-ctrl-z
 fd
-# flutter
-# frontend-search
 fzf
-gcloud
-# gem
-# genpass
-# gh
 git
 git-auto-fetch
-git-escape-magic
-git-extras
-gitfast
-git-flow
-git-flow-avh
-github
-git-hubflow
 gitignore
-git-lfs
 git-prompt
-globalias
 gnu-utils
-golang
 gpg-agent
-# gradle
 helm
 history
 history-substring-search
-# httpie
-# invoke
-# ipfs
 isodate
-# istioctl
-# iterm2
-# jira
 jsontools
-# jump
 keychain
-# kops
 kubectl
 kubectx
 kube-ps1
-# last-working-dir
-# lein
 macos
 man
-pep8
 perms
-pip
-pipenv
-poetry
-pyenv
-pylint
-python
 ssh-agent
 terraform
 z
@@ -191,8 +146,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -202,9 +155,15 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 export PATH="/usr/local/sbin:$PATH"
 
+
+# KREW
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/jorgealves/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
-# KREW
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/jorgealves/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+# Created by `userpath` on 2023-12-20 22:29:31
+export PATH="$PATH:/Users/jorgealves/Library/Application Support/hatch/pythons/3.12/python/bin"
