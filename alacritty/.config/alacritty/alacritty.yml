@@ -1,7 +1,6 @@
 import:
   - ~/.config/alacritty/nord.yml
   - ~/.config/alacritty/fonts.yml
-dynamic_title: true 
 window:
   padding:
     x: 0

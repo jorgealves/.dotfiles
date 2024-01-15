@@ -1,4 +1,4 @@
-dynamic_title = true
+# dynamic_title = true
 import = ["/Users/jorgealves/.config/alacritty/nord.toml", "/Users/jorgealves/.config/alacritty/fonts.toml"]
 
 [scrolling]
