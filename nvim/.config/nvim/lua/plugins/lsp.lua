@@ -13,6 +13,9 @@ return {
 			auto_install = true,
 		},
 	},
+  {
+    "b0o/schemastore.nvim",
+  },
 	{
 		"neovim/nvim-lspconfig",
 		lazy = false,
@@ -32,7 +35,26 @@ return {
 			lspconfig.pyright.setup({
 				capabilities = capabilities,
 			})
+      lspconfig.jsonls.setup({
+        settings = {
+          json = {
+            schemas = require('schemastore').json.schemas(),
+            validate = {enable = true},
+          },
+        },
+      })
 
+      lspconfig.yamlls.setup({
+        settings = {
+          yaml = {
+            schemas = require('schemastore').yaml.schemas(),
+            schemaStore = {
+              enable = false,
+              url = ""
+            },
+          },
+        },
+      })
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
