@@ -18,6 +18,7 @@ return {
   {
     "hrsh7th/nvim-cmp",
     lazy = false,
+    dependencies = { 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline' },
     config = function()
       local cmp = require("cmp")
       cmp.setup({
@@ -42,6 +43,7 @@ return {
           { name = "luasnip" },
         }, {
           { name = "buffer" },
+          { name = "path" }
         }),
       })
     end,
