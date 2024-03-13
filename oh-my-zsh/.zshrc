@@ -138,6 +138,7 @@ alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias brew_update_all="brew upgrade && brew cu -yaf && brew cleanup && brew doctor" # Update and clean all apps
 alias l="exa --icons -s type -lha" # Fancy ls
+alias tmstart="bash ~/tat"
 # NVIM default editor
 alias vim='nvim'
 
