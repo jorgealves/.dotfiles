@@ -134,8 +134,6 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="mate ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
 alias brew_update_all="brew upgrade && brew cu -yaf && brew cleanup && brew doctor" # Update and clean all apps
 alias l="exa --icons -s type -lha" # Fancy ls
 alias tmstart="bash ~/tat"
@@ -377,3 +375,4 @@ _buffalo()
 if [ "$funcstack[1]" = "_buffalo" ]; then
     _buffalo
 fi
+
