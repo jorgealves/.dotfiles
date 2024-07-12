@@ -376,3 +376,6 @@ if [ "$funcstack[1]" = "_buffalo" ]; then
     _buffalo
 fi
 
+
+# bun completions
+[ -s "/Users/jorgealves/.bun/_bun" ] && source "/Users/jorgealves/.bun/_bun"
