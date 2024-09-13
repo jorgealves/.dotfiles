@@ -128,4 +128,4 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- fix Makefile indentation
-vim.cmd("autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=8")
+vim.cmd("autocmd FileType makefile set noexpandtab shiftwidth=8 softtabstop=8")

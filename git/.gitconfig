@@ -1,11 +1,13 @@
 [user]
 	name = Jorge Alves
 	email = jorgeandrealves@gmail.com
-  signingkey = 02835DE4E360E76A46B8AA6EE901E3B323F0D345
+	signingkey = 02835DE4E360E76A46B8AA6EE901E3B323F0D345
 
 [includeIf "gitdir:~/projects/worten/**"]
   path = ~/.gitconfig_wrt
 
+[includeIf "gitdir:~/projects/devoteam/**"]
+  path = ~/.gitconfig_dvt
 [core]    
   editor = nvim
 	excludesfile = /Users/jorgealves/.gitignore_global
@@ -22,7 +24,5 @@
 	process = git-lfs filter-process
 [init]
 	defaultBranch = main
-[credential]
-	helper = osxkeychain
 [safe]
 	directory = /Users/jorgealves

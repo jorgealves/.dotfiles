@@ -23,6 +23,23 @@ return {
 		local dap = require("dap")
 		local dapui = require("dapui")
 
+		dap.configurations.python = {
+			{
+				name = "Odoo: Attach",
+				type = "python",
+				request = "attach",
+				port = 8069,
+				debugServer = 8888,
+				host = "localhost",
+				pathMappings = {
+					{
+						localRoot = "${workspaceFolder}",
+						remoteRoot = "/workspace",
+					},
+				},
+			},
+		}
+
 		require("mason-nvim-dap").setup({
 			-- Makes a best effort to setup the various debuggers with
 			-- reasonable debug configurations

@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Jetbrains Mono 13
+font pango:MesloGS NF Regular 13
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -45,13 +45,13 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+space exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -99,7 +99,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+d focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -181,17 +181,23 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 # bar {
-#         status_command i3status
-#         position top
+#         tray_output HDMI-1
+#         strip_workspace_numbers no
+#         workspace_buttons yes
+#         status_command $HOME/.config/polybar/launch_polybar.sh
 # }
+exec_always --no-startup-id $HOME/.config/polybar/launch_polybar.sh 
 
-# polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch_polybar.sh
+
 # wallpapper 
 exec_always feh --bg-fill $HOME/Pictures/pexels-samandgos-709552.jpg
 
 # My config
-exec_always setxkbmap -layout us -variant intl
+exec_always "setxkbmap -layout us -variant intl"
+exec_always "setxkbmap -option 'grp:alt_shift_toggle'"
+
+# bind Shutdown shortcut
+bindsym $mod+Control+Shift+q exec ~/.config/i3blocks/shutdown_menu/shutdown_menu
 
 bindsym $mod+Ctrl+greater move workspace to output right
 bindsym $mod+Ctrl+less move workspace to output left

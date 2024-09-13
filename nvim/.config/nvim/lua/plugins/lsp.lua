@@ -14,6 +14,7 @@ return { -- LSP Configuration & Plugins
 		{ "towolf/vim-helm" },
 	},
 	config = function()
+		vim.lsp.set_log_level("off")
 		-- Brief Aside: **What is LSP?**
 		--
 		-- LSP is an acronym you've probably heard, but might not understand what it is.

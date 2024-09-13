@@ -83,7 +83,6 @@ common-aliases
 compleat
 docker
 docker-compose
-fd
 fzf
 git
 git-auto-fetch
@@ -165,3 +164,5 @@ eval "$(pyenv init -)"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$HOME/.cargo/bin:$PATH"
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
