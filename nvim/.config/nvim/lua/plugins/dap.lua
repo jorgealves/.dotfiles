@@ -6,6 +6,13 @@
 -- be extended to other languages as well. That's why it's called
 -- kickstart.nvim and not kitchen-sink.nvim ;)
 
+local function get_python_path()
+	local handle = io.popen("python -c 'import sys; print(sys.executable)'")
+	local python_path = handle:read("*a"):gsub("%s+", "") -- trim whitespace
+	handle:close()
+	return python_path
+end
+
 return {
 	-- NOTE: Yes, you can install new plugins here!
 	"mfussenegger/nvim-dap",
@@ -14,6 +21,7 @@ return {
 		-- Creates a beautiful debugger UI
 		"nvim-neotest/nvim-nio",
 		"rcarriga/nvim-dap-ui",
+		"mfussenegger/nvim-dap-python",
 
 		-- Installs the debug adapters for you
 		"williamboman/mason.nvim",
@@ -22,6 +30,15 @@ return {
 	config = function()
 		local dap = require("dap")
 		local dapui = require("dapui")
+		local dap_python = require("dap-python")
+
+		dap_python.setup(get_python_path())
+
+		dap.adapters.python = {
+			type = "server",
+			host = "localhost",
+			port = 5678,
+		}
 
 		dap.configurations.python = {
 			{
@@ -29,11 +46,23 @@ return {
 				type = "python",
 				request = "attach",
 				port = 8069,
-				debugServer = 8888,
-				host = "localhost",
+				host = "127.0.0.1",
 				pathMappings = {
 					{
-						localRoot = "${workspaceFolder}",
+						localRoot = vim.fn.getcwd(),
+						remoteRoot = "/workspace",
+					},
+				},
+			},
+			{
+				name = "FastAPI: Attach",
+				type = "python",
+				request = "attach",
+				port = 5678,
+				host = "127.0.0.1",
+				pathMappings = {
+					{
+						localRoot = vim.fn.getcwd(),
 						remoteRoot = "/workspace",
 					},
 				},

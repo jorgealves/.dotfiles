@@ -137,7 +137,7 @@ fi
 # MACOS
 alias brew_update_all="brew upgrade && brew cu -yaf && brew cleanup && brew doctor" # Update and clean all apps
 # UBUNTU
-alias ubuntu_update_all="sudo apt update && sudo apt full-upgrade -y && nix-env -u '*'"
+alias ubuntu_update_all="sudo apt update && sudo apt full-upgrade -y && NIXPKGS_ALLOW_UNFREE=1 nix profile upgrade --all --impure"
 alias l="exa --icons -s type -lha" # Fancy ls
 alias tmstart="bash ~/tat"
 # DEVOTEAM
