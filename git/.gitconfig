@@ -1,28 +1,67 @@
 [user]
-	name = Jorge Alves
-	email = jorgeandrealves@gmail.com
-	signingkey = 02835DE4E360E76A46B8AA6EE901E3B323F0D345
+  name = Jorge Alves
+
+[author]
+  name = Jorge Alves
+
+[commiter]
+  name = Jorge Alves
+
+[include]
+  path = ~/.gitconfig.private
 
 [includeIf "gitdir:~/projects/worten/**"]
   path = ~/.gitconfig_wrt
 
 [includeIf "gitdir:~/projects/devoteam/**"]
   path = ~/.gitconfig_dvt
-[core]    
+
+[core]
   editor = nvim
-	excludesfile = /Users/jorgealves/.gitignore_global
+  excludesfile = ~/.gitignore_global
+
+[color]
+  advice = always
+  branch = always
+  diff = always
+  grep = always
+  interactive = always
+  push = always
+  showBranch = always
+  remote = always
+  status = always
+  ui = always
+  
+[alias]
+  logog = "log --oneline --graph --decorate"
+
 [commit]
-	template = /Users/jorgealves/.stCommitMsg
+  gpgsign = true
+
+[fetch]
+  prune = true
+  all = true
+
+[grep]
+  lineNumber = true
+
+[column]
+  ui = always dense
+
+[blame]
+  coloring = highlightRecent
+
 [gpg]
-	program = gpg
+  format = ssh
+
 [help]
-  autocorrect = 30
-[filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+  autocorrect = prompt
+  browser = google-chrome
+  format = web
+
 [init]
-	defaultBranch = main
+  defaultBranch = main
+
 [safe]
-	directory = /Users/jorgealves
+  directory = ~/projects
+

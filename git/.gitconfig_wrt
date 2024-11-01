@@ -1,9 +1,4 @@
 [user]
-name = Jorge Alves
-email = joralves@ext.worten.pt
-signingkey = D21D1B2838E8F7E0A40906C2242D6E7D014B2A71
-
-
-[commit]
-gpgsign = false
+  email = joralves@ext.worten.pt
+  signingkey = ~/.ssh/id_signing
 

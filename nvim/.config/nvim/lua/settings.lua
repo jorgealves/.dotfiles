@@ -64,8 +64,12 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 -- Fold Code
-vim.wo.foldmethod = "expr"
-vim.wo.foldexpr = "nvim_treesiter#foldexpr()"
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 1
+vim.opt.foldnestmax = 5
+
 -- Python indentation
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2

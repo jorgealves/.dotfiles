@@ -84,6 +84,7 @@ compleat
 docker
 docker-compose
 fzf
+gcloud
 git
 git-auto-fetch
 gitignore
