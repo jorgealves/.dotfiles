@@ -1,11 +1,11 @@
 # dynamic_title = true
-import = ["/Users/jorgealves/.config/alacritty/fonts.toml"]
+general.import = ["/Users/jorgealves/.config/alacritty/fonts.toml"]
 
 [scrolling]
 history = 10000
 multiplier = 3
 
-[shell]
+[terminal.shell]
 program = "/bin/zsh"
 
 [window]

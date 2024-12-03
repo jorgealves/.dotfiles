@@ -34,40 +34,40 @@ return {
 
 		dap_python.setup(get_python_path())
 
-		dap.adapters.python = {
-			type = "server",
-			host = "localhost",
-			port = 5678,
-		}
-
-		dap.configurations.python = {
-			{
-				name = "Odoo: Attach",
-				type = "python",
-				request = "attach",
-				port = 8069,
-				host = "127.0.0.1",
-				pathMappings = {
-					{
-						localRoot = vim.fn.getcwd(),
-						remoteRoot = "/workspace",
-					},
-				},
-			},
-			{
-				name = "FastAPI: Attach",
-				type = "python",
-				request = "attach",
-				port = 5678,
-				host = "127.0.0.1",
-				pathMappings = {
-					{
-						localRoot = vim.fn.getcwd(),
-						remoteRoot = "/workspace",
-					},
-				},
-			},
-		}
+		-- dap.adapters.python = {
+		-- 	type = "server",
+		-- 	host = "localhost",
+		-- 	port = 5678,
+		-- }
+		--
+		-- dap.configurations.python = {
+		-- 	{
+		-- 		name = "Odoo: Attach",
+		-- 		type = "python",
+		-- 		request = "attach",
+		-- 		port = 8069,
+		-- 		host = "127.0.0.1",
+		-- 		pathMappings = {
+		-- 			{
+		-- 				localRoot = vim.fn.getcwd(),
+		-- 				remoteRoot = "/workspace",
+		-- 			},
+		-- 		},
+		-- 	},
+		-- 	{
+		-- 		name = "FastAPI: Attach",
+		-- 		type = "python",
+		-- 		request = "attach",
+		-- 		port = 5678,
+		-- 		host = "127.0.0.1",
+		-- 		pathMappings = {
+		-- 			{
+		-- 				localRoot = vim.fn.getcwd(),
+		-- 				remoteRoot = "/workspace",
+		-- 			},
+		-- 		},
+		-- 	},
+		-- }
 
 		require("mason-nvim-dap").setup({
 			-- Makes a best effort to setup the various debuggers with
