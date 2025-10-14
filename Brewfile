@@ -45,6 +45,15 @@ brew "wget"                          # Download utility
 brew "ripgrep"                       # Fast grep alternative
 brew "bat"                           # Better cat with syntax highlighting
 brew "stow"                          # Symlink manager
+brew "z"                             # Jump around directories
+brew "eza"                           # Modern ls replacement
+brew "fd"                            # Simple, fast and user-friendly alternative to 'find'
+brew "htop"                          # Interactive process viewer
+brew "lazygit"                       # Simple terminal UI for git commands
+brew "lazydocker"                    # Simple terminal UI for docker commands
+brew "lazysql"                       # Simple terminal UI for MySQL commands
+brew "tldr"                          # Simplified and community-driven man pages
+
 
 # ===== Fonts (optional) =====
 cask "font-fira-code-nerd-font"      # Great for terminals

@@ -90,9 +90,11 @@ fi
 # ===== Aliases =====
 
 # General
-alias ll='ls -lah'
-alias la='ls -A'
-alias l='ls -CF'
+# File management with eza
+alias l='eza'
+alias ll='eza -lA -F always --icons=always -s type'
+alias la='ll'
+alias tree='l --tree'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
