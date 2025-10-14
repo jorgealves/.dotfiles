@@ -1,71 +1,52 @@
 [user]
-  name = Jorge Alves
+  	name = Jorge Alves
 
 [author]
-  name = Jorge Alves
+  	name = Jorge Alves
 
 [commiter]
-  name = Jorge Alves
-
-[include]
-  path = ~/.gitconfig.private
-
-[includeIf "gitdir:~/projects/worten/**"]
-  path = ~/.gitconfig_wrt
-
-[includeIf "gitdir:~/projects/devoteam/**"]
-  path = ~/.gitconfig_dvt
+  	name = Jorge Alves
 
 [core]
-  editor = nvim
-  excludesfile = ~/.gitignore_global
+	editor = nvim
+    excludesfile = ~/.gitignore_global
 
 [color]
-  advice = always
-  branch = always
-  diff = always
-  grep = always
-  interactive = always
-  push = always
-  showBranch = always
-  remote = always
-  status = always
-  ui = always
-  
-[alias]
-  logog = "log --oneline --graph --decorate"
+	advice = always
+	branch = always
+	diff = always
+	grep = always
+	interactive = always
+	push = always
+	showBranch = always
+	remote = always
+	status = always
+	ui = always
+
 [commit]
-  gpgsign = true
-
-[fetch]
-  prune = true
-  all = true
-
-[grep]
-  lineNumber = true
-
-[column]
-  ui = always dense
-
-[blame]
-  coloring = highlightRecent
+    gpgsign = true
 
 [gpg]
-  format = ssh
-
-[help]
-  autocorrect = prompt
-  browser = google-chrome-stable
-  format = web
+    format = ssh
 
 [init]
-  defaultBranch = main
+    defaultBranch = main
 
-[safe]
-  directory = ~/projects
+[credential]
+    helper = osxkeychain
+
+[alias]
+    lg = log --oneline --graph --decorate
+
+[blame]
+  	coloring = highlightRecent
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+# Private config handles ALL profile switching
+[include]
+    path = ~/.gitconfig.private

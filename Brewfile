@@ -1,188 +1,57 @@
-tap "boz/repo"
-tap "buo/cask-upgrade"
-tap "datawire/blackbird"
-tap "derailed/popeye"
-tap "esolitos/ipa"
-tap "fluxcd/tap"
-tap "go-task/tap"
-tap "goles/battery"
-tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/services"
-tap "kong/kong"
-tap "romkatv/powerlevel10k"
-tap "tilt-dev/tap"
-tap "ubuntu/microk8s"
-brew "ansible"
-brew "argocd"
-brew "autopep8"
-brew "awscli"
-brew "azure-cli"
-brew "bash"
-brew "bash-completion"
-brew "bat"
-brew "cdk"
-brew "gcc"
-brew "clang-format"
-brew "cmake"
-brew "cmake-docs"
-brew "gnutls"
-brew "colima"
-brew "commitizen"
-brew "conftest"
-brew "cookiecutter"
-brew "cppcheck"
-brew "ctop"
-brew "curl"
-brew "datree"
-brew "delve"
-brew "diff-so-fancy"
-brew "dive"
-brew "docker"
-brew "docker-compose"
-brew "docker-credential-helper"
-brew "docker-credential-helper-ecr"
-brew "editorconfig"
-brew "node"
-brew "eslint"
-brew "exa"
-brew "fd"
-brew "ffmpeg"
-brew "flake8"
-brew "fzf"
-brew "gdb"
-brew "git"
-brew "git-cliff"
-brew "git-lfs"
-brew "gitlab-runner"
-brew "gitlint"
-brew "gnupg"
-brew "gnupg@1.4"
-brew "gnupg@2.2"
-brew "go"
-brew "gofumpt"
-brew "gopls"
-brew "hadolint"
-brew "helm"
-brew "lua"
-brew "highlight"
-brew "htop"
-brew "httpie"
-brew "hub"
-brew "hyperkit"
-brew "imagemagick"
-brew "infracost"
-brew "isort"
-brew "istioctl"
-brew "jq"
-brew "jsonlint"
-brew "jsonpp"
-brew "k3sup"
-brew "k9s"
-brew "kcat"
-brew "kind"
-brew "kompose"
-brew "kubernetes-cli"
-brew "krew"
-brew "kubectx"
-brew "lazydocker"
-brew "lazygit"
-brew "libao"
-brew "lua-language-server"
-brew "luajit"
-brew "luarocks"
-brew "openjdk"
-brew "maven"
-brew "minikube"
-brew "mypy"
-brew "n"
-brew "ncdu"
-brew "neovim"
-brew "nmap"
-brew "octant"
-brew "onnxruntime"
-brew "opencv"
-brew "openjdk@11"
-brew "pinentry-mac"
-brew "pipenv"
-brew "virtualenv"
+# Brewfile
+# Place this in ~/dotfiles/Brewfile
+
+# ===== Python Development =====
+brew "uv"                            # Fast Python package manager
 brew "poetry"
-brew "portaudio"
-brew "powerlevel10k"
-brew "pre-commit"
-brew "pulseaudio"
-brew "pyenv"
-brew "pylint"
-brew "python@3.9"
-brew "reattach-to-user-namespace"
-brew "ripgrep"
-brew "rustup-init"
-brew "shellcheck"
-brew "sl"
-brew "sox"
-brew "stow"
-brew "stylua"
-brew "telnet"
-brew "term"
-brew "terraform"
-brew "tfsec"
-brew "tldr"
-brew "tmux"
-brew "tree"
-brew "vault"
-brew "velero"
-brew "vint"
-brew "wakatime-cli"
-brew "watch"
-brew "wget"
-brew "write-good"
-brew "yamllint"
-brew "yapf"
-brew "yarn"
-brew "yq"
-brew "z"
-brew "zsh-autosuggestions"
-brew "zsh-completions"
-brew "zsh-syntax-highlighting"
-brew "derailed/popeye/popeye"
-brew "esolitos/ipa/sshpass"
-brew "fluxcd/tap/flux"
-brew "go-task/tap/go-task"
-brew "goles/battery/battery"
-brew "tilt-dev/tap/tilt"
-cask "alacritty"
-cask "appcleaner"
-cask "balance-lock"
-cask "barrier"
-cask "bitwarden"
-cask "ccleaner"
-cask "discord"
-cask "dozer"
-cask "epic-games"
-cask "font-jetbrains-mono-nerd-font"
-cask "google-chrome"
-cask "jetbrains-toolbox"
-cask "keybase"
-cask "lens"
-cask "microsoft-teams"
-cask "muzzle"
-cask "pritunl"
-cask "rancher"
-cask "rectangle"
-cask "stats"
-cask "telegram"
-cask "unity"
-cask "virtualbox"
-cask "visual-studio-code"
-cask "whatsapp"
-vscode "enkia.tokyo-night"
-vscode "GrapeCity.gc-excelviewer"
-vscode "ms-python.python"
-vscode "ms-python.vscode-pylance"
-vscode "ms-vsliveshare.vsliveshare"
-vscode "redhat.vscode-yaml"
-vscode "ritwickdey.LiveServer"
-vscode "tsandall.opa"
-vscode "vscodevim.vim"
-vscode "zeshuaro.vscode-python-poetry"
+brew "direnv"                        # Directory-based environments
+brew "libmagic"                       # File type detection
+brew "hadolint"
+
+# ===== Container Runtime =====
+cask "rancher"               # Docker alternative
+# OR choose podman instead:
+# brew "podman"
+# brew "docker-compose"
+
+# ===== AWS Tools =====
+brew "awscli"                        # AWS CLI
+brew "docker-credential-helper-ecr"  # ECR authentication
+
+# ===== Version Control =====
+brew "git"                           # Git
+brew "git-lfs"                       # Git Large File Storage
+brew "gh"                            # GitHub CLI (optional)
+
+# ===== Node.js =====
+brew "node"                          # Node.js and npm
+# Note: install 'less' compiler via npm after: npm install -g less
+
+# ===== Shell Enhancements =====
+brew "zsh-autosuggestions"           # Fish-like autosuggestions
+brew "zsh-syntax-highlighting"       # Syntax highlighting
+brew "zsh-completions"               # Additional completions
+brew "starship"                      # Fast, customizable prompt
+brew "fzf"                           # Fuzzy finder
+
+# ===== Optional: Plugin Manager =====
+# brew "antidote"                    # If you want a zsh plugin manager
+
+# ===== Developer Tools =====
+brew "jq"                            # JSON processor
+brew "httpie"                        # User-friendly HTTP client
+brew "tree"                          # Directory visualization
+brew "wget"                          # Download utility
+brew "ripgrep"                       # Fast grep alternative
+brew "bat"                           # Better cat with syntax highlighting
+brew "stow"                          # Symlink manager
+
+# ===== Fonts (optional) =====
+cask "font-fira-code-nerd-font"      # Great for terminals
+# cask "font-jetbrains-mono-nerd-font"
+# cask "font-hack-nerd-font"
+
+# ===== Optional: Useful Apps =====
+cask "visual-studio-code"          # If not managed by Kandji
+
+# cask "docker"                      # If you prefer Docker Desktop over Rancher

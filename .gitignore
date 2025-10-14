@@ -1,0 +1,5 @@
+.gitconfig.private
+.gitconfig_*
+
+.DS_Store
+.python-version
