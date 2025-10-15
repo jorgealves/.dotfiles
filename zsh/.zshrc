@@ -1,5 +1,5 @@
 # ~/.zshrc
-# Optimized Zsh configuration for PandaDoc development
+# Optimized Zsh configuration for development
 # Managed by GNU Stow from ~/dotfiles/zsh/.zshrc
 
 # ===== Performance Profiling (optional) =====
@@ -80,6 +80,11 @@ fi
 # fzf - Fuzzy finder
 if command -v fzf &> /dev/null; then
   eval "$(fzf --zsh)"
+fi
+
+# zoxide - Modern cd replacement
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init zsh)"
 fi
 
 # Starship prompt (must be at end)

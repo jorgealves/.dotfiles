@@ -39,6 +39,7 @@ brew "fzf"                           # Fuzzy finder
 
 # ===== Developer Tools =====
 brew "jq"                            # JSON processor
+brew "yq"                            # YAML processor
 brew "httpie"                        # User-friendly HTTP client
 brew "tree"                          # Directory visualization
 brew "wget"                          # Download utility
@@ -46,6 +47,7 @@ brew "ripgrep"                       # Fast grep alternative
 brew "bat"                           # Better cat with syntax highlighting
 brew "stow"                          # Symlink manager
 brew "z"                             # Jump around directories
+brew "zoxide"                        # Modern cd replacement
 brew "eza"                           # Modern ls replacement
 brew "fd"                            # Simple, fast and user-friendly alternative to 'find'
 brew "htop"                          # Interactive process viewer
@@ -53,6 +55,9 @@ brew "lazygit"                       # Simple terminal UI for git commands
 brew "lazydocker"                    # Simple terminal UI for docker commands
 brew "lazysql"                       # Simple terminal UI for MySQL commands
 brew "tldr"                          # Simplified and community-driven man pages
+brew "tmux"                          # Terminal multiplexer
+brew "neovim"                        # Modern vim
+brew "jless"                         # JSON viewer
 
 
 # ===== Fonts (optional) =====
@@ -61,6 +66,11 @@ cask "font-fira-code-nerd-font"      # Great for terminals
 # cask "font-hack-nerd-font"
 
 # ===== Optional: Useful Apps =====
-cask "visual-studio-code"          # If not managed by Kandji
+# cask "visual-studio-code"            # If not managed by Kandji
+cask "cursor"                        # Cursor IDE
+cask "cursor-cli"                    # Cursor CLI
+cask "nikitabobko/tap/aerospace"     # Aerospace App
+cask "bitwarden"                     # Password manager
+brew "bitwarden-cli"                 # Bitwarden CLI
 
 # cask "docker"                      # If you prefer Docker Desktop over Rancher
