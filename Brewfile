@@ -54,7 +54,6 @@ brew "htop"                          # Interactive process viewer
 brew "lazygit"                       # Simple terminal UI for git commands
 brew "lazydocker"                    # Simple terminal UI for docker commands
 brew "lazysql"                       # Simple terminal UI for MySQL commands
-brew "tldr"                          # Simplified and community-driven man pages
 brew "tmux"                          # Terminal multiplexer
 brew "neovim"                        # Modern vim
 brew "jless"                         # JSON viewer
@@ -72,5 +71,4 @@ cask "cursor-cli"                    # Cursor CLI
 cask "nikitabobko/tap/aerospace"     # Aerospace App
 cask "bitwarden"                     # Password manager
 brew "bitwarden-cli"                 # Bitwarden CLI
-
 # cask "docker"                      # If you prefer Docker Desktop over Rancher

@@ -22,9 +22,11 @@ install:
 update:
 	@echo "📦 Updating packages..."
 	@brew update && brew upgrade
-	@brew bundle install
-	@echo "🔄 Restowing configurations..."
-	@make stow
+	@brew bundle upgrade
+	@brew cleanup
+	@brew bundle cleanup --force
+	@brew bundle check
+	@brew doctor
 	@echo "✅ Update complete!"
 
 
