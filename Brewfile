@@ -71,4 +71,6 @@ cask "cursor-cli"                    # Cursor CLI
 cask "nikitabobko/tap/aerospace"     # Aerospace App
 cask "bitwarden"                     # Password manager
 brew "bitwarden-cli"                 # Bitwarden CLI
+cask "discord"                       # Discord
+cask "ghostty"                       # Ghostty
 # cask "docker"                      # If you prefer Docker Desktop over Rancher
