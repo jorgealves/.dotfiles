@@ -68,7 +68,6 @@ cask "font-fira-code-nerd-font"      # Great for terminals
 # cask "visual-studio-code"            # If not managed by Kandji
 cask "cursor"                        # Cursor IDE
 cask "cursor-cli"                    # Cursor CLI
-cask "nikitabobko/tap/aerospace"     # Aerospace App
 cask "bitwarden"                     # Password manager
 brew "bitwarden-cli"                 # Bitwarden CLI
 cask "discord"                       # Discord
