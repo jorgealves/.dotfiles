@@ -17,7 +17,7 @@ install:
 	@echo "🚀 Starting full installation..."
 	@chmod +x install.sh
 	@./install.sh
-
+	@make update
 # Update packages and configurations
 update:
 	@echo "📦 Updating packages..."

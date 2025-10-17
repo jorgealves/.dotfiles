@@ -73,4 +73,7 @@ cask "bitwarden"                     # Password manager
 brew "bitwarden-cli"                 # Bitwarden CLI
 cask "discord"                       # Discord
 cask "ghostty"                       # Ghostty
+cask "zen"                           # Zen Browser
+cask "notion"                        # Notion
+cask "obsidian"                      # Obsidian
 # cask "docker"                      # If you prefer Docker Desktop over Rancher
