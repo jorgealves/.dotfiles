@@ -2,6 +2,7 @@
 # Place this in ~/dotfiles/Brewfile
 
 # ===== Python Development =====
+brew "pipx"
 brew "uv"                            # Fast Python package manager
 brew "poetry"
 brew "direnv"                        # Directory-based environments
@@ -38,6 +39,8 @@ brew "fzf"                           # Fuzzy finder
 # brew "antidote"                    # If you want a zsh plugin manager
 
 # ===== Developer Tools =====
+brew "nats-io/nats-tools/nats"       # NATS CLI
+brew "pre-commit"                    # Pre-commit hooks
 brew "jq"                            # JSON processor
 brew "yq"                            # YAML processor
 brew "httpie"                        # User-friendly HTTP client
@@ -66,13 +69,22 @@ cask "font-fira-code-nerd-font"      # Great for terminals
 
 # ===== Optional: Useful Apps =====
 # cask "visual-studio-code"            # If not managed by Kandji
+cask "zen"                           # Zen Browser
+# cask "nikitabobko/tap/aerospace"     # Aerospace Tiling Window Manager
+cask "rectangle"                     # Rectangle Window Manager
+cask "displaybuddy"                  # DisplayBuddy
 cask "cursor"                        # Cursor IDE
 cask "cursor-cli"                    # Cursor CLI
 cask "bitwarden"                     # Password manager
 brew "bitwarden-cli"                 # Bitwarden CLI
 cask "discord"                       # Discord
 cask "ghostty"                       # Ghostty
-cask "zen"                           # Zen Browser
 cask "notion"                        # Notion
 cask "obsidian"                      # Obsidian
-# cask "docker"                      # If you prefer Docker Desktop over Rancher
+cask "roblox"                        # Roblox
+cask "steam"                         # Steam
+brew "gemini-cli"                    # Gemini CLI
+cask "claude-code"                   # Claude Code
+cask "claude"                        # Claude Desktop
+cask "chatgpt"                       # ChatGPT
+brew "opencode"                      # OpenCode
