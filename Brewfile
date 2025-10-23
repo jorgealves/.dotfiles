@@ -2,6 +2,7 @@
 # Place this in ~/dotfiles/Brewfile
 
 # ===== Python Development =====
+brew "pipx"
 brew "uv"                            # Fast Python package manager
 brew "poetry"
 brew "direnv"                        # Directory-based environments
