@@ -72,7 +72,7 @@ cask "font-fira-code-nerd-font"      # Great for terminals
 cask "zen"                           # Zen Browser
 # cask "nikitabobko/tap/aerospace"     # Aerospace Tiling Window Manager
 cask "rectangle"                     # Rectangle Window Manager
-cask "displaybuddy"                  # DisplayBuddy
+cask "monitorcontrol"                # MonitorControl
 cask "cursor"                        # Cursor IDE
 cask "cursor-cli"                    # Cursor CLI
 cask "bitwarden"                     # Password manager
@@ -82,9 +82,13 @@ cask "ghostty"                       # Ghostty
 cask "notion"                        # Notion
 cask "obsidian"                      # Obsidian
 cask "roblox"                        # Roblox
+cask "robloxstudio"                  # Roblox Studio
+brew "rojo"                          # Rojo CLI
 cask "steam"                         # Steam
 brew "gemini-cli"                    # Gemini CLI
 cask "claude-code"                   # Claude Code
 cask "claude"                        # Claude Desktop
 cask "chatgpt"                       # ChatGPT
 brew "opencode"                      # OpenCode
+cask "whisky"                        # Whisky
+cask "telegram"                      # Telegram
