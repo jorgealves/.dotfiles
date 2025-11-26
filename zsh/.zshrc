@@ -95,7 +95,7 @@ fi
 # ===== Aliases =====
 
 # update from dotfiles
-alias update='cd ~/projects/personal/.dotfiles && make install'
+alias update='cd ~/projects/personal/.dotfiles && make install && make update && cd -'
 
 # General
 # File management with eza
