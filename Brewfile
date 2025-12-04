@@ -60,6 +60,9 @@ brew "lazysql"                       # Simple terminal UI for MySQL commands
 brew "tmux"                          # Terminal multiplexer
 brew "neovim"                        # Modern vim
 brew "jless"                         # JSON viewer
+brew "tldr"                          # Simplified man pages
+brew "k9s"                           # Kubernetes CLI
+brew "kubectx"                       # Kubernetes context manager
 
 
 # ===== Fonts (optional) =====
