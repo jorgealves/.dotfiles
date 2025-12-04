@@ -161,7 +161,7 @@ setup_stow() {
     echo ""
 
     # Stow each package
-    local packages=("zsh" "git" "starship", "aerospace")
+    local packages=("zsh" "git" "starship", "cursor")
 
     for package in "${packages[@]}"; do
         if [ -d "$package" ]; then

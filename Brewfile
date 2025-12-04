@@ -60,6 +60,9 @@ brew "lazysql"                       # Simple terminal UI for MySQL commands
 brew "tmux"                          # Terminal multiplexer
 brew "neovim"                        # Modern vim
 brew "jless"                         # JSON viewer
+brew "tldr"                          # Simplified man pages
+brew "k9s"                           # Kubernetes CLI
+brew "kubectx"                       # Kubernetes context manager
 
 
 # ===== Fonts (optional) =====
@@ -79,16 +82,16 @@ cask "bitwarden"                     # Password manager
 brew "bitwarden-cli"                 # Bitwarden CLI
 cask "discord"                       # Discord
 cask "ghostty"                       # Ghostty
-cask "notion"                        # Notion
-cask "obsidian"                      # Obsidian
-cask "roblox"                        # Roblox
-cask "robloxstudio"                  # Roblox Studio
-brew "rojo"                          # Rojo CLI
-cask "steam"                         # Steam
-brew "gemini-cli"                    # Gemini CLI
-cask "claude-code"                   # Claude Code
-cask "claude"                        # Claude Desktop
-cask "chatgpt"                       # ChatGPT
-brew "opencode"                      # OpenCode
-cask "whisky"                        # Whisky
-cask "telegram"                      # Telegram
+# cask "notion"                        # Notion
+# cask "obsidian"                      # Obsidian
+# cask "roblox"                        # Roblox
+# cask "robloxstudio"                  # Roblox Studio
+# brew "rojo"                          # Rojo CLI
+# cask "steam"                         # Steam
+# brew "gemini-cli"                    # Gemini CLI
+# cask "claude-code"                   # Claude Code
+# cask "claude"                        # Claude Desktop
+# cask "chatgpt"                       # ChatGPT
+# brew "opencode"                      # OpenCode
+# cask "whisky"                        # Whisky
+# cask "telegram"                      # Telegram
