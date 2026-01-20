@@ -3,3 +3,7 @@
 
 .DS_Store
 .python-version
+
+# zsh files
+.zsh_history
+.zcompdump*

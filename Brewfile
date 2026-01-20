@@ -2,12 +2,12 @@
 # Place this in ~/dotfiles/Brewfile
 
 # ===== Python Development =====
-brew "pipx"
+# brew "pipx"
 brew "uv"                            # Fast Python package manager
-brew "poetry"
+# brew "poetry"
 brew "direnv"                        # Directory-based environments
-brew "libmagic"                       # File type detection
-brew "hadolint"
+# brew "libmagic"                       # File type detection
+# brew "hadolint"
 
 # ===== Container Runtime =====
 cask "rancher"               # Docker alternative
@@ -16,16 +16,16 @@ cask "rancher"               # Docker alternative
 # brew "docker-compose"
 
 # ===== AWS Tools =====
-brew "awscli"                        # AWS CLI
-brew "docker-credential-helper-ecr"  # ECR authentication
+# brew "awscli"                        # AWS CLI
+# brew "docker-credential-helper-ecr"  # ECR authentication
 
 # ===== Version Control =====
 brew "git"                           # Git
 brew "git-lfs"                       # Git Large File Storage
-brew "gh"                            # GitHub CLI (optional)
+# brew "gh"                            # GitHub CLI (optional)
 
 # ===== Node.js =====
-brew "node"                          # Node.js and npm
+# brew "node"                          # Node.js and npm
 # Note: install 'less' compiler via npm after: npm install -g less
 
 # ===== Shell Enhancements =====
@@ -39,7 +39,7 @@ brew "fzf"                           # Fuzzy finder
 # brew "antidote"                    # If you want a zsh plugin manager
 
 # ===== Developer Tools =====
-brew "nats-io/nats-tools/nats"       # NATS CLI
+# brew "nats-io/nats-tools/nats"       # NATS CLI
 brew "pre-commit"                    # Pre-commit hooks
 brew "jq"                            # JSON processor
 brew "yq"                            # YAML processor
@@ -60,7 +60,6 @@ brew "lazysql"                       # Simple terminal UI for MySQL commands
 brew "tmux"                          # Terminal multiplexer
 brew "neovim"                        # Modern vim
 brew "jless"                         # JSON viewer
-brew "tldr"                          # Simplified man pages
 brew "k9s"                           # Kubernetes CLI
 brew "kubectx"                       # Kubernetes context manager
 
@@ -71,19 +70,20 @@ cask "font-fira-code-nerd-font"      # Great for terminals
 # cask "font-hack-nerd-font"
 
 # ===== Optional: Useful Apps =====
-# cask "visual-studio-code"            # If not managed by Kandji
-cask "zen"                           # Zen Browser
+cask "visual-studio-code"            # If not managed by Kandji
+# cask "zen"                           # Zen Browser
+cask "zed"                           # Zed IDE
 # cask "nikitabobko/tap/aerospace"     # Aerospace Tiling Window Manager
 cask "rectangle"                     # Rectangle Window Manager
 cask "monitorcontrol"                # MonitorControl
-cask "cursor"                        # Cursor IDE
-cask "cursor-cli"                    # Cursor CLI
+# cask "cursor"                        # Cursor IDE
+# cask "cursor-cli"                    # Cursor CLI
 cask "bitwarden"                     # Password manager
 brew "bitwarden-cli"                 # Bitwarden CLI
 cask "discord"                       # Discord
 cask "ghostty"                       # Ghostty
-# cask "notion"                        # Notion
-# cask "obsidian"                      # Obsidian
+cask "notion"                        # Notion
+cask "obsidian"                      # Obsidian
 # cask "roblox"                        # Roblox
 # cask "robloxstudio"                  # Roblox Studio
 # brew "rojo"                          # Rojo CLI

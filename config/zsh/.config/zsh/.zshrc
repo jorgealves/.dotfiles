@@ -1,10 +1,14 @@
-# ~/.zshrc
-# Optimized Zsh configuration for development
-# Managed by GNU Stow from ~/dotfiles/zsh/.zshrc
+# This file is sourced by zsh after .zshenv and .zprofile
+# You should is this file for:
+# - zsh options
+# - key bindings
+# - zsh plugins
+# - Aliases and functions
+# - any prompt configurations
 
 # ===== Performance Profiling (optional) =====
 # Uncomment to measure startup time
-#zmodload zsh/zprof
+# zmodload zsh/zprof
 
 # ===== History Configuration =====
 HISTFILE=~/.zsh_history
@@ -87,15 +91,8 @@ if command -v zoxide &> /dev/null; then
   eval "$(zoxide init zsh)"
 fi
 
-# Starship prompt (must be at end)
-if command -v starship &> /dev/null; then
-  eval "$(starship init zsh)"
-fi
 
 # ===== Aliases =====
-
-# update from dotfiles
-alias update='cd ~/projects/personal/.dotfiles && make install && make update && cd -'
 
 # General
 # File management with eza
@@ -133,7 +130,6 @@ alias aws-login='aws sso login'
 
 # Kubernetes shortcuts (if using Rancher Desktop)
 alias k='kubectl'
-
 
 # Modern CLI tool alternatives
 if command -v bat &> /dev/null; then
@@ -205,48 +201,18 @@ venv-info() {
   fi
 }
 
-# ===== Environment Variables =====
-
-# Preferred editor
-export EDITOR='vim'
-export VISUAL='vim'
-
-# Language
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-# Less options (better paging)
-export LESS='-R -F -X'
-
-# Node.js
-export NODE_OPTIONS="--max-old-space-size=4096"
-
-# Python
-export PYTHONDONTWRITEBYTECODE=1  # Don't create .pyc files
-
-# UV configuration
-export UV_PYTHON_PREFERENCE=only-managed  # Use uv-managed Python versions
-
-# ===== PATH Configuration =====
-# Add local bin to PATH
-export PATH="$HOME/.local/bin:$PATH"
-
-# Add custom scripts if you have them
-# export PATH="$HOME/bin:$PATH"
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/jorgeandre.alves/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-
-# Bitwarden CLI SSH integration
-export SSH_AUTH_SOCK=/Users/$USER/.bitwarden-ssh-agent.sock
-
 # ===== Machine-specific Configuration =====
 # Load local configuration if it exists (not tracked in git)
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
 
+
+# Starship prompt (must be at end)
+if command -v starship &> /dev/null; then
+  eval "$(starship init zsh)"
+fi
+
 # ===== Performance Profiling Output =====
 # Uncomment if you enabled zprof at the top
-#zprof
+# zprof
