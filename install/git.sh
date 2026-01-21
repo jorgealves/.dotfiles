@@ -26,11 +26,10 @@ if [ -z "${SSH_AUTH_SOCK:-}" ]; then
     exit 1
 fi
 
-export BW_SESSION=$(bw unlock --raw)
 
 if ! bw status | grep -q '"status":"unlocked"'; then
-    log_error "Bitwarden is not unlocked. Please unlock Bitwarden before running this script."
-    exit 1
+    log_info "Bitwarden is not unlocked. Unlocking Bitwarden..."
+    export BW_SESSION=$(bw unlock --raw)
 fi
 
 log_info "Bitwarden is unlocked 🔓"

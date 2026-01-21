@@ -25,7 +25,7 @@ brew "git-lfs"                       # Git Large File Storage
 # brew "gh"                            # GitHub CLI (optional)
 
 # ===== Node.js =====
-# brew "node"                          # Node.js and npm
+brew "node"                          # Node.js and npm
 # Note: install 'less' compiler via npm after: npm install -g less
 
 # ===== Shell Enhancements =====
