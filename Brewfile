@@ -38,7 +38,8 @@ brew "fzf"                           # Fuzzy finder
 # ===== Optional: Plugin Manager =====
 # brew "antidote"                    # If you want a zsh plugin manager
 
-# ===== Developer Tools =====
+# ===== Terminal Tools =====
+cask "ghostty"                       # Ghostty
 # brew "nats-io/nats-tools/nats"       # NATS CLI
 brew "pre-commit"                    # Pre-commit hooks
 brew "jq"                            # JSON processor
@@ -62,6 +63,7 @@ brew "neovim"                        # Modern vim
 brew "jless"                         # JSON viewer
 brew "k9s"                           # Kubernetes CLI
 brew "kubectx"                       # Kubernetes context manager
+# brew "rojo"                          # Rojo CLI
 
 
 # ===== Fonts (optional) =====
@@ -69,29 +71,52 @@ cask "font-fira-code-nerd-font"      # Great for terminals
 # cask "font-jetbrains-mono-nerd-font"
 # cask "font-hack-nerd-font"
 
-# ===== Optional: Useful Apps =====
-cask "visual-studio-code"            # If not managed by Kandji
-# cask "zen"                           # Zen Browser
+# ===== AI Tools =====
+cask "codex"                        # Codex CLI
+brew "gemini-cli"                    # Gemini CLI
+brew "copilot-cli"                  # GitHub Copilot CLI
+cask "claude-code"                   # Claude Code
+brew "opencode"                      # OpenCode
+# cask "claude"                        # Claude Desktop
+# cask "chatgpt"                       # ChatGPT
+
+# ===== Note-Taking Tools =====
+cask "notion"                        # Notion
+cask "obsidian"                      # Obsidian
+
+# ===== Communication Tools =====
+cask "discord"                       # Discord
+cask "slack"                         # Slack
+cask "zoom"                          # Zoom
+cask "whatsapp"                      # WhatsApp
+# cask "telegram"                      # Telegram
+
+# ===== Code Editors =====
+# cask "visual-studio-code"            # If not managed by Kandji
 cask "zed"                           # Zed IDE
+# cask "robloxstudio"                  # Roblox Studio
+# cask "cursor"                        # Cursor IDE
+# cask "cursor-cli"                    # Cursor CLI
+
+# ===== Security Tools =====
+# brew "gpg"                           # GPG for signing commits
+# brew "gnupg-pinentry-mac"            # Pinentry for GPG on Mac
+cask "bitwarden"                     # Password manager
+brew "bitwarden-cli"                 # Bitwarden CLI
+
+# ===== Browsers  =====
+cask "google-chrome"                 # Google Chrome
+# cask "firefox"                       # Firefox
+# cask "brave-browser"                 # Brave Browser
+# cask "microsoft-edge"                # Microsoft Edge
+# cask "zen"                           # Zen Browser
+
+# ====== Window Management =====
 # cask "nikitabobko/tap/aerospace"     # Aerospace Tiling Window Manager
 cask "rectangle"                     # Rectangle Window Manager
 cask "monitorcontrol"                # MonitorControl
-# cask "cursor"                        # Cursor IDE
-# cask "cursor-cli"                    # Cursor CLI
-cask "bitwarden"                     # Password manager
-brew "bitwarden-cli"                 # Bitwarden CLI
-cask "discord"                       # Discord
-cask "ghostty"                       # Ghostty
-cask "notion"                        # Notion
-cask "obsidian"                      # Obsidian
+
+# ===== Gaming =====
 # cask "roblox"                        # Roblox
-# cask "robloxstudio"                  # Roblox Studio
-# brew "rojo"                          # Rojo CLI
 # cask "steam"                         # Steam
-# brew "gemini-cli"                    # Gemini CLI
-# cask "claude-code"                   # Claude Code
-# cask "claude"                        # Claude Desktop
-# cask "chatgpt"                       # ChatGPT
-# brew "opencode"                      # OpenCode
 # cask "whisky"                        # Whisky
-# cask "telegram"                      # Telegram
