@@ -74,7 +74,7 @@ cask "font-fira-code-nerd-font"      # Great for terminals
 # ===== AI Tools =====
 cask "codex"                        # Codex CLI
 brew "gemini-cli"                    # Gemini CLI
-brew "copilot-cli"                  # GitHub Copilot CLI
+cask "copilot-cli"                  # GitHub Copilot CLI
 cask "claude-code"                   # Claude Code
 brew "opencode"                      # OpenCode
 # cask "claude"                        # Claude Desktop
