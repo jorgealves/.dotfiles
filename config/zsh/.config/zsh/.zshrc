@@ -31,11 +31,12 @@ autoload -Uz compinit
 
 # Performance optimization: only check once a day
 # (speeds up shell startup)
-if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
-  compinit
-else
-  compinit -C
-fi
+compinit -C
+# if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
+  # compinit
+# else
+  # compinit -C
+# fi
 
 # Completion options
 zstyle ':completion:*' menu select                          # Interactive menu

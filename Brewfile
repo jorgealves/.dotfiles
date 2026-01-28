@@ -2,27 +2,29 @@
 # Place this in ~/dotfiles/Brewfile
 
 # ===== Python Development =====
-# brew "pipx"
+brew "pipx"
 brew "uv"                            # Fast Python package manager
-# brew "poetry"
+brew "poetry"
 brew "direnv"                        # Directory-based environments
 # brew "libmagic"                       # File type detection
 # brew "hadolint"
 
 # ===== Container Runtime =====
-cask "rancher"               # Docker alternative
+# cask "rancher"               # Docker alternative
 # OR choose podman instead:
 # brew "podman"
 # brew "docker-compose"
+cask "docker-desktop"
 
-# ===== AWS Tools =====
+# ===== Cloud Tools =====
 # brew "awscli"                        # AWS CLI
 # brew "docker-credential-helper-ecr"  # ECR authentication
+brew "azure-cli"
 
 # ===== Version Control =====
 brew "git"                           # Git
 brew "git-lfs"                       # Git Large File Storage
-# brew "gh"                            # GitHub CLI (optional)
+brew "gh"                            # GitHub CLI (optional)
 
 # ===== Node.js =====
 brew "node"                          # Node.js and npm
@@ -34,6 +36,8 @@ brew "zsh-syntax-highlighting"       # Syntax highlighting
 brew "zsh-completions"               # Additional completions
 brew "starship"                      # Fast, customizable prompt
 brew "fzf"                           # Fuzzy finder
+brew "bash"
+brew "bash-completion@2"
 
 # ===== Optional: Plugin Manager =====
 # brew "antidote"                    # If you want a zsh plugin manager
@@ -68,47 +72,52 @@ brew "kubectx"                       # Kubernetes context manager
 
 # ===== Fonts (optional) =====
 cask "font-fira-code-nerd-font"      # Great for terminals
-# cask "font-jetbrains-mono-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
 # cask "font-hack-nerd-font"
 
 # ===== AI Tools =====
 cask "codex"                        # Codex CLI
-brew "gemini-cli"                    # Gemini CLI
 cask "copilot-cli"                  # GitHub Copilot CLI
-cask "claude-code"                   # Claude Code
 brew "opencode"                      # OpenCode
+cask "chatgpt"                       # ChatGPT
+# brew "gemini-cli"                    # Gemini CLI
+# cask "claude-code"                   # Claude Code
 # cask "claude"                        # Claude Desktop
-# cask "chatgpt"                       # ChatGPT
 
 # ===== Note-Taking Tools =====
 cask "notion"                        # Notion
 cask "obsidian"                      # Obsidian
+cask "granola"                       # Granola
 
 # ===== Communication Tools =====
 cask "discord"                       # Discord
 cask "slack"                         # Slack
-cask "zoom"                          # Zoom
-cask "whatsapp"                      # WhatsApp
+# cask "zoom"                          # Zoom
+# cask "whatsapp"                      # WhatsApp
 # cask "telegram"                      # Telegram
 
 # ===== Code Editors =====
-# cask "visual-studio-code"            # If not managed by Kandji
 cask "zed"                           # Zed IDE
+# cask "visual-studio-code"            # If not managed by Kandji
 # cask "robloxstudio"                  # Roblox Studio
 # cask "cursor"                        # Cursor IDE
 # cask "cursor-cli"                    # Cursor CLI
 
 # ===== Security Tools =====
-# brew "gpg"                           # GPG for signing commits
 # brew "gnupg-pinentry-mac"            # Pinentry for GPG on Mac
 cask "bitwarden"                     # Password manager
 brew "bitwarden-cli"                 # Bitwarden CLI
+# brew "1password-cli"
+brew "pinentry-mac"
+brew "gpg2"
+brew "gnupg"
+cask "nordlayer"                     # VPN
 
 # ===== Browsers  =====
 cask "google-chrome"                 # Google Chrome
+cask "microsoft-edge"                # Microsoft Edge
 # cask "firefox"                       # Firefox
 # cask "brave-browser"                 # Brave Browser
-# cask "microsoft-edge"                # Microsoft Edge
 # cask "zen"                           # Zen Browser
 
 # ====== Window Management =====

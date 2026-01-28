@@ -7,6 +7,7 @@ ROOT_DIR=$(pwd)
 # source libs
 source "$ROOT_DIR/lib/logs.sh"
 source "$ROOT_DIR/lib/utils.sh"
+source "$ROOT_DIR/lib/variables.sh"
 
 log_header "Installing Git 🪾"
 
@@ -37,6 +38,6 @@ log_info "Bitwarden is unlocked 🔓"
 verify_stow
 
 cd "$ROOT_DIR/config"
-stow -R -v git -t "$HOME"
+stow -R -v git -t "$USER_HOME"
 
 log_info "Git configuration installed 🪾"

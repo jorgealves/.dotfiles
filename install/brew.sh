@@ -16,6 +16,6 @@ if ! command -v brew &> /dev/null; then
 fi
 brew update
 brew upgrade
-brew bundle -v --file="$BREWFILE" --upgrade
+brew bundle install -v --file="$BREWFILE" --upgrade --cleanup
 
 log_footer "Homebrew installed successfully 🎉"
