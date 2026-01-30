@@ -7,6 +7,20 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent": {
+    "default_profile": "write",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4"
+    },
+    "favorite_models": [
+      {
+        "provider": "copilot_chat",
+        "model": "claude-sonnet-4"
+      }
+    ],
+    "model_parameters": []
+  },
   "tab_bar": {
     "show_pinned_tabs_in_separate_row": true
   },
@@ -17,18 +31,6 @@
     "enable_preview_multibuffer_from_code_navigation": true
   },
   "context_servers": {
-    "mcp-server-slack": {
-      "enabled": true,
-      "settings": {
-        "slack_bot_token": "SLACK_BOT_TOKEN",
-        "slack_team_id": "SLACK_TEAM_ID",
-        "slack_channel_ids": "SLACK_CHANNEL_IDS"
-      }
-    },
-    "browser-tools-context-server": {
-      "enabled": true,
-      "settings": {}
-    },
     "mcp-server-github": {
       "enabled": true,
       "settings": {

@@ -20,6 +20,7 @@ cask "docker-desktop"
 # brew "awscli"                        # AWS CLI
 # brew "docker-credential-helper-ecr"  # ECR authentication
 brew "azure-cli"
+brew "Azure/kubelogin/kubelogin"      # Azure Kubernetes login
 
 # ===== Version Control =====
 brew "git"                           # Git
@@ -93,7 +94,7 @@ cask "font-jetbrains-mono-nerd-font"
 # cask "codex"                        # Codex CLI
 cask "copilot-cli"                  # GitHub Copilot CLI
 brew "opencode"                      # OpenCode
-#cask "chatgpt"                       # ChatGPT
+cask "chatgpt"                       # ChatGPT
 # brew "gemini-cli"                    # Gemini CLI
 # cask "claude-code"                   # Claude Code
 # cask "claude"                        # Claude Desktop
@@ -101,7 +102,7 @@ brew "opencode"                      # OpenCode
 # ===== Note-Taking Tools =====
 cask "notion"                        # Notion
 cask "obsidian"                      # Obsidian
-cask "granola"                       # Granola
+# cask "granola"                       # Granola
 
 # ===== Communication Tools =====
 cask "discord"                       # Discord

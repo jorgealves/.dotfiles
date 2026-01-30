@@ -32,4 +32,6 @@ if ! npx --version &> /dev/null; then
     exit 1
 fi
 
-AGENTS=("copilot" "opencode")
+npx skills add jorgealves/agent_skills --global --yes --full-depth --agent opencode --agent github-copilot
+
+log_footer  "AI Skills setup completed successfully 🎉"
