@@ -65,10 +65,24 @@ brew "lazysql"                       # Simple terminal UI for MySQL commands
 brew "tmux"                          # Terminal multiplexer
 brew "neovim"                        # Modern vim
 brew "jless"                         # JSON viewer
-brew "k9s"                           # Kubernetes CLI
-brew "kubectx"                       # Kubernetes context manager
 # brew "rojo"                          # Rojo CLI
 
+# ===== Kubernetes Tools =====
+brew "kubectl"                       # Kubernetes CLI
+brew "k9s"                           # Kubernetes TUI
+brew "kubectx"                       # Kubernetes context manager
+brew "helm"                          # Helm package manager
+brew "helmfile"                      # Helmfile
+brew "helm-docs"                      # Helm documentation generator
+brew "minikube"                      # Local Kubernetes cluster
+brew "kind"                           # Kubernetes in Docker
+brew "popeye"                         # Kubernetes resource viewer
+
+# ===== Terraform Tools =====
+# brew "terraform"                     # Terraform
+brew "terraform-docs"                # Terraform documentation generator
+brew "warrensbox/tap/tfswitch"    # Terraform version switcher
+brew "tflint"                        # Terraform linter
 
 # ===== Fonts (optional) =====
 cask "font-fira-code-nerd-font"      # Great for terminals
@@ -76,10 +90,10 @@ cask "font-jetbrains-mono-nerd-font"
 # cask "font-hack-nerd-font"
 
 # ===== AI Tools =====
-cask "codex"                        # Codex CLI
+# cask "codex"                        # Codex CLI
 cask "copilot-cli"                  # GitHub Copilot CLI
 brew "opencode"                      # OpenCode
-cask "chatgpt"                       # ChatGPT
+#cask "chatgpt"                       # ChatGPT
 # brew "gemini-cli"                    # Gemini CLI
 # cask "claude-code"                   # Claude Code
 # cask "claude"                        # Claude Desktop
@@ -112,6 +126,7 @@ brew "pinentry-mac"
 brew "gpg2"
 brew "gnupg"
 cask "nordlayer"                     # VPN
+brew "trivy"
 
 # ===== Browsers  =====
 cask "google-chrome"                 # Google Chrome

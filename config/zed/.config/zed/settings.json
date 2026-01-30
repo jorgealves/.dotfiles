@@ -7,6 +7,35 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "tab_bar": {
+    "show_pinned_tabs_in_separate_row": true
+  },
+  "when_closing_with_no_tabs": "keep_window_open",
+  "preview_tabs": {
+    "enable_keep_preview_on_code_navigation": true,
+    "enable_preview_from_file_finder": true,
+    "enable_preview_multibuffer_from_code_navigation": true
+  },
+  "context_servers": {
+    "mcp-server-slack": {
+      "enabled": true,
+      "settings": {
+        "slack_bot_token": "SLACK_BOT_TOKEN",
+        "slack_team_id": "SLACK_TEAM_ID",
+        "slack_channel_ids": "SLACK_CHANNEL_IDS"
+      }
+    },
+    "browser-tools-context-server": {
+      "enabled": true,
+      "settings": {}
+    },
+    "mcp-server-github": {
+      "enabled": true,
+      "settings": {
+        "github_personal_access_token": "GITHUB_PERSONAL_ACCESS_TOKEN"
+      }
+    }
+  },
   "bottom_dock_layout": "full",
   "auto_indent": true,
   "auto_indent_on_paste": true,
@@ -43,6 +72,7 @@
     "git_diff": true,
   },
   "tabs":{
+    "close_position": "left",
     "file_icons": true,
     "git_status": true,
     "show_diagnostics":"all",

@@ -2,9 +2,8 @@
 
 set -euo pipefail # Enable strict mode
 
-ROOT_DIR=$(pwd)
-
 # source libs
+source "$(pwd)/lib/variables.sh"
 source "$ROOT_DIR/lib/logs.sh"
 source "$ROOT_DIR/lib/utils.sh"
 

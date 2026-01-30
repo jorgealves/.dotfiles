@@ -11,7 +11,81 @@ Automated dotfiles setup for macOS development at company using GNU Stow.
 - 📦 **Node.js** with npm
 - 🎨 **Beautiful shell** with Starship prompt
 - 🔧 **GNU Stow** for symlink management
+- 🤖 **Agent Skills** management with Vercel ecosystem integration
 - ⚡ **Fast startup** (~50ms with optimizations)
+
+## 🤖 Agent Skills Management
+
+This setup includes a hybrid agent skills management system that combines:
+- **Official Skills**: From Vercel's agent skills ecosystem
+- **Custom Skills**: Your personal collection of agent capabilities
+
+### Quick Start with Skills
+
+```bash
+# List available skills
+./scripts/sync-skills.sh --list
+
+# Sync skills to current project for OpenCode
+./scripts/sync-skills.sh --tool opencode
+
+# Sync to all AI tools in current project
+./scripts/sync-skills.sh --all
+
+# Check skills status
+./scripts/sync-skills.sh --check
+```
+
+### Available Skills
+
+**Official Skills (5 from Vercel):**
+- claude.ai
+- composition-patterns  
+- react-best-practices
+- react-native-skills
+- web-design-guidelines
+
+**Custom Skills (40+ specialized capabilities):**
+- Python development (testing, async, performance, security)
+- Compliance (HIPAA, GDPR, license auditing)
+- Code quality (review, refactoring, technical debt)
+- Infrastructure (K8s optimization, database migration)
+- Education (learning path generation, code grading)
+
+### Adding New Official Skills
+
+```bash
+# Clone additional skill repositories to official directory
+cd ~/.skills-management/official
+git clone https://github.com/anthropic/agent-skills.git anthropic-skills
+
+# Create individual skill symlinks
+cd individual
+for skill in ../anthropic-skills/skills/*/; do 
+  ln -sf "$skill" "./$(basename "$skill")"
+done
+
+# Sync to your projects
+./scripts/sync-skills.sh --all
+```
+
+### Skills Directory Structure
+
+```
+~/.skills-management/
+├── official/           # Official skills from ecosystems
+│   ├── vercel-agent-skills/
+│   └── individual/     # Individual skill symlinks
+├── custom/            # Your custom skills
+│   └── agent_skills/  # Symlinked to config/agent_skills
+└── config.json       # Management configuration
+
+Projects get skills via symlinks:
+your-project/
+├── .opencode/skills/  # All available skills
+├── .cursor/skills/    # All available skills  
+└── .claude/skills/    # All available skills
+```
 
 ## 📋 What Gets Installed
 
@@ -36,6 +110,12 @@ Automated dotfiles setup for macOS development at company using GNU Stow.
 - **httpie** - User-friendly HTTP client
 - **tree** - Directory visualization
 
+### AI Agent Tools
+- **OpenCode** - AI coding assistant
+- **Claude Code** - Anthropic's coding assistant
+- **GitHub Copilot CLI** - AI pair programmer
+- **Agent Skills** - Hybrid skills management (Vercel ecosystem + custom skills)
+
 ## 🚀 Quick Start
 
 ### New Machine Setup
@@ -55,6 +135,7 @@ That's it! The script will:
 - ✅ Install all packages from Brewfile
 - ✅ Setup Python (3.11, 3.12, 3.13)
 - ✅ Setup Node.js
+- ✅ Setup agent skills management
 - ✅ Backup existing configs
 - ✅ Symlink dotfiles with Stow
 - ✅ Configure Git and shell

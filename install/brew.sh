@@ -1,12 +1,12 @@
 #!/bin/bash
 
 set -euo pipefail # Enable strict mode
-
-ROOT_DIR=$(pwd)
-BREWFILE="$ROOT_DIR/Brewfile"
-
 # source libs
+source "$(pwd)/lib/variables.sh"
 source "$ROOT_DIR/lib/logs.sh"
+source "$ROOT_DIR/lib/utils.sh"
+
+BREWFILE="$ROOT_DIR/Brewfile"
 
 log_header "Installing Homebrew"
 
