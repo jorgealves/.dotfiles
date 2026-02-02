@@ -102,7 +102,9 @@ brew "opencode"                      # OpenCode
 # ===== Note-Taking Tools =====
 cask "notion"                        # Notion
 cask "obsidian"                      # Obsidian
-# cask "granola"                       # Granola
+# tap "zackriya-solutions/meetily"
+# cask "meetily"     # Meetily
+# cask "granola"                     # Granola
 
 # ===== Communication Tools =====
 cask "discord"                       # Discord
@@ -140,6 +142,9 @@ cask "microsoft-edge"                # Microsoft Edge
 # cask "nikitabobko/tap/aerospace"     # Aerospace Tiling Window Manager
 cask "rectangle"                     # Rectangle Window Manager
 cask "monitorcontrol"                # MonitorControl
+
+# ===== Misceleaneous =========
+brew "synergy-core"
 
 # ===== Gaming =====
 # cask "roblox"                        # Roblox

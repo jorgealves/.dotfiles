@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -euo pipefail # Enable strict mode
+
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+source "$SCRIPT_DIR/logs.sh"
+
+#enforce file to be source and not executed directly
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+    echo "This script should be sourced, not executed directly."
+    exit 1
+fi
+
+USER_HOME="$HOME"
+ROOT_DIR=$(pwd)
+
+log_info "💼 Variables loaded."
