@@ -94,7 +94,7 @@ cask "font-jetbrains-mono-nerd-font"
 # cask "codex"                        # Codex CLI
 cask "copilot-cli"                  # GitHub Copilot CLI
 brew "opencode"                      # OpenCode
-cask "chatgpt"                       # ChatGPT
+# cask "chatgpt"                       # ChatGPT
 # brew "gemini-cli"                    # Gemini CLI
 # cask "claude-code"                   # Claude Code
 # cask "claude"                        # Claude Desktop
