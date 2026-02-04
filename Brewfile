@@ -91,9 +91,11 @@ cask "font-jetbrains-mono-nerd-font"
 # cask "font-hack-nerd-font"
 
 # ===== AI Tools =====
-# cask "codex"                        # Codex CLI
+cask "codex"                        # Codex CLI
 cask "copilot-cli"                  # GitHub Copilot CLI
 brew "opencode"                      # OpenCode
+brew "ollama"                       # Ollama
+# cask "lm-studio"
 # cask "chatgpt"                       # ChatGPT
 # brew "gemini-cli"                    # Gemini CLI
 # cask "claude-code"                   # Claude Code
@@ -120,6 +122,10 @@ cask "zed"                           # Zed IDE
 # cask "cursor"                        # Cursor IDE
 # cask "cursor-cli"                    # Cursor CLI
 
+# ===== Database Tools ========
+cask "dbeaver-community"
+cask "beekeeper-studio"
+
 # ===== Security Tools =====
 # brew "gnupg-pinentry-mac"            # Pinentry for GPG on Mac
 cask "bitwarden"                     # Password manager
@@ -145,7 +151,7 @@ cask "monitorcontrol"                # MonitorControl
 
 # ===== Misceleaneous =========
 brew "synergy-core"
-
+cask "uhk-agent"                    # UHK Agent
 # ===== Gaming =====
 # cask "roblox"                        # Roblox
 # cask "steam"                         # Steam
