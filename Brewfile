@@ -152,6 +152,7 @@ cask "monitorcontrol"                # MonitorControl
 # ===== Misceleaneous =========
 brew "synergy-core"
 cask "uhk-agent"                    # UHK Agent
+cask "microsoft-azure-storage-explorer" # Azure Storage Explorer
 # ===== Gaming =====
 # cask "roblox"                        # Roblox
 # cask "steam"                         # Steam
