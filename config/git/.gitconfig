@@ -1,13 +1,13 @@
 [includeIf "gitdir:~/projects/"]
 	path = ~/.gitconfig.private
-	
+
 [core]
 	editor = nvim
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = ~/.config/git/excludes
 	fsmonitor = true
 	untrackedCache = true
-	
+
 [init]
 	defaultBranch = main
 
@@ -15,11 +15,11 @@
 	prune = true
 	pruneTags = true
 	all = true
-	
+
 [pull]
 	rebase = true
 	ff = only
-	
+
 [rebase]
 	autoStash = true
 	autoSquash = true
@@ -32,26 +32,26 @@
 	default = simple
 	autoSetupRemote = true
 	followTags = true
-	
+
 [commit]
 	verbose = true
 	gpgsign = true
-	
+
 [branch]
 	sort = -committerdate
-	
+
 [tag]
 	sort = version:refname
-	
+
 [diff]
 	algorithm = histogram
 	colorMoved = default
 	mnemonicPrefix = true
 	renames = true
-	
+
 [log]
-	date = iso 
-	
+	date = iso
+
 [status]
 	showUntrackedFiles = all
 
@@ -60,27 +60,27 @@
 
 [gpg "ssh"]
 	allowedSignersFile = ~/.config/git/allowed_signers
-	
+
 [color]
 	ui = auto
-	
+
 [column]
 	ui = auto
 
 [rerere]
 	enabled = true
 	autoupdate = true
-	
+
 [help]
 	autocorrect = true
-	
+
 [filter "lfs"]
 		clean = git-lfs clean -- %f
 		smudge = git-lfs smudge -- %f
 		process = git-lfs filter-process
 		required = true
 
-	
+
 [alias]
 	st = status
   co = checkout
@@ -96,5 +96,4 @@
   squash = rebase -i --autosquash
 
   undo = reset --soft HEAD~1
-  wipe = reset --hard HEAD	
-
+  wipe = reset --hard HEAD

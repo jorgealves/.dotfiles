@@ -22,10 +22,13 @@ make run
 brew list | grep -E "(uv|poetry|kubectl)"
 
 # Validate configuration
-stow -n -v */ && echo "✅ All configs valid"
+stow -n -v -d config -t "$HOME" zsh starship git opencode zed && echo "✅ All configs valid"
+
+# Run local checks
+make check
 
 # Update environment
-source ~/.zshrc && direnv reload
+source ~/.config/zsh/.zshrc && direnv reload
 ```
 
 ## Architecture
@@ -40,7 +43,7 @@ source ~/.zshrc && direnv reload
 │   ├── 🐚 zsh/                 # Shell configuration
 │   └── ⭐ starship/            # Shell prompt themes
 ├── 🔨 install/                 # Installation scripts (ORDERED)
-│   ├── brew.sh → shell.sh → git.sh → dotfiles.sh → python.sh → skills.sh
+│   ├── brew.sh → shell.sh → git.sh → dotfiles.sh → python.sh → ai.sh
 └── 📚 lib/                     # Utility functions
     ├── logs.sh                 # log_info, log_error, log_success
     └── variables.sh            # Environment variables
@@ -51,7 +54,7 @@ source ~/.zshrc && direnv reload
 ### Before Making Changes
 ```bash
 # ALWAYS validate first
-stow -n -v */ 2>&1 | grep -i conflict
+stow -n -v -d config -t "$HOME" zsh starship git opencode zed 2>&1 | grep -i conflict
 
 # Use existing logging
 source lib/logs.sh
@@ -70,7 +73,7 @@ log_info "Starting task"
 uv python list
 
 # Create project environment
-echo "python-version = '3.12'" > .python-version
+echo "3.14" > .python-version
 direnv allow
 
 # Validate
@@ -82,13 +85,13 @@ python --version && echo "✅ Ready"
 ### Configuration Management
 - **Use GNU Stow**: All configs go in `config/` and are symlinked
 - **Never edit directly**: Don't modify `~/.zshrc`, use `config/zsh/.zshrc`
-- **Test first**: Always run `stow -n -v */` before `stow -v */`
+- **Test first**: Always run `stow -n -v -d config -t "$HOME" <tool>` before applying changes
 
 ### Python Standards
 - **Primary tool**: uv (fast package manager)
-- **Supported versions**: 3.11, 3.12, 3.13
+- **Supported versions**: 3.12, 3.13, 3.14
 - **Environment management**: direnv for auto-activation
-- **Default version**: 3.12
+- **Default version**: 3.14
 
 ### Shell Configuration
 - **Shell**: zsh with starship prompt
@@ -124,18 +127,21 @@ command -v uv && echo "✅ uv"
 command -v stow && echo "✅ GNU Stow"
 
 # Configuration validation
-[ -f ~/.zshrc ] && echo "✅ zsh configured"
+[ -f ~/.config/zsh/.zshrc ] && echo "✅ zsh configured"
 [ -f ~/.gitconfig ] && echo "✅ git configured"
 
 # Agent skills
 npx skills list && echo "✅ Skills available"
 ls -la config/agent_skills/ && echo "✅ Custom skills"
+
+# Security checks
+make security
 ```
 
 ### Debugging Common Issues
 ```bash
 # Stow conflicts
-stow -D -v */ && stow -v */
+stow -R -v -d config -t "$HOME" zsh starship git opencode zed
 
 # Homebrew issues
 brew doctor && brew update && brew upgrade
@@ -173,7 +179,7 @@ npx skills use code-review-assistant review src/
 brew update && brew upgrade
 uv self update
 npx skills update
-stow -R -v */
+stow -R -v -d config -t "$HOME" zsh starship git opencode zed
 
 # Cleanup
 brew cleanup
@@ -185,7 +191,7 @@ uv cache clean
 ### Complete Reset (Nuclear Option)
 ```bash
 cd ~/.dotfiles
-stow -D -v */              # Remove all symlinks
+stow -D -v -d config -t "$HOME" zsh starship git opencode zed
 git checkout HEAD -- config/  # Reset configs
 ./bootstrap.sh             # Reinstall everything
 ```
@@ -193,7 +199,7 @@ git checkout HEAD -- config/  # Reset configs
 ### Partial Fixes
 ```bash
 # Fix only Stow issues
-stow -R -v */
+stow -R -v -d config -t "$HOME" zsh starship git opencode zed
 
 # Fix only Python
 uv self update && direnv reload
@@ -204,10 +210,10 @@ brew doctor && brew update && brew upgrade
 
 ## Important Notes
 
-- **Installation Order**: The 6 install scripts must run in order (brew → shell → git → dotfiles → python → skills)
+- **Installation Order**: The 6 install scripts must run in order (brew → shell → git → dotfiles → python → ai)
 - **macOS Only**: This setup is specifically designed for macOS
 - **GNU Stow Required**: All configuration management relies on GNU Stow for symlinks
-- **Python Default**: Default Python version is 3.12, but 3.11 and 3.13 are also available
+- **Python Default**: Default Python version is 3.14, with 3.12 and 3.13 also available
 - **Agent Integration**: Works with OpenCode, GitHub Copilot, Cursor, and other AI coding tools
 
 ## Key Tools Installed
@@ -242,8 +248,8 @@ brew doctor && brew update && brew upgrade
 
 ✅ **Installation Complete When**:
 - All 6 install scripts complete without errors
-- `stow -n -v */` shows no conflicts  
-- `python --version` shows 3.12 (or desired version)
+- `stow -n -v -d config -t "$HOME" zsh starship git opencode zed` shows no conflicts
+- `python --version` shows 3.14 (or desired version)
 - `gh auth status` shows authenticated
 - Starship prompt is active in terminal
 
@@ -255,6 +261,6 @@ brew doctor && brew update && brew upgrade
 
 ---
 
-**Last Updated**: 2025-01-21  
-**Format**: AGENTS.md v2.0 Standard  
+**Last Updated**: 2026-02-18
+**Format**: AGENTS.md v2.0 Standard
 **Compatible With**: OpenCode, GitHub Copilot, Cursor, Zed, Claude Code, and other AI coding agents

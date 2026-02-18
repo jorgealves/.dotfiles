@@ -10,9 +10,9 @@ BREWFILE="$ROOT_DIR/Brewfile"
 
 log_header "Installing Homebrew"
 
-if ! command -v brew &> /dev/null; then
-    log_error "Homebrew is not installed. Installing..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if ! command -v brew &>/dev/null; then
+  log_error "Homebrew is not installed. Installing..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 brew update
 brew upgrade

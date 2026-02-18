@@ -1,0 +1,22 @@
+title = "Dotfiles Gitleaks configuration"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Ignore local pre-commit cache artifacts"
+paths = [
+  '''(^|/)\.cache/pre-commit/''',
+]
+
+[[allowlists]]
+description = "Ignore git signing key identifiers in git config files"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "line"
+paths = [
+  '''(^|/)(git|config/git)/\.gitconfig(?:_wrt|\.private)?$''',
+]
+regexes = [
+  '''(?i)^\s*signingkey\s*=\s*(?:[A-F0-9]{40}|ssh-(?:ed25519|rsa)\s+[A-Za-z0-9+/=]+)\s*$''',
+]

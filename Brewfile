@@ -47,6 +47,8 @@ brew "bash-completion@2"
 cask "ghostty"                       # Ghostty
 # brew "nats-io/nats-tools/nats"       # NATS CLI
 brew "pre-commit"                    # Pre-commit hooks
+brew "shellcheck"                    # Shell script linting
+brew "shfmt"                         # Shell script formatting
 brew "jq"                            # JSON processor
 brew "yq"                            # YAML processor
 brew "httpie"                        # User-friendly HTTP client
@@ -134,6 +136,7 @@ brew "bitwarden-cli"                 # Bitwarden CLI
 brew "pinentry-mac"
 brew "gpg2"
 brew "gnupg"
+brew "gitleaks"
 cask "nordlayer"                     # VPN
 brew "trivy"
 

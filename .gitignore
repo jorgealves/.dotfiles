@@ -1,6 +1,27 @@
 .gitconfig.private
 .gitconfig_*
 
+# Local overrides and secrets
+*.local
+.env
+.env.*
+!.env.example
+!.envrc.example
+.envrc.local
+*.pem
+*.key
+*.p12
+*.pfx
+*_rsa
+id_rsa
+id_ed25519
+
+# Local editor/state backups
+*.bak
+*.backup
+*.orig
+*.tmp
+
 .DS_Store
 .python-version
 
@@ -11,3 +32,4 @@
 
 # zed files
 *.mdb
+config/zed/.config/zed/settings_backup.json

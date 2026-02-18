@@ -10,9 +10,15 @@ cd ~/.dotfiles
 ./bootstrap.sh
 ```
 
+## Validate
+
+```bash
+make check
+```
+
 ## What's included
 
-- Python (uv, poetry, 3.11/3.12/3.13)
+- Python (uv, poetry, 3.12/3.13/3.14)
 - Node.js + npm
 - Docker Desktop
 - Azure CLI
@@ -23,7 +29,18 @@ cd ~/.dotfiles
 
 ## Security
 
-Never commit secrets. 
+Never commit secrets.
+
+- Store local credentials in `.envrc.local` (gitignored).
+- Keep private Git identity in `~/.gitconfig.private`.
+- Follow the policy in [`SECURITY.md`](SECURITY.md).
+
+## Pre-commit Checks
+
+```bash
+pre-commit install
+make security
+```
 
 ## Details
 
