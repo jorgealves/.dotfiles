@@ -94,9 +94,9 @@ cask "font-jetbrains-mono-nerd-font"
 cask "codex"                        # Codex CLI
 cask "copilot-cli"                  # GitHub Copilot CLI
 brew "opencode"                      # OpenCode
-brew "ollama"                       # Ollama
+# brew "ollama"                       # Ollama
 # cask "lm-studio"
-# cask "chatgpt"                       # ChatGPT
+cask "chatgpt"                       # ChatGPT
 # brew "gemini-cli"                    # Gemini CLI
 # cask "claude-code"                   # Claude Code
 # cask "claude"                        # Claude Desktop
@@ -104,15 +104,15 @@ brew "ollama"                       # Ollama
 # ===== Note-Taking Tools =====
 cask "notion"                        # Notion
 cask "obsidian"                      # Obsidian
-# tap "zackriya-solutions/meetily"
-# cask "meetily"     # Meetily
+# tap "zackriya-solutions/meetily"      # Meetily
+# cask "meetily"
 # cask "granola"                     # Granola
 
 # ===== Communication Tools =====
 cask "discord"                       # Discord
 cask "slack"                         # Slack
 # cask "zoom"                          # Zoom
-# cask "whatsapp"                      # WhatsApp
+cask "whatsapp"                      # WhatsApp
 # cask "telegram"                      # Telegram
 
 # ===== Code Editors =====

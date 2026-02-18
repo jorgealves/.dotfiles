@@ -1,3 +1,0 @@
-[submodule "config/agent_skills"]
-	path = config/agent_skills
-	url = https://github.com/jorgealves/agent_skills.git
