@@ -119,7 +119,7 @@ cask "whatsapp"                      # WhatsApp
 
 # ===== Code Editors =====
 cask "zed"                           # Zed IDE
-# cask "visual-studio-code"            # If not managed by Kandji
+cask "visual-studio-code"            # Visual Studio Code
 # cask "robloxstudio"                  # Roblox Studio
 # cask "cursor"                        # Cursor IDE
 # cask "cursor-cli"                    # Cursor CLI
