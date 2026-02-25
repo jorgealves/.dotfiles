@@ -132,7 +132,7 @@ cask "beekeeper-studio"
 # brew "gnupg-pinentry-mac"            # Pinentry for GPG on Mac
 cask "bitwarden"                     # Password manager
 brew "bitwarden-cli"                 # Bitwarden CLI
-# brew "1password-cli"
+cask "1password-cli"
 brew "pinentry-mac"
 brew "gpg2"
 brew "gnupg"
