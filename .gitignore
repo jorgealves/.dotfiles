@@ -28,6 +28,7 @@ id_ed25519
 # zsh files
 .zsh_history
 .zcompdump*
+.zsh_sessions/
 
 
 # zed files
