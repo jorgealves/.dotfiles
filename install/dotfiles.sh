@@ -14,6 +14,6 @@ verify_stow
 cd "$ROOT_DIR/config"
 stow -R -v zed -t "$USER_HOME"
 stow -R -v opencode -t "$USER_HOME"
-stow -R -v aerospace -t "$USER_HOME"
+# stow -R -v aerospace -t "$USER_HOME"
 
 log_footer "Dotfiles configuration installed successfully 🎉"

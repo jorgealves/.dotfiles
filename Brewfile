@@ -146,7 +146,7 @@ cask "microsoft-edge"                   # Microsoft Edge
 # cask "zen"                            # Zen Browser
 
 # ====== Window Management =====
-cask "nikitabobko/tap/aerospace"        # Aerospace Tiling Window Manager
+# cask "nikitabobko/tap/aerospace"      # Aerospace Tiling Window Manager
 cask "rectangle"                        # Rectangle Window Manager
 cask "monitorcontrol"                   # MonitorControl
 
