@@ -219,6 +219,6 @@ fi
 
 
 
-# autocompletion for Azure Cli
+# autocompletion for bash (useful for Azure CLI)
 autoload -U +X bashcompinit && bashcompinit
 

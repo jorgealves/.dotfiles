@@ -1,17 +1,15 @@
 {
+  "edit_predictions": {
+    "mode": "eager"
+  },
   "agent": {
     "always_allow_tool_actions": true,
     "default_profile": "write",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5"
+      "model": "claude-opus-4.5"
     },
-    "favorite_models": [
-      {
-        "provider": "copilot_chat",
-        "model": "claude-sonnet-4"
-      }
-    ],
+    "favorite_models": [],
     "model_parameters": []
   },
   "tab_bar": {
@@ -135,7 +133,11 @@
     "enabled": true,
     "coloring": "indent_aware"
   },
-  "icon_theme": "Material Icon Theme",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Material Icon Theme",
+    "dark": "Material Icon Theme"
+  },
   "image_viewer": {
     "unit": "binary"
   },
@@ -153,8 +155,8 @@
   "buffer_font_size": 13,
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark"
+    "light": "Gruvbox Light",
+    "dark": "Gruvbox Dark Hard"
   },
   "use_smartcase_search": true,
   "show_whitespaces": "all",
