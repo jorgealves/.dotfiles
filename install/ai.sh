@@ -30,7 +30,7 @@ if ! npm list --global skills --depth=0 &>/dev/null; then
   npm install -g skills
 fi
 
-npx skills add jorgealves/agent_skills --global --yes --full-depth --agent opencode --agent github-copilot --agent codex
+npx skills add jorgealves/agent_skills --global --yes --full-depth --agent opencode --agent github-copilot --agent codex --agent claude-code
 
 log_info "Custom skills setup completed successfully 🎉"
 

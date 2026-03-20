@@ -91,14 +91,14 @@ cask "font-jetbrains-mono-nerd-font"    # JetBrains Nerd Font
 # cask "font-hack-nerd-font"
 
 # ===== AI Tools =====
-cask "codex"                            # Codex CLI
-cask "copilot-cli"                      # GitHub Copilot CLI
+# cask "codex"                          # Codex CLI
+# cask "copilot-cli"                    # GitHub Copilot CLI
 brew "opencode"                         # OpenCode
 # brew "ollama"                         # Ollama
 # cask "lm-studio"                      # LM Studio
-cask "chatgpt"                          # ChatGPT
+# cask "chatgpt"                        # ChatGPT
 # brew "gemini-cli"                     # Gemini CLI
-# cask "claude-code"                    # Claude Code
+cask "claude-code"                      # Claude Code
 # cask "claude"                         # Claude Desktop
 
 # ===== Note-Taking Tools =====
@@ -124,7 +124,7 @@ cask "visual-studio-code"               # Visual Studio Code
 
 # ===== Database Tools ========
 cask "dbeaver-community"                # DBeaver
-cask "beekeeper-studio"                 # BeeKeeper Studio
+# cask "beekeeper-studio"               # BeeKeeper Studio
 
 # ===== Security Tools =====
 # brew "gnupg-pinentry-mac"             # Pinentry for GPG on Mac
@@ -155,6 +155,7 @@ brew "synergy-core"                     # Synergy KVM
 cask "uhk-agent"                        # UHK Agent
 cask "microsoft-azure-storage-explorer" # Azure Storage Explorer
 cask "hiddenbar"                        # HiddenBar for managing menu bar icons
+cask "raspberry-pi-imager"              # Raspberry Pi Image Builder
 
 # ===== Gaming =====
 # cask "roblox"                         # Roblox
