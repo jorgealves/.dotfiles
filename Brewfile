@@ -3,161 +3,161 @@
 
 # ===== Python Development =====
 brew "pipx"
-brew "uv"                               # Fast Python package manager
+brew "uv"                                 # Fast Python package manager
 brew "poetry"
-brew "direnv"                           # Directory-based environments
-# brew "libmagic"                       # File type detection
+brew "direnv"                             # Directory-based environments
+# brew "libmagic"                         # File type detection
 # brew "hadolint"
 
 # ===== Container Runtime =====
-# cask "rancher"                        # Rancher (Docker virtual machine)
-# brew "podman"                         # Podman
-cask "docker-desktop"                   # Docker Desktop
+# cask "rancher"                          # Rancher (Docker virtual machine)
+# brew "podman"                           # Podman
+cask "docker-desktop"                     # Docker Desktop
 
 # ===== Cloud Tools =====
-# brew "awscli"                         # AWS CLI
-# brew "docker-credential-helper-ecr"   # ECR authentication
-brew "azure-cli"                        # Azure CLI
-brew "Azure/kubelogin/kubelogin"        # Azure Kubernetes login
+# brew "awscli"                           # AWS CLI
+# brew "docker-credential-helper-ecr"     # ECR authentication
+brew "azure-cli"                          # Azure CLI
+brew "Azure/kubelogin/kubelogin"          # Azure Kubernetes login
 
 # ===== Version Control =====
-brew "git"                              # Git
-brew "git-lfs"                          # Git Large File Storage
-brew "gh"                               # GitHub CLI (optional)
+brew "git"                                # Git
+brew "git-lfs"                            # Git Large File Storage
+brew "gh"                                 # GitHub CLI (optional)
 
 # ===== Node.js =====
-brew "node"                             # Node.js and npm
+brew "node"                               # Node.js and npm
 # Note: install 'less' compiler via npm after: npm install -g less
 
 # ===== Shell Enhancements =====
-brew "zsh-autosuggestions"              # Fish-like autosuggestions
-brew "zsh-syntax-highlighting"          # Syntax highlighting
-brew "zsh-completions"                  # Additional completions
-brew "starship"                         # Fast, customizable prompt
-brew "fzf"                              # Fuzzy finder
-brew "bash"                             # Bash
-brew "bash-completion@2"                # Bash completions
+brew "zsh-autosuggestions"                # Fish-like autosuggestions
+brew "zsh-syntax-highlighting"            # Syntax highlighting
+brew "zsh-completions"                    # Additional completions
+brew "starship"                           # Fast, customizable prompt
+brew "fzf"                                # Fuzzy finder
+brew "bash"                               # Bash
+brew "bash-completion@2"                  # Bash completions
 
 # ===== Optional: Plugin Manager =====
-# brew "antidote"                       # If you want a zsh plugin manager
+# brew "antidote"                         # If you want a zsh plugin manager
 
 # ===== Terminal Tools =====
-cask "ghostty"                          # Ghostty
-# brew "nats-io/nats-tools/nats"        # NATS CLI
-brew "pre-commit"                       # Pre-commit hooks
-brew "shellcheck"                       # Shell script linting
-brew "shfmt"                            # Shell script formatting
-brew "jq"                               # JSON processor
-brew "yq"                               # YAML processor
-brew "httpie"                           # User-friendly HTTP client
-brew "tree"                             # Directory visualization
-brew "wget"                             # Download utility
-brew "ripgrep"                          # Fast grep alternative
-brew "bat"                              # Better cat with syntax highlighting
-brew "stow"                             # Symlink manager
-brew "z"                                # Jump around directories
-brew "zoxide"                           # Modern cd replacement
-brew "eza"                              # Modern ls replacement
-brew "fd"                               # Simple, fast and user-friendly alternative to 'find'
-brew "htop"                             # Interactive process viewer
-brew "lazygit"                          # Simple terminal UI for git commands
-brew "lazydocker"                       # Simple terminal UI for docker commands
-brew "lazysql"                          # Simple terminal UI for MySQL commands
-brew "tmux"                             # Terminal multiplexer
-brew "neovim"                           # Modern vim
-brew "jless"                            # JSON viewer
-# brew "rojo"                           # Rojo CLI
+cask "ghostty"                            # Ghostty
+# brew "nats-io/nats-tools/nats"          # NATS CLI
+brew "pre-commit"                         # Pre-commit hooks
+brew "shellcheck"                         # Shell script linting
+brew "shfmt"                              # Shell script formatting
+brew "jq"                                 # JSON processor
+brew "yq"                                 # YAML processor
+brew "httpie"                             # User-friendly HTTP client
+brew "tree"                               # Directory visualization
+brew "wget"                               # Download utility
+brew "ripgrep"                            # Fast grep alternative
+brew "bat"                                # Better cat with syntax highlighting
+brew "stow"                               # Symlink manager
+brew "z"                                  # Jump around directories
+brew "zoxide"                             # Modern cd replacement
+brew "eza"                                # Modern ls replacement
+brew "fd"                                 # Simple, fast and user-friendly alternative to 'find'
+brew "htop"                               # Interactive process viewer
+brew "lazygit"                            # Simple terminal UI for git commands
+brew "lazydocker"                         # Simple terminal UI for docker commands
+brew "lazysql"                            # Simple terminal UI for MySQL commands
+brew "tmux"                               # Terminal multiplexer
+brew "neovim"                             # Modern vim
+brew "jless"                              # JSON viewer
+# brew "rojo"                             # Rojo CLI
 
 # ===== Kubernetes Tools =====
-brew "kubectl"                          # Kubernetes CLI
-brew "k9s"                              # Kubernetes TUI
-brew "kubectx"                          # Kubernetes context manager
-brew "helm"                             # Helm package manager
-brew "helmfile"                         # Helmfile
-brew "helm-docs"                        # Helm documentation generator
-brew "minikube"                         # Local Kubernetes cluster
-brew "kind"                             # Kubernetes in Docker
-brew "popeye"                           # Kubernetes resource viewer
+brew "kubectl"                            # Kubernetes CLI
+brew "k9s"                                # Kubernetes TUI
+brew "kubectx"                            # Kubernetes context manager
+brew "helm"                               # Helm package manager
+brew "helmfile"                           # Helmfile
+brew "helm-docs"                          # Helm documentation generator
+brew "minikube"                           # Local Kubernetes cluster
+brew "kind"                               # Kubernetes in Docker
+brew "popeye"                             # Kubernetes resource viewer
 
 # ===== Terraform Tools =====
-# brew "terraform"                      # Terraform
-brew "terraform-docs"                   # Terraform documentation generator
-brew "warrensbox/tap/tfswitch"          # Terraform version switcher
-brew "tflint"                           # Terraform linter
+# brew "terraform"                        # Terraform
+brew "terraform-docs"                     # Terraform documentation generator
+brew "warrensbox/tap/tfswitch"            # Terraform version switcher
+brew "tflint"                             # Terraform linter
 
 # ===== Fonts (optional) =====
-cask "font-fira-code-nerd-font"         # Great for terminals
-cask "font-jetbrains-mono-nerd-font"    # JetBrains Nerd Font
+cask "font-fira-code-nerd-font"           # Great for terminals
+cask "font-jetbrains-mono-nerd-font"      # JetBrains Nerd Font
 # cask "font-hack-nerd-font"
 
 # ===== AI Tools =====
-# cask "codex"                          # Codex CLI
-# cask "copilot-cli"                    # GitHub Copilot CLI
-brew "opencode"                         # OpenCode
-# brew "ollama"                         # Ollama
-# cask "lm-studio"                      # LM Studio
-# cask "chatgpt"                        # ChatGPT
-# brew "gemini-cli"                     # Gemini CLI
-cask "claude-code"                      # Claude Code
-# cask "claude"                         # Claude Desktop
+# cask "codex"                            # Codex CLI
+# cask "copilot-cli"                      # GitHub Copilot CLI
+brew "opencode"                           # OpenCode
+# brew "ollama"                           # Ollama
+# cask "lm-studio"                        # LM Studio
+# cask "chatgpt"                          # ChatGPT
+# brew "gemini-cli"                       # Gemini CLI
+cask "claude-code"                        # Claude Code
+cask "claude"                             # Claude Desktop
 
 # ===== Note-Taking Tools =====
-cask "notion"                           # Notion
-cask "obsidian"                         # Obsidian
-# tap "zackriya-solutions/meetily"      # Meetily
+cask "notion"                             # Notion
+cask "obsidian"                           # Obsidian
+# tap "zackriya-solutions/meetily"        # Meetily
 # cask "meetily"
-# cask "granola"                        # Granola
+# cask "granola"                          # Granola
 
 # ===== Communication Tools =====
-cask "discord"                          # Discord
-cask "slack"                            # Slack
-# cask "zoom"                           # Zoom
-cask "whatsapp"                         # WhatsApp
-# cask "telegram"                       # Telegram
+cask "discord"                            # Discord
+cask "slack"                              # Slack
+# cask "zoom"                             # Zoom
+cask "whatsapp"                           # WhatsApp
+# cask "telegram"                         # Telegram
 
 # ===== Code Editors =====
-cask "zed"                              # Zed IDE
-cask "visual-studio-code"               # Visual Studio Code
-# cask "robloxstudio"                   # Roblox Studio
-# cask "cursor"                         # Cursor IDE
-# cask "cursor-cli"                     # Cursor CLI
+cask "zed"                                # Zed IDE
+cask "visual-studio-code"                 # Visual Studio Code
+# cask "robloxstudio"                     # Roblox Studio
+# cask "cursor"                           # Cursor IDE
+# cask "cursor-cli"                       # Cursor CLI
 
 # ===== Database Tools ========
-cask "dbeaver-community"                # DBeaver
-# cask "beekeeper-studio"               # BeeKeeper Studio
+cask "dbeaver-community"                  # DBeaver
+# cask "beekeeper-studio"                 # BeeKeeper Studio
 
 # ===== Security Tools =====
-# brew "gnupg-pinentry-mac"             # Pinentry for GPG on Mac
-cask "bitwarden"                        # Password manager
-brew "bitwarden-cli"                    # Bitwarden CLI
-cask "1password-cli"                    # 1Password cli
-brew "pinentry-mac"                     # Pinentry for Mac
-brew "gpg2"                             # GPG
-brew "gnupg"                            # GnuPG
-brew "gitleaks"                         # GitLeaks
-cask "nordlayer"                        # NordLayer VPN
-brew "trivy"                            # Trivy CLI
+# brew "gnupg-pinentry-mac"               # Pinentry for GPG on Mac
+cask "bitwarden"                          # Password manager
+brew "bitwarden-cli"                      # Bitwarden CLI
+cask "1password-cli"                      # 1Password cli
+brew "pinentry-mac"                       # Pinentry for Mac
+brew "gpg2"                               # GPG
+brew "gnupg"                              # GnuPG
+brew "gitleaks"                           # GitLeaks
+cask "nordlayer"                          # NordLayer VPN
+brew "trivy"                              # Trivy CLI
 
 # ===== Browsers  =====
-cask "google-chrome"                    # Google Chrome
-cask "microsoft-edge"                   # Microsoft Edge
-# cask "firefox"                        # Firefox
-# cask "brave-browser"                  # Brave Browser
-# cask "zen"                            # Zen Browser
+cask "google-chrome"                      # Google Chrome
+cask "microsoft-edge"                     # Microsoft Edge
+# cask "firefox"                          # Firefox
+# cask "brave-browser"                    # Brave Browser
+# cask "zen"                              # Zen Browser
 
 # ====== Window Management =====
-# cask "nikitabobko/tap/aerospace"      # Aerospace Tiling Window Manager
-cask "rectangle"                        # Rectangle Window Manager
-cask "monitorcontrol"                   # MonitorControl
+# cask "nikitabobko/tap/aerospace"        # Aerospace Tiling Window Manager
+cask "rectangle"                          # Rectangle Window Manager
+cask "monitorcontrol"                     # MonitorControl
 
 # ===== Misceleaneous =========
-brew "synergy-core"                     # Synergy KVM
-cask "uhk-agent"                        # UHK Agent
-cask "microsoft-azure-storage-explorer" # Azure Storage Explorer
-cask "hiddenbar"                        # HiddenBar for managing menu bar icons
-cask "raspberry-pi-imager"              # Raspberry Pi Image Builder
+# brew "synergy-core"                     # Synergy KVM
+cask "uhk-agent"                          # UHK Agent
+# cask "microsoft-azure-storage-explorer" # Azure Storage Explorer
+cask "hiddenbar"                          # HiddenBar for managing menu bar icons
+# cask "raspberry-pi-imager"              # Raspberry Pi Image Builder
 
 # ===== Gaming =====
-# cask "roblox"                         # Roblox
-# cask "steam"                          # Steam
-# cask "whisky"                         # Whisky
+# cask "roblox"                           # Roblox
+# cask "steam"                            # Steam
+# cask "whisky"                           # Whisky
