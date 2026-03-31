@@ -27,6 +27,9 @@ setopt APPEND_HISTORY            # Append to history file
 setopt INC_APPEND_HISTORY        # Write to history immediately
 
 # ===== Completion System =====
+# Add custom completions directory
+fpath+=("$HOME/.zfunc")
+
 autoload -Uz compinit
 
 # Performance optimization: only check once a day
