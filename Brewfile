@@ -91,15 +91,15 @@ cask "font-jetbrains-mono-nerd-font"      # JetBrains Nerd Font
 # cask "font-hack-nerd-font"
 
 # ===== AI Tools =====
-# cask "codex"                            # Codex CLI
-# cask "copilot-cli"                      # GitHub Copilot CLI
+cask "codex"                              # Codex CLI
+cask "copilot-cli"                        # GitHub Copilot CLI
 brew "opencode"                           # OpenCode
 # brew "ollama"                           # Ollama
 # cask "lm-studio"                        # LM Studio
-# cask "chatgpt"                          # ChatGPT
+cask "chatgpt"                            # ChatGPT
 # brew "gemini-cli"                       # Gemini CLI
-cask "claude-code"                        # Claude Code
-cask "claude"                             # Claude Desktop
+# cask "claude-code"                      # Claude Code
+# cask "claude"                           # Claude Desktop
 
 # ===== Note-Taking Tools =====
 cask "notion"                             # Notion
@@ -151,7 +151,7 @@ cask "rectangle"                          # Rectangle Window Manager
 cask "monitorcontrol"                     # MonitorControl
 
 # ===== Misceleaneous =========
-# brew "synergy-core"                     # Synergy KVM
+brew "synergy-core"                       # Synergy KVM
 cask "uhk-agent"                          # UHK Agent
 # cask "microsoft-azure-storage-explorer" # Azure Storage Explorer
 cask "hiddenbar"                          # HiddenBar for managing menu bar icons
