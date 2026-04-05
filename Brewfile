@@ -17,8 +17,8 @@ cask "docker-desktop"                     # Docker Desktop
 # ===== Cloud Tools =====
 # brew "awscli"                           # AWS CLI
 # brew "docker-credential-helper-ecr"     # ECR authentication
-brew "azure-cli"                          # Azure CLI
-brew "Azure/kubelogin/kubelogin"          # Azure Kubernetes login
+# brew "azure-cli"                          # Azure CLI
+# brew "Azure/kubelogin/kubelogin"          # Azure Kubernetes login
 
 # ===== Version Control =====
 brew "git"                                # Git
@@ -91,15 +91,15 @@ cask "font-jetbrains-mono-nerd-font"      # JetBrains Nerd Font
 # cask "font-hack-nerd-font"
 
 # ===== AI Tools =====
-cask "codex"                              # Codex CLI
-cask "copilot-cli"                        # GitHub Copilot CLI
+# cask "codex"                              # Codex CLI
+# cask "copilot-cli"                        # GitHub Copilot CLI
 brew "opencode"                           # OpenCode
 # brew "ollama"                           # Ollama
 # cask "lm-studio"                        # LM Studio
-cask "chatgpt"                            # ChatGPT
+# cask "chatgpt"                            # ChatGPT
 # brew "gemini-cli"                       # Gemini CLI
-# cask "claude-code"                      # Claude Code
-# cask "claude"                           # Claude Desktop
+cask "claude-code"                      # Claude Code
+cask "claude"                           # Claude Desktop
 
 # ===== Note-Taking Tools =====
 cask "notion"                             # Notion
@@ -130,17 +130,17 @@ cask "dbeaver-community"                  # DBeaver
 # brew "gnupg-pinentry-mac"               # Pinentry for GPG on Mac
 cask "bitwarden"                          # Password manager
 brew "bitwarden-cli"                      # Bitwarden CLI
-cask "1password-cli"                      # 1Password cli
+# cask "1password-cli"                      # 1Password cli
 brew "pinentry-mac"                       # Pinentry for Mac
 brew "gpg2"                               # GPG
 brew "gnupg"                              # GnuPG
 brew "gitleaks"                           # GitLeaks
-cask "nordlayer"                          # NordLayer VPN
+# cask "nordlayer"                          # NordLayer VPN
 brew "trivy"                              # Trivy CLI
 
 # ===== Browsers  =====
 cask "google-chrome"                      # Google Chrome
-cask "microsoft-edge"                     # Microsoft Edge
+# cask "microsoft-edge"                     # Microsoft Edge
 # cask "firefox"                          # Firefox
 # cask "brave-browser"                    # Brave Browser
 # cask "zen"                              # Zen Browser
@@ -151,7 +151,7 @@ cask "rectangle"                          # Rectangle Window Manager
 cask "monitorcontrol"                     # MonitorControl
 
 # ===== Misceleaneous =========
-brew "synergy-core"                       # Synergy KVM
+# brew "synergy-core"                       # Synergy KVM
 cask "uhk-agent"                          # UHK Agent
 # cask "microsoft-azure-storage-explorer" # Azure Storage Explorer
 cask "hiddenbar"                          # HiddenBar for managing menu bar icons

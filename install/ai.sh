@@ -9,6 +9,18 @@ source "$ROOT_DIR/lib/utils.sh"
 
 log_header "Setting up AI 🤖"
 
+log_info "Installing AI config for Claude..."
+
+# Check if claude code cli exists before trying to link it
+if command -v claude &>/dev/null; then
+    log_info "Found claude-code CLI - configuring..."
+    
+    verify_stow
+    cd "$ROOT_DIR/agents" 
+    
+    stow -R -v .claude -t "$USER_HOME"
+fi
+
 # Initialize agent_skills submodule if not already done
 log_info "Setting up custom skills..."
 
