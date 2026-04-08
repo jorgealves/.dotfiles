@@ -39,9 +39,8 @@ export PATH="$HOME/.local/bin:$PATH"
 # Add custom scripts if you have them
 export PATH="$HOME/bin:$PATH"
 
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="${HOME}/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-
-# Bitwarden CLI SSH integration
-export SSH_AUTH_SOCK=/Users/$USER/.bitwarden-ssh-agent.sock
+# Start system ssh-agent
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  unset SSH_AUTH_SOCK
+  eval "$(ssh-agent -s)" > /dev/null
+fi

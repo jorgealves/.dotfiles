@@ -1,6 +1,6 @@
 .gitconfig.private
 .gitconfig_*
-config/ssh/config
+config/ssh/.ssh/config
 
 # Local overrides and secrets
 *.local

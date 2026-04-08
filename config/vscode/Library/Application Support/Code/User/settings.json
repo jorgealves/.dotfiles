@@ -12,4 +12,6 @@
     ".gitleaks.toml": "toml",
   },
   "makefile.configureOnOpen": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "window.nativeTabs": true,
 }
