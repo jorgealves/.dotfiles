@@ -68,10 +68,10 @@ Every file you produce must follow this template:
 ```markdown
 # [Masterclass Title]
 
-> **Format:** [Solo / Co-hosted]  
-> **Audience:** [Target audience, experience level]  
-> **Duration:** [Estimated time]  
-> **Topic Type:** [Technical / Philosophical / Mixed]  
+> **Format:** [Solo / Co-hosted]
+> **Audience:** [Target audience, experience level]
+> **Duration:** [Estimated time]
+> **Topic Type:** [Technical / Philosophical / Mixed]
 
 ---
 

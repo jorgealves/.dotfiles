@@ -12,7 +12,14 @@ log_header "Installing Shell Configuration 🎮"
 verify_stow
 
 cd "$ROOT_DIR/config"
-stow -R -v zsh -t "$USER_HOME"
-stow -R -v starship -t "$USER_HOME"
+if command -v zsh &>/dev/null; then
+  log_info "Configuring Zsh shell 🐚"
+  stow -R -v zsh -t "$USER_HOME"
+fi
+
+if command -v starship &>/dev/null; then
+  log_info "Configuring Starship prompt 🚀"
+  stow -R -v starship -t "$USER_HOME"
+fi
 
 log_footer "Shell configuration installed successfully 🎉"

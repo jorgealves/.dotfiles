@@ -190,5 +190,10 @@
     "scrollbar": {
       "show": "auto"
     }
+  },
+  "languages": {
+    "Make": {
+      "hard_tabs": true,
+    }
   }
 }

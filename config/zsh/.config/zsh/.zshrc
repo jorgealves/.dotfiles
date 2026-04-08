@@ -216,6 +216,12 @@ if command -v starship &> /dev/null; then
   eval "$(starship init zsh)"
 fi
 
+
+# ssh agent startup (only if not already running)
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+  eval "$(ssh-agent -s)"
+fi
+
 # ===== Performance Profiling Output =====
 # Uncomment if you enabled zprof at the top
 # zprof
@@ -224,4 +230,3 @@ fi
 
 # autocompletion for bash (useful for Azure CLI)
 autoload -U +X bashcompinit && bashcompinit
-

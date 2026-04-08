@@ -40,6 +40,9 @@ log_info "Bitwarden is unlocked 🔓"
 verify_stow
 
 cd "$ROOT_DIR/config"
-stow -R -v git -t "$USER_HOME"
+if command -v git &>/dev/null; then
+  log_info "Configuring Git 🪾"
+  stow -R -v git -t "$USER_HOME"
+fi
 
 log_info "Git configuration installed 🪾"

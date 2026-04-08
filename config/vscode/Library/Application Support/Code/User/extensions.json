@@ -1,0 +1,22 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "esbenp.prettier-vscode",
+        "github.copilot-chat",
+        "ms-vscode.makefile-tools",
+        "editorconfig.editorconfig",
+        "sst-dev.opencode",
+        "littlefoxteam.vscode-python-test-adapter",
+        "charliermarsh.ruff",
+        "ms-python.mypy-type-checker",
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "github.copilot",
+        "vscode-icons-team.vscode-icons",
+        "davidanson.vscode-markdownlint",
+        "vscodevim.vim",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "tamasfe.even-better-toml"
+
+    ]
+}

@@ -23,11 +23,11 @@ cask "docker-desktop"                     # Docker Desktop
 # ===== Version Control =====
 brew "git"                                # Git
 brew "git-lfs"                            # Git Large File Storage
-brew "gh"                                 # GitHub CLI (optional)
+brew "gh"                                 # GitHub CLI
 
 # ===== Node.js =====
 brew "node"                               # Node.js and npm
-# Note: install 'less' compiler via npm after: npm install -g less
+
 
 # ===== Shell Enhancements =====
 brew "zsh-autosuggestions"                # Fish-like autosuggestions
@@ -42,7 +42,7 @@ brew "bash-completion@2"                  # Bash completions
 # brew "antidote"                         # If you want a zsh plugin manager
 
 # ===== Terminal Tools =====
-cask "ghostty"                            # Ghostty
+# cask "ghostty"                            # Ghostty
 # brew "nats-io/nats-tools/nats"          # NATS CLI
 brew "pre-commit"                         # Pre-commit hooks
 brew "shellcheck"                         # Shell script linting
@@ -82,7 +82,7 @@ brew "popeye"                             # Kubernetes resource viewer
 # ===== Terraform Tools =====
 # brew "terraform"                        # Terraform
 brew "terraform-docs"                     # Terraform documentation generator
-brew "warrensbox/tap/tfswitch"            # Terraform version switcher
+# brew "warrensbox/tap/tfswitch"          # Terraform version switcher
 brew "tflint"                             # Terraform linter
 
 # ===== Fonts (optional) =====
@@ -99,10 +99,10 @@ brew "opencode"                           # OpenCode
 # cask "chatgpt"                            # ChatGPT
 # brew "gemini-cli"                       # Gemini CLI
 cask "claude-code"                      # Claude Code
-cask "claude"                           # Claude Desktop
+# cask "claude"                           # Claude Desktop
 
 # ===== Note-Taking Tools =====
-cask "notion"                             # Notion
+# cask "notion"                             # Notion
 cask "obsidian"                           # Obsidian
 # tap "zackriya-solutions/meetily"        # Meetily
 # cask "meetily"
@@ -116,31 +116,31 @@ cask "whatsapp"                           # WhatsApp
 # cask "telegram"                         # Telegram
 
 # ===== Code Editors =====
-cask "zed"                                # Zed IDE
+# cask "zed"                                # Zed IDE
 cask "visual-studio-code"                 # Visual Studio Code
 # cask "robloxstudio"                     # Roblox Studio
 # cask "cursor"                           # Cursor IDE
 # cask "cursor-cli"                       # Cursor CLI
 
 # ===== Database Tools ========
-cask "dbeaver-community"                  # DBeaver
+# cask "dbeaver-community"                  # DBeaver
 # cask "beekeeper-studio"                 # BeeKeeper Studio
 
 # ===== Security Tools =====
 # brew "gnupg-pinentry-mac"               # Pinentry for GPG on Mac
-cask "bitwarden"                          # Password manager
+# cask "bitwarden"                          # Password manager
 brew "bitwarden-cli"                      # Bitwarden CLI
-# cask "1password-cli"                      # 1Password cli
+cask "1password-cli"                      # 1Password cli
 brew "pinentry-mac"                       # Pinentry for Mac
 brew "gpg2"                               # GPG
 brew "gnupg"                              # GnuPG
 brew "gitleaks"                           # GitLeaks
-# cask "nordlayer"                          # NordLayer VPN
+cask "nordlayer"                          # NordLayer VPN
 brew "trivy"                              # Trivy CLI
 
 # ===== Browsers  =====
 cask "google-chrome"                      # Google Chrome
-# cask "microsoft-edge"                     # Microsoft Edge
+cask "microsoft-edge"                     # Microsoft Edge
 # cask "firefox"                          # Firefox
 # cask "brave-browser"                    # Brave Browser
 # cask "zen"                              # Zen Browser

@@ -11,14 +11,37 @@ log_header "Setting up AI 🤖"
 
 log_info "Installing AI config for Claude..."
 
+agents=()
+
 # Check if claude code cli exists before trying to link it
 if command -v claude &>/dev/null; then
-    log_info "Found claude-code CLI - configuring..."
-    
-    verify_stow
-    cd "$ROOT_DIR/agents" 
-    
-    stow -R -v .claude -t "$USER_HOME"
+  log_info "Found claude-code CLI - configuring..."
+
+  verify_stow
+  cd "$ROOT_DIR/agents"
+
+  stow -R -v .claude -t "$USER_HOME"
+  agents+=("claude-code")
+  rm -rf ~/.claude/skills
+fi
+
+if command -v opencode &>/dev/null; then
+  agents+=("opencode")
+  rm -rf ~/.config/opencode/skills
+fi
+
+if command -v copilot &>/dev/null; then
+  agents+=("github-copilot")
+  rm -rf ~/.copilot/skills
+fi
+
+if command -v codex &>/dev/null; then
+  agents+=("codex")
+  rm -rf ~/.codex/skills
+fi
+
+if command -v gemini &>/dev/null; then
+  agents+=("gemini")
 fi
 
 # Initialize agent_skills submodule if not already done
@@ -42,8 +65,7 @@ if ! npm list --global skills --depth=0 &>/dev/null; then
   npm install -g skills
 fi
 
-npx skills add jorgealves/agent_skills --global --yes --full-depth --agent opencode --agent github-copilot --agent codex --agent claude-code
-
+npx skills add jorgealves/agent_skills --global --yes --full-depth "$(printf -- '--agent %s ' "${agents[@]}")"
 log_info "Custom skills setup completed successfully 🎉"
 
 log_footer "AI Skills setup completed successfully 🎉"

@@ -1,0 +1,14 @@
+{
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+    "editor.suggestFontSize": 12,
+    "workbench.iconTheme": "vscode-icons",
+    "vim.autoindent": true,
+    "vim.smartRelativeLine": true,
+    "redhat.telemetry.enabled": false,
+    "files.associations": {
+        ".gitleaks.toml": "toml"
+    }
+}
