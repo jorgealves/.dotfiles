@@ -43,6 +43,7 @@ cd "$ROOT_DIR/config"
 if command -v git &>/dev/null; then
   log_info "Configuring Git 🪾"
   stow -R -v git -t "$USER_HOME"
+  stow -R -v ssh -t "$USER_HOME"
 fi
 
 log_info "Git configuration installed 🪾"
