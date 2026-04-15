@@ -44,3 +44,6 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
   unset SSH_AUTH_SOCK
   eval "$(ssh-agent -s)" > /dev/null
 fi
+
+# Created by `pipx` on 2026-04-09 15:37:20
+export PATH="$PATH:/Users/jorge.alves/.local/bin"
