@@ -24,9 +24,11 @@ cask "docker-desktop"                     # Docker Desktop
 brew "git"                                # Git
 brew "git-lfs"                            # Git Large File Storage
 brew "gh"                                 # GitHub CLI
+brew "act"                                # Run GitHub Actions locally
 
 # ===== Node.js =====
 brew "node"                               # Node.js and npm
+brew "nvm"                                # Node Version Manager
 
 
 # ===== Shell Enhancements =====

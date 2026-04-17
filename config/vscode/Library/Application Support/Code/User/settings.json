@@ -14,5 +14,12 @@
   "makefile.configureOnOpen": true,
   "python.analysis.typeCheckingMode": "basic",
   "window.nativeTabs": true,
+  "githubLocalActions.dockerDesktopPath": "/Applications/Docker.app",
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "chat.viewSessions.orientation": "stacked",
 }
