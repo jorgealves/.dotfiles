@@ -17,8 +17,8 @@ cask "docker-desktop"                     # Docker Desktop
 # ===== Cloud Tools =====
 # brew "awscli"                           # AWS CLI
 # brew "docker-credential-helper-ecr"     # ECR authentication
-# brew "azure-cli"                          # Azure CLI
-# brew "Azure/kubelogin/kubelogin"          # Azure Kubernetes login
+brew "azure-cli"                          # Azure CLI
+brew "Azure/kubelogin/kubelogin"          # Azure Kubernetes login
 
 # ===== Version Control =====
 brew "git"                                # Git
@@ -83,9 +83,9 @@ brew "popeye"                             # Kubernetes resource viewer
 
 # ===== Terraform Tools =====
 # brew "terraform"                        # Terraform
-brew "terraform-docs"                     # Terraform documentation generator
+# brew "terraform-docs"                     # Terraform documentation generator
 # brew "warrensbox/tap/tfswitch"          # Terraform version switcher
-brew "tflint"                             # Terraform linter
+# brew "tflint"                             # Terraform linter
 
 # ===== Fonts (optional) =====
 cask "font-fira-code-nerd-font"           # Great for terminals
@@ -100,7 +100,7 @@ brew "opencode"                           # OpenCode
 # cask "lm-studio"                        # LM Studio
 # cask "chatgpt"                            # ChatGPT
 # brew "gemini-cli"                       # Gemini CLI
-cask "claude-code"                      # Claude Code
+# cask "claude-code"                      # Claude Code
 # cask "claude"                           # Claude Desktop
 
 # ===== Note-Taking Tools =====
@@ -127,6 +127,7 @@ cask "visual-studio-code"                 # Visual Studio Code
 # ===== Database Tools ========
 # cask "dbeaver-community"                  # DBeaver
 # cask "beekeeper-studio"                 # BeeKeeper Studio
+cask "pgadmin4"                          # pgAdmin
 
 # ===== Security Tools =====
 # brew "gnupg-pinentry-mac"               # Pinentry for GPG on Mac
