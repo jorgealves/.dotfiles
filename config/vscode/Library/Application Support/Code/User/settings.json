@@ -22,4 +22,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "chat.viewSessions.orientation": "stacked",
+  "vs-kubernetes": {
+    "vs-kubernetes.crd-code-completion": "enabled",
+  },
 }
