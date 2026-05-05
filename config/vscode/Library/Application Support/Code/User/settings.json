@@ -25,4 +25,8 @@
   "vs-kubernetes": {
     "vs-kubernetes.crd-code-completion": "enabled",
   },
+  "vim.useSystemClipboard": true,
+  "vim.visualstar": true,
+  "vim.incsearch": true,
+  "vim.hlsearch": true
 }

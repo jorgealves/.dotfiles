@@ -2,7 +2,6 @@
     "recommendations": [
         "ms-python.python",
         "esbenp.prettier-vscode",
-        "github.copilot-chat",
         "ms-vscode.makefile-tools",
         "editorconfig.editorconfig",
         "sst-dev.opencode",

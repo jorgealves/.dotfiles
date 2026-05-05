@@ -23,7 +23,7 @@ fi
 if command -v code &>/dev/null; then
   log_info "Configuring VS Code editor 🧑‍💻"
   stow -R -v vscode -t "$USER_HOME"
-  jq -r '.recommendations[]' "$ROOT_DIR/config/vscode/Library/Application Support/Code/User/extensions.json" | xargs -n 1 code --verbose --force --install-extension
+  jq -r '.recommendations[]' "$ROOT_DIR/config/vscode/Library/Application Support/Code/User/extensions.json" | xargs -n 1 code --force --install-extension || true
 else
   stow -D -v code -t "$USER_HOME"
   log_info "VS Code editor not found, skipping configuration 🧑‍💻"
