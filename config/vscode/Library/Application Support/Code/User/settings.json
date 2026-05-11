@@ -28,5 +28,17 @@
   "vim.useSystemClipboard": true,
   "vim.visualstar": true,
   "vim.incsearch": true,
-  "vim.hlsearch": true
+  "vim.hlsearch": true,
+  "terminal.integrated.allowedLinkSchemes": [
+    "file",
+    "http",
+    "https",
+    "mailto",
+    "vscode",
+    "vscode-insiders",
+    "docker-desktop",
+  ],
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }

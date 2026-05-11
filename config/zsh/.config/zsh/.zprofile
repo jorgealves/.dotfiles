@@ -40,10 +40,15 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
 # Start system ssh-agent
-if [ -z "$SSH_AUTH_SOCK" ]; then
-  unset SSH_AUTH_SOCK
-  eval "$(ssh-agent -s)" > /dev/null
-fi
+unset SSH_AUTH_SOCK
 
-# Created by `pipx` on 2026-04-09 15:37:20
-export PATH="$PATH:/Users/jorge.alves/.local/bin"
+# Verify if Bitwarden Desktop is installed and add ssh agent
+if mdfind -name "Bitwarden.app" -count 1 &> /dev/null; then
+  export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
+  eval "$(ssh-agent -s)" > /dev/null
+else
+  eval "$(ssh-agent -s)" > /dev/null
+  # assuming you have your ssh keys in ~/.ssh, add them to the agent
+  ssh-add $HOME/.ssh/github &> /dev/null
+  ssh-add $HOME/.ssh/signing &> /dev/null
+fi
