@@ -1,7 +1,5 @@
 .gitconfig.private
 .gitconfig_*
-config/ssh/.ssh/config
-
 # Local overrides and secrets
 *.local
 .env
@@ -35,3 +33,8 @@ id_ed25519
 # zed files
 *.mdb
 config/zed/.config/zed/settings_backup.json
+
+
+# Custom Brewfiles
+client_*.Brewfile
+

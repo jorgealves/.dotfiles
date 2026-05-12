@@ -44,8 +44,8 @@ unset SSH_AUTH_SOCK
 
 # Verify if Bitwarden Desktop is installed and add ssh agent
 if mdfind -name "Bitwarden.app" -count 1 &> /dev/null; then
+  printf "Bitwarden Desktop found. Setting up SSH agent...\n"
   export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
-  eval "$(ssh-agent -s)" > /dev/null
 else
   eval "$(ssh-agent -s)" > /dev/null
   # assuming you have your ssh keys in ~/.ssh, add them to the agent

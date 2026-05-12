@@ -17,8 +17,8 @@ cask "docker-desktop"                     # Docker Desktop
 # ===== Cloud Tools =====
 # brew "awscli"                           # AWS CLI
 # brew "docker-credential-helper-ecr"     # ECR authentication
-brew "azure-cli"                          # Azure CLI
-brew "Azure/kubelogin/kubelogin"          # Azure Kubernetes login
+# brew "azure-cli"                         # Azure CLI
+# brew "Azure/kubelogin/kubelogin"          # Azure Kubernetes login
 
 # ===== Version Control =====
 brew "git"                                # Git
@@ -105,10 +105,10 @@ brew "opencode"                           # OpenCode
 
 # ===== Note-Taking Tools =====
 # cask "notion"                             # Notion
-cask "obsidian"                           # Obsidian
-# tap "zackriya-solutions/meetily"        # Meetily
+# cask "obsidian"                           # Obsidian
+# tap "zackriya-solutions/meetily"          # Meetily
 # cask "meetily"
-# cask "granola"                          # Granola
+# cask "granola"                            # Granola
 
 # ===== Communication Tools =====
 cask "discord"                            # Discord
@@ -125,25 +125,25 @@ cask "visual-studio-code"                 # Visual Studio Code
 # cask "cursor-cli"                       # Cursor CLI
 
 # ===== Database Tools ========
-# cask "dbeaver-community"                  # DBeaver
+# cask "dbeaver-community"                # DBeaver
 # cask "beekeeper-studio"                 # BeeKeeper Studio
-cask "pgadmin4"                          # pgAdmin
+# cask "pgadmin4"                           # pgAdmin
 
 # ===== Security Tools =====
 # brew "gnupg-pinentry-mac"               # Pinentry for GPG on Mac
 # cask "bitwarden"                          # Password manager
 brew "bitwarden-cli"                      # Bitwarden CLI
-cask "1password-cli"                      # 1Password cli
+# cask "1password-cli"                      # 1Password CLI
 brew "pinentry-mac"                       # Pinentry for Mac
 brew "gpg2"                               # GPG
 brew "gnupg"                              # GnuPG
 brew "gitleaks"                           # GitLeaks
-cask "nordlayer"                          # NordLayer VPN
+# cask "nordlayer"                          # NordLayer VPN
 brew "trivy"                              # Trivy CLI
 
 # ===== Browsers  =====
 cask "google-chrome"                      # Google Chrome
-cask "microsoft-edge"                     # Microsoft Edge
+# cask "microsoft-edge"                     # Microsoft Edge
 # cask "firefox"                          # Firefox
 # cask "brave-browser"                    # Brave Browser
 # cask "zen"                              # Zen Browser
