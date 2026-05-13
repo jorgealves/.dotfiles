@@ -12,7 +12,7 @@ log_header "Installing Homebrew"
 declare -a BREWFILES
 while IFS= read -r file; do
   BREWFILES+=("$file")
-done < <(find "$ROOT_DIR" -maxdepth 1 -name "*Brewfile" -type f | sort)
+done < <(find "$ROOT_DIR" -maxdepth 1 -name "client_*Brewfile" -type f | sort)
 
 # Select Brewfile
 if [[ ${#BREWFILES[@]} -eq 0 ]]; then
