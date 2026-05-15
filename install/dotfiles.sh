@@ -25,7 +25,7 @@ if command -v code &>/dev/null; then
   stow -R -v vscode -t "$USER_HOME"
   jq -r '.recommendations[]' "$ROOT_DIR/config/vscode/Library/Application Support/Code/User/extensions.json" | xargs -n 1 code --force --install-extension || true
 else
-  stow -D -v code -t "$USER_HOME"
+  stow -D -v vscode -t "$USER_HOME"
   log_info "VS Code editor not found, skipping configuration 🧑‍💻"
 fi
 
