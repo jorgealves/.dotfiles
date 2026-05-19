@@ -45,4 +45,12 @@ else
   log_info "Aerospace window manager not found, skipping configuration 🧑‍💻"
 fi
 
+if command -v nvim &>/dev/null; then
+  log_info "Configuring Neovim editor 🧑‍💻"
+  stow -R -v nvim -t "$USER_HOME"
+else
+  stow -D -v nvim -t "$USER_HOME"
+  log_info "Neovim editor not found, skipping configuration 🧑‍💻"
+fi
+
 log_footer "Dotfiles configuration installed successfully 🎉"
