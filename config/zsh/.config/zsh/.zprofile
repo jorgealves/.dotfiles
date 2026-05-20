@@ -39,12 +39,14 @@ export PATH="$HOME/.local/bin:$PATH"
 # Add custom scripts if you have them
 export PATH="$HOME/bin:$PATH"
 
+# add rust cargo bin to PATH
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # Start system ssh-agent
 unset SSH_AUTH_SOCK
 
 # Verify if Bitwarden Desktop is installed and add ssh agent
 if mdfind -name "Bitwarden.app" -count 1 &> /dev/null; then
-  printf "Bitwarden Desktop found. Setting up SSH agent...\n"
   export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
 else
   eval "$(ssh-agent -s)" > /dev/null

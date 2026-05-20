@@ -3,3 +3,4 @@
 # NOTE: YOU SHOULD NOT ADD ANYTHING HERE
 
 export ZDOTDIR="$HOME/.config/zsh"
+. "$HOME/.cargo/env"
