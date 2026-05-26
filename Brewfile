@@ -157,7 +157,7 @@ cask "monitorcontrol"                     # MonitorControl
 # brew "synergy-core"                       # Synergy KVM
 cask "uhk-agent"                          # UHK Agent
 # cask "microsoft-azure-storage-explorer" # Azure Storage Explorer
-cask "hiddenbar"                          # HiddenBar for managing menu bar icons
+# cask "hiddenbar"                          # HiddenBar for managing menu bar icons
 # cask "raspberry-pi-imager"              # Raspberry Pi Image Builder
 
 # ===== Gaming =====
