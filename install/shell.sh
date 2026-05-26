@@ -22,4 +22,9 @@ if command -v starship &>/dev/null; then
   stow -R -v starship -t "$USER_HOME"
 fi
 
+if command -v tmux &>/dev/null; then
+  log_info "Configuring Tmux terminal multiplexer 🖥️"
+  stow -R -v tmux -t "$USER_HOME"
+fi
+
 log_footer "Shell configuration installed successfully 🎉"
