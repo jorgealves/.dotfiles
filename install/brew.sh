@@ -26,14 +26,14 @@ else
   for i in "${!BREWFILES[@]}"; do
     echo "  $((i + 1))) $(basename "${BREWFILES[$i]}")"
   done
-  
-  read -p "Choose a Brewfile (1-${#BREWFILES[@]}): " choice
-  
-  if ! [[ "$choice" =~ ^[0-9]+$ ]] || (( choice < 1 || choice > ${#BREWFILES[@]} )); then
+
+  read -rp "Choose a Brewfile (1-${#BREWFILES[@]}): " choice
+
+  if ! [[ "$choice" =~ ^[0-9]+$ ]] || ((choice < 1 || choice > ${#BREWFILES[@]})); then
     log_error "Invalid choice"
     exit 1
   fi
-  
+
   BREWFILE="${BREWFILES[$((choice - 1))]}"
   log_info "Selected: $(basename "$BREWFILE")"
 fi
@@ -44,6 +44,6 @@ if ! command -v brew &>/dev/null; then
 fi
 brew update
 brew upgrade
-brew bundle install -v --file="$BREWFILE" --upgrade --cleanup
+brew bundle install -v --file="$BREWFILE" --upgrade --force-cleanup
 
 log_footer "Homebrew installed successfully 🎉"

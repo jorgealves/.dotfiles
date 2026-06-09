@@ -1,0 +1,30 @@
+# ===== SSH Keys Configuration Example =====
+# Copy this file to ~/.config/zsh/.zprofile.local and customize with YOUR keys
+# This file is gitignored and not tracked in version control
+
+# Example 1: Minimal setup (GitHub only)
+# export SSH_KEYS_TO_ADD=(
+#   "$HOME/.ssh/github"
+# )
+
+# Example 2: Standard setup (GitHub + Signing)
+# export SSH_KEYS_TO_ADD=(
+#   "$HOME/.ssh/github"
+#   "$HOME/.ssh/signing"
+# )
+
+# Example 3: Multiple work identities
+# export SSH_KEYS_TO_ADD=(
+#   "$HOME/.ssh/github"
+#   "$HOME/.ssh/github-work"
+#   "$HOME/.ssh/gitlab"
+#   "$HOME/.ssh/signing"
+# )
+
+# Example 4: Using ed25519 keys (modern)
+# export SSH_KEYS_TO_ADD=(
+#   "$HOME/.ssh/id_ed25519"
+#   "$HOME/.ssh/id_ed25519_work"
+# )
+
+# Choose ONE example above, uncomment it, and customize for your setup

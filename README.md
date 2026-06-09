@@ -33,6 +33,7 @@ Never commit secrets.
 
 - Store local credentials in `.envrc.local` (gitignored).
 - Keep private Git identity in `~/.gitconfig.private`.
+- SSH agent logic: Bitwarden SSH Agent is used if available; otherwise, a robust fallback starts `ssh-agent` only if needed and loads keys only if not present. See `.zprofile` for details.
 - Follow the policy in [`SECURITY.md`](SECURITY.md).
 
 ## Pre-commit Checks

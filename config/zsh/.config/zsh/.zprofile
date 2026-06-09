@@ -42,15 +42,24 @@ export PATH="$HOME/bin:$PATH"
 # add rust cargo bin to PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# Start system ssh-agent
-unset SSH_AUTH_SOCK
+# ===== SSH Agent Setup =====
+# Source local SSH key configuration (not tracked in version control)
+[ -f "$HOME/.config/zsh/.zprofile.local" ] && source "$HOME/.config/zsh/.zprofile.local"
 
-# Verify if Bitwarden Desktop is installed and add ssh agent
+# Robust SSH agent logic
+# Prefer Bitwarden SSH Agent if available, otherwise use system ssh-agent
+
 if mdfind -name "Bitwarden.app" -count 1 &> /dev/null; then
   export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
 else
-  eval "$(ssh-agent -s)" > /dev/null
-  # assuming you have your ssh keys in ~/.ssh, add them to the agent
-  ssh-add $HOME/.ssh/github &> /dev/null
-  ssh-add $HOME/.ssh/signing &> /dev/null
+  # Only start ssh-agent if not already running
+  if [ -z "$SSH_AUTH_SOCK" ]; then
+    eval "$(ssh-agent -s)" > /dev/null
+  fi
+  # Only add keys if not already present (keys defined in .zprofile.local)
+  for key in "${SSH_KEYS_TO_ADD[@]}"; do
+    if [ -f "$key" ] && ! ssh-add -l | grep -q "$(ssh-keygen -lf $key | awk '{print $2}')"; then
+      ssh-add "$key" &> /dev/null
+    fi
+  done
 fi
