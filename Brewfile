@@ -1,6 +1,10 @@
 # Brewfile
 # Place this in ~/dotfiles/Brewfile
 
+#===== Programming Languages =====
+brew "go"                                 # Go programming language
+
+
 # ===== Python Development =====
 brew "pipx"
 brew "uv"                                 # Fast Python package manager

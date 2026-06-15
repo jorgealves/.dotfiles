@@ -231,3 +231,8 @@ autoload -U +X bashcompinit && bashcompinit
 
 # Created by `pipx` on 2026-04-09 15:37:20
 export PATH="$PATH:/Users/jorge.alves/.local/bin"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/jorge.alves/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
