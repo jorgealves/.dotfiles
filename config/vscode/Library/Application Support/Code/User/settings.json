@@ -21,7 +21,6 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
-  "chat.viewSessions.orientation": "stacked",
   "vs-kubernetes": {
     "vs-kubernetes.crd-code-completion": "enabled",
   },
@@ -44,4 +43,13 @@
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml",
+  ],
+  "chat.viewSessions.orientation": "stacked",
 }
