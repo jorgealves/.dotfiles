@@ -66,6 +66,7 @@ if ! npm list --global skills --depth=0 &>/dev/null; then
 fi
 
 npx skills add jorgealves/agent_skills --global --yes --full-depth "$(printf -- '--agent %s ' "${agents[@]}")"
+npx skills add jorgealves/matt_pocock_skills --global --yes --full-depth "$(printf -- '--agent %s ' "${agents[@]}")"
 log_info "Custom skills setup completed successfully 🎉"
 
 log_footer "AI Skills setup completed successfully 🎉"
