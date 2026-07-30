@@ -70,6 +70,7 @@ brew "lazygit"                            # Simple terminal UI for git commands
 brew "lazydocker"                         # Simple terminal UI for docker commands
 brew "lazysql"                            # Simple terminal UI for MySQL commands
 brew "tmux"                               # Terminal multiplexer
+brew "herdr"                              # Herd: Terminal multiplexer with a focus on simplicity
 brew "neovim"                             # Modern vim
 brew "jless"                              # JSON viewer
 # brew "rojo"                             # Rojo CLI
