@@ -1,0 +1,150 @@
+[settings]
+cache_prune_age = "7d"
+color_theme = "default"
+locked = false
+locked_verify_provenance = false
+lockfile = false
+minimum_release_age = "24h"
+paranoid = true
+verbose = false
+status.missing_tools = "always"
+status.show_deps_stale = true
+status.show_env = true
+status.show_tools = true
+status.truncate = false
+dotfiles.root = "~/projects/.dotfiles"
+
+[env]
+MISE_BREW_CASK_OPT_APPDIR = "$HOME/Applications"
+
+[bootstrap.macos.dock]
+autohide = true
+orientation = "bottom"
+magnification = true
+
+[bootstrap.packages]
+"brew:git" = "latest"
+"brew:git-lfs" = "latest"
+"brew:gh" = "latest"
+"brew:act" = "latest"
+"brew:zsh-autosuggestions" = "latest"
+"brew:zsh-syntax-highlighting" = "latest"
+"brew:zsh-completions" = "latest"
+"brew:starship" = "latest"
+"brew:bash" = "latest"
+"brew:bash-completion@2" = "latest"
+"brew:fzf" = "latest"
+"brew:bat" = "latest"
+"brew:fd" = "latest"
+"brew:eza" = "latest"
+"brew:tmux" = "latest"
+"brew:neovim" = "latest"
+"brew:jless" = "latest"
+"brew:pre-commit" = "latest"
+"brew:shellcheck" = "latest"
+"brew:shfmt" = "latest"
+"brew:jq" = "latest"
+"brew:yq" = "latest"
+"brew:httpie" = "latest"
+"brew:tree" = "latest"
+"brew:wget" = "latest"
+"brew:ripgrep" = "latest"
+"brew:zoxide" = "latest"
+"brew:htop" = "latest"
+"brew:herdr" = "latest"
+"brew:kubernetes-cli" = "latest"
+"brew:k9s" = "latest"
+"brew:helm" = "latest"
+"brew:helmfile" = "latest"
+"brew:kubectx" = "latest"
+"brew:k6" = "latest"
+"brew:kind" = "latest"
+"brew:popeye" = "latest"
+"brew:opencode" = "latest"
+"brew-cask:font-fira-code-nerd-font" = "latest"
+"brew-cask:font-jetbrains-mono-nerd-font" = "latest"
+"brew:bitwarden-cli" = "latest"
+"brew:pinentry-mac" = "latest"
+"brew:gnupg" = "latest"
+"brew:gitleaks" = "latest"
+"brew:trivy" = "latest"
+# "brew-cask:meetily" = "latest"
+# "brew-cask:slack" = "latest"
+# "brew-cask:zoom" = "latest"
+# "brew-cask:whatsapp" = "latest"
+# "brew-cask:visual-studio-code" = "latest"
+# "brew-cask:docker-desktop" = "latest"
+
+
+[dotfiles]
+"~/.ssh" = { source = "~/projects/.dotfiles/config/.ssh", mode = "symlink" }
+"~/.config/git" = { source = "~/projects/.dotfiles/config/git", mode = "symlink" }
+"~/.gitconfig*" = { source = "~/projects/.dotfiles/config/.gitconfig*", mode = "symlink" }
+"~/.zshenv" = { source = "~/projects/.dotfiles/config/zsh/.zshenv", mode = "symlink" }
+"~/.config/zsh" = { source = "~/projects/.dotfiles/config/zsh", mode = "symlink" }
+"~/Library/Application Support/Code/User/*.json" = { source = "~/projects/.dotfiles/vscode/*.json", mode = "symlink" }
+"~/.config/opencode" = { source = "~/projects/.dotfiles/config/opencode", mode = "symlink" }
+"~/.config/starship.toml" = { source = "~/projects/.dotfiles/config/starship.toml", mode = "symlink" }
+"~/.config/nvim" = { source = "~/projects/.dotfiles/config/nvim", mode = "symlink" }
+"~/.tmux.conf" = { source = "~/projects/.dotfiles/config/.tmux.conf", mode = "symlink" }
+
+[tools]
+# Programming languages
+python = ["3.10", "3.11", "3.12", "3.13", "3.14"]
+node = ["22", "lts"]
+go = "latest"
+rust = "latest"
+#
+# # Python
+uv = { version = "latest", depends = [
+  "python",
+] } # Universal virtual environment manager
+pipx = { version = "latest", depends = [
+  "python",
+] } # Install and run Python applications in isolated environments
+poetry = { version = "latest", depends = [
+  "python",
+] } # Python dependency management and packaging
+
+[shell_alias]
+# file management
+l = 'eza'
+ll = 'eza -lA -F always --icons=always -s type'
+la = 'll'
+tree = 'l --tree'
+'..' = 'cd ..'
+'...' = 'cd ../..'
+'....' = 'cd ../../..'
+
+# git
+g = 'git'
+gs = 'git status'
+gp = 'git pull'
+gfa = 'git fetch --all --prune --verbose'
+gc = 'git commit'
+gca = 'git commit -a'
+gco = 'git checkout'
+gb = 'git branch'
+gd = 'git diff'
+gl = 'git log --oneline --graph --decorate'
+gla = 'git log --oneline --graph --decorate --all'
+
+# uv
+py = 'uv run python'
+pytest = 'uv run pytest'
+uvr = 'uv run'
+uvsync = 'uv sync'
+uvlock = 'uv lock'
+
+# kubernetes
+k = 'kubectl'
+
+# misc
+cat = 'bat'
+grep = 'rg'
+find = 'fd'
+
+
+[tasks.docker-sysclean]
+description = "Clean up Docker system"
+run = "docker system prune -af --volumes"

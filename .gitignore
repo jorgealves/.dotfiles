@@ -38,3 +38,5 @@ config/zed/.config/zed/settings_backup.json
 # Custom Brewfiles
 client_*.Brewfile
 
+# ssh
+config/.ssh/

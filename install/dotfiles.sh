@@ -53,4 +53,11 @@ else
   log_info "Neovim editor not found, skipping configuration 🧑‍💻"
 fi
 
+if command -v mise &>/dev/null; then
+  log_info "Configuring Mise editor 🧑‍💻"
+  stow -R -v mise -t "$USER_HOME"
+else
+  stow -D -v mise -t "$USER_HOME"
+  log_info "Mise editor not found, skipping configuration 🧑‍💻"
+fi
 log_footer "Dotfiles configuration installed successfully 🎉"

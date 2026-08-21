@@ -107,7 +107,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-# Git shortcuts
+ # Git shortcuts
 alias g='git'
 alias gs='git status'
 alias gp='git pull'
