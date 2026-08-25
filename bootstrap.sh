@@ -10,7 +10,9 @@ clear
 log_header "Bootstraping your DevEnv on Macos 🍎"
 
 "$ROOT_DIR/install/brew.sh"
-mise bootstrap --update
-"$ROOT_DIR/install/ai.sh"
+mise bootstrap plan
+mise bootstrap dotfiles status
+mise bootstrap --update --force-dotfiles
+# "$ROOT_DIR/install/ai.sh"
 
 log_success "DevEnv bootstrapped successfully 🎉"
