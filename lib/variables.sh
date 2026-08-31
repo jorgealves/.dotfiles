@@ -13,7 +13,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
 fi
 
 export USER_HOME="$HOME"
-CURRENT_DIR=$(pwd)
-export ROOT_DIR="$CURRENT_DIR"
+ROOT_DIR=$(cd "$SCRIPT_DIR/.." && pwd)
+export ROOT_DIR
 
 log_info "💼 Variables loaded."

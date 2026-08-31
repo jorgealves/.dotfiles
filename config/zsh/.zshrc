@@ -29,6 +29,8 @@ setopt INC_APPEND_HISTORY        # Write to history immediately
 # ===== Completion System =====
 # Add custom completions directory
 fpath+=("$HOME/.zfunc")
+# Docker CLI completions (must be added before compinit runs)
+fpath=("$HOME/.docker/completions" $fpath)
 
 autoload -Uz compinit
 
@@ -229,10 +231,5 @@ export NVM_DIR="$HOME/.nvm"
 # autocompletion for bash (useful for Azure CLI)
 autoload -U +X bashcompinit && bashcompinit
 
-# Created by `pipx` on 2026-04-09 15:37:20
-export PATH="$PATH:/Users/jorge.alves/.local/bin"
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/jorge.alves/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
+# Docker CLI completions fpath is registered earlier, before compinit runs
+# ($HOME/.local/bin already added to PATH in .zprofile; pipx's auto-added line was redundant)

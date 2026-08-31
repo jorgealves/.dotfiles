@@ -2,7 +2,9 @@
 
 set -euo pipefail # Enable strict mode
 # source libs
-source "$(pwd)/lib/variables.sh"
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+# shellcheck source=lib/variables.sh
+source "$SCRIPT_DIR/../lib/variables.sh"
 source "$ROOT_DIR/lib/logs.sh"
 source "$ROOT_DIR/lib/utils.sh"
 

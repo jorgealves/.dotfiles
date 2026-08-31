@@ -9,6 +9,9 @@
 #homebrew
 eval $(/opt/homebrew/bin/brew shellenv)
 
+# Keep PATH entries unique (dedupes any repeated dirs added by brew/mise/etc.)
+typeset -U path PATH
+
 # mise-en-place
 eval "$(mise activate zsh)"
 
@@ -50,19 +53,27 @@ export PATH="$HOME/.cargo/bin:$PATH"
 [ -f "$HOME/.config/zsh/.zprofile.local" ] && source "$HOME/.config/zsh/.zprofile.local"
 
 # Robust SSH agent logic
-# Prefer Bitwarden SSH Agent if available, otherwise use system ssh-agent
+# Prefer Bitwarden SSH Agent when it's actually running (socket exists), otherwise
+# fall back to the system ssh-agent and load keys from ~/.ssh (via SSH_KEYS_TO_ADD)
 
-if mdfind -name "Bitwarden.app" -count 1 &> /dev/null; then
-  export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
+BITWARDEN_SSH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
+
+if [ -S "$BITWARDEN_SSH_SOCK" ]; then
+  export SSH_AUTH_SOCK="$BITWARDEN_SSH_SOCK"
 else
-  # Only start ssh-agent if not already running
+  # Only start ssh-agent if not already running / reachable (exit code 2 = can't connect)
   if [ -z "$SSH_AUTH_SOCK" ]; then
     eval "$(ssh-agent -s)" > /dev/null
+  else
+    ssh-add -l &> /dev/null
+    [ $? -eq 2 ] && eval "$(ssh-agent -s)" > /dev/null
   fi
   # Only add keys if not already present (keys defined in .zprofile.local)
   for key in "${SSH_KEYS_TO_ADD[@]}"; do
-    if [ -f "$key" ] && ! ssh-add -l | grep -q "$(ssh-keygen -lf $key | awk '{print $2}')"; then
-      ssh-add "$key" &> /dev/null
+    if [ -f "$key" ] && ! ssh-add -l | grep -q "$(ssh-keygen -lf "$key" | awk '{print $2}')"; then
+      ssh-add --apple-use-keychain "$key" &> /dev/null
     fi
   done
 fi
+
+unset BITWARDEN_SSH_SOCK
