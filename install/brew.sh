@@ -8,6 +8,23 @@ source "$SCRIPT_DIR/../lib/variables.sh"
 source "$ROOT_DIR/lib/logs.sh"
 source "$ROOT_DIR/lib/utils.sh"
 
+keep_sudo_alive_for_casks() {
+  if [[ ! -t 0 ]]; then
+    log_warning "No interactive terminal found; Homebrew may ask for sudo per cask operation."
+    return
+  fi
+
+  log_info "Refreshing sudo credentials once for Homebrew cask upgrades..."
+  sudo -v
+
+  while true; do
+    sudo -n -v 2>/dev/null || exit
+    sleep 60
+  done &
+  SUDO_KEEPALIVE_PID=$!
+  trap 'kill "$SUDO_KEEPALIVE_PID" 2>/dev/null || true' EXIT
+}
+
 log_header "Installing Homebrew"
 
 # Find all Brewfile variants
@@ -44,6 +61,7 @@ if ! command -v brew &>/dev/null; then
   log_error "Homebrew is not installed. Installing..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
+keep_sudo_alive_for_casks
 brew update
 brew upgrade
 brew bundle install -v --file="$BREWFILE" --upgrade --force
