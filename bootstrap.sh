@@ -27,9 +27,11 @@ if ! command -v mise &>/dev/null; then
   brew install mise
 fi
 
-mise bootstrap status
+log_info "Here's what mise is planning 🛫..."
 mise bootstrap plan
+log_info "Executing mise bootstrap... 🚀"
 mise bootstrap --update --force-dotfiles --prompt-secrets
+log_info "Mise bootstrap completed. 👍"
 # "$ROOT_DIR/install/ai.sh"
 
 log_success "DevEnv bootstrapped successfully 🎉"
