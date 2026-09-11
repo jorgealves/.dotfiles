@@ -1,266 +1,96 @@
 # AGENTS.md
 
-## Project Overview
+## Source of truth
 
-This is a **macOS dotfiles repository** that provides automated development environment setup with a focus on:
-- Python development (uv, poetry, multiple Python versions)
-- Container development (Docker, Kubernetes tools)
-- Cloud development (Azure CLI, Terraform)
-- AI/ML development (AI agent skills, GitHub Copilot, OpenCode)
-- Modern shell experience (Starship prompt, zsh enhancements)
+Treat the code as authoritative. In particular:
 
-## Setup Commands
+- `bootstrap.sh` is the entry point and runs the `mise bootstrap` workflow.
+- `config/mise/config.toml` defines packages, tools, dotfile mappings, and
+  bootstrap preferences.
+- `bootstrap.sh` installs mise directly through Homebrew when necessary; the
+  current bootstrap flow does not invoke `Brewfile`.
+- `Makefile` has only `run` and `security` targets; there is no `check`
+  target.
+
+Request confirmation before performing an action that changes the computer, the
+repository, dependencies, or files outside this repository.
+
+## Current structure
+
+```text
+.
+├── bootstrap.sh             # Updates Homebrew and applies mise bootstrap
+├── config/
+│   ├── mise/config.toml     # Packages, runtimes, and dotfile mappings
+│   ├── zsh/                 # ZDOTDIR, profile, and interactive shell
+│   ├── nvim/                # LazyVim configuration
+│   ├── opencode/            # OpenCode configuration
+│   ├── git/ and .gitconfig  # Git exclusions and configuration
+│   └── starship.toml        # Starship prompt
+├── install/ai.sh            # Standalone script; bootstrap does not call it
+└── lib/                     # Logging and small shell helpers
+```
+
+Do not use GNU Stow for this configuration: symlinks are declared in the mise
+`[dotfiles]` section. The old install scripts for brew, shell, Git, dotfiles,
+and Python do not exist.
+
+## Installation and diagnostics
+
+Homebrew is a prerequisite. The repository is currently configured to live in
+`~/projects/.dotfiles`.
 
 ```bash
-# Full automated setup
 ./bootstrap.sh
-
-# Alternative entry point
-make run
-
-# Check installation status
-brew list | grep -E "(uv|poetry|kubectl)"
-
-# Validate configuration
-stow -n -v -d config -t "$HOME" zsh starship git opencode zed && echo "✅ All configs valid"
-
-# Run local checks
-make check
-
-# Update environment
-source ~/.config/zsh/.zshrc && direnv reload
+mise bootstrap status
+mise bootstrap plan
 ```
 
-## Architecture
+`./bootstrap.sh` is mutating: it updates and upgrades Homebrew, may install
+mise, and applies bootstrap with `--update`, `--force-dotfiles`, and
+`--prompt-secrets`.
 
-```
-.dotfiles/
-├── 🚀 bootstrap.sh              # Main installation orchestrator
-├── 📦 Brewfile                  # ALL packages (read this first)
-├── ⚙️ config/                   # Symlinked to $HOME via GNU Stow
-│   ├── 🤖 agent_skills/         # Custom AI capabilities (submodule)
-│   ├── 🤖 opencode/            # OpenCode AI assistant config
-│   ├── 🐚 zsh/                 # Shell configuration
-│   └── ⭐ starship/            # Shell prompt themes
-├── 🔨 install/                 # Installation scripts (ORDERED)
-│   ├── brew.sh → shell.sh → git.sh → dotfiles.sh → python.sh → ai.sh
-└── 📚 lib/                     # Utility functions
-    ├── logs.sh                 # log_info, log_error, log_success
-    └── variables.sh            # Environment variables
-```
+For hook checks:
 
-## Development Workflow
-
-### Before Making Changes
 ```bash
-# ALWAYS validate first
-stow -n -v -d config -t "$HOME" zsh starship git opencode zed 2>&1 | grep -i conflict
-
-# Use existing logging
-source lib/logs.sh
-log_info "Starting task"
-```
-
-### Adding New Tools
-1. Add to `Brewfile`
-2. Create config in `config/<tool>/`
-3. Add symlink in `install/dotfiles.sh`
-4. Test with `stow -n -v <tool>`
-
-### Python Environment Setup
-```bash
-# Check available versions
-uv python list
-
-# Create project environment
-echo "3.14" > .python-version
-direnv allow
-
-# Validate
-python --version && echo "✅ Ready"
-```
-
-## Code Style & Conventions
-
-### Configuration Management
-- **Use GNU Stow**: All configs go in `config/` and are symlinked
-- **Never edit directly**: Don't modify `~/.zshrc`, use `config/zsh/.zshrc`
-- **Test first**: Always run `stow -n -v -d config -t "$HOME" <tool>` before applying changes
-
-### Python Standards
-- **Primary tool**: uv (fast package manager)
-- **Supported versions**: 3.12, 3.13, 3.14
-- **Environment management**: direnv for auto-activation
-- **Default version**: 3.14
-
-### Shell Configuration
-- **Shell**: zsh with starship prompt
-- **Auto-suggestions**: zsh-autosuggestions enabled
-- **Syntax highlighting**: zsh-syntax-highlighting enabled
-
-## Security Rules
-
-### NEVER Commit These Files
-```gitignore
-*.local
-.envrc.local
-.env
-.env.*
-*.pem
-*.key
-*_rsa
-.aws/credentials
-```
-
-### Secrets Management
-- Store API keys in `.envrc.local` files (auto-gitignored)
-- Use direnv for environment isolation
-- Use SSH keys for Git authentication
-
-## Testing & Validation
-
-### Health Check Commands
-```bash
-# Core tools validation
-command -v brew && echo "✅ Homebrew"
-command -v uv && echo "✅ uv"
-command -v stow && echo "✅ GNU Stow"
-
-# Configuration validation
-[ -f ~/.config/zsh/.zshrc ] && echo "✅ zsh configured"
-[ -f ~/.gitconfig ] && echo "✅ git configured"
-
-# Agent skills
-npx skills list && echo "✅ Skills available"
-ls -la config/agent_skills/ && echo "✅ Custom skills"
-
-# Security checks
 make security
 ```
 
-### Debugging Common Issues
-```bash
-# Stow conflicts
-stow -R -v -d config -t "$HOME" zsh starship git opencode zed
+This command can change shell files through `shfmt -w`; do not treat it as a
+read-only check.
 
-# Homebrew issues
-brew doctor && brew update && brew upgrade
+## Changing tools or configuration
 
-# Python environment problems
-direnv reload && uv python list
-```
+1. For Homebrew packages or casks, edit `[bootstrap.packages]`; for mise-managed
+   runtimes, edit `[tools]` in `config/mise/config.toml`.
+2. Place public configuration in `config/`, and add a `[dotfiles]` mapping
+   when it should be linked into `$HOME`.
+3. Keep secrets and machine-specific data out of versioned state.
+4. Review `mise bootstrap plan` before applying bootstrap.
 
-## Agent Skills System
+Supported local configuration is ignored by Git, including
+`config/mise/config.local.toml` and `config/zsh/.zprofile.local`. The zsh
+configuration looks for the latter at `~/.config/zsh/.zprofile.local`.
 
-### Official Skills (npm/npx)
-```bash
-npx skills add python-helper
-npx skills list
-npx skills update
-```
+## Security
 
-### Custom Skills (config/agent_skills/)
-Specialized skills for:
-- **Python**: async-advisor, type-hints-converter, security-scanner
-- **Security**: secret-leak-detector, pii-sanitizer, compliance-auditors
-- **DevOps**: k8s-resource-optimizer, database-migration-checker
-- **Code Quality**: code-review-assistant, refactoring-suggester
+- Never add secrets, private keys, or customer information.
+- `config/.ssh/`, `.gitconfig.private`, `.envrc.local`, `.env`, and local
+  variants are ignored by Git.
+- `~/.gitconfig.private` is included only for repositories under
+  `~/projects/`.
+- The SSH agent prefers the Bitwarden socket when it exists; otherwise, it uses
+  `ssh-agent` and the keys defined in local zsh configuration.
 
-Usage:
-```bash
-npx skills use python-security-scanner scan .
-npx skills use code-review-assistant review src/
-```
+Read [SECURITY.md](SECURITY.md) before changing exclusion or security rules.
 
-## Maintenance Commands
+## Included configuration
 
-```bash
-# Weekly updates
-brew update && brew upgrade
-uv self update
-npx skills update
-stow -R -v -d config -t "$HOME" zsh starship git opencode zed
+The current mappings cover mise, SSH, Git exclusions, `.gitconfig`, zsh,
+VS Code, OpenCode, Starship, Neovim, and tmux. Active packages include
+Git/GitHub CLI, Python, Node.js, Go, Rust, Docker Desktop, Kubernetes tools,
+OpenCode, and Copilot CLI; the TOML remains the complete declaration.
 
-# Cleanup
-brew cleanup
-uv cache clean
-```
-
-## Emergency Recovery
-
-### Complete Reset (Nuclear Option)
-```bash
-cd ~/.dotfiles
-stow -D -v -d config -t "$HOME" zsh starship git opencode zed
-git checkout HEAD -- config/  # Reset configs
-./bootstrap.sh             # Reinstall everything
-```
-
-### Partial Fixes
-```bash
-# Fix only Stow issues
-stow -R -v -d config -t "$HOME" zsh starship git opencode zed
-
-# Fix only Python
-uv self update && direnv reload
-
-# Fix only Homebrew
-brew doctor && brew update && brew upgrade
-```
-
-## Important Notes
-
-- **Installation Order**: The 6 install scripts must run in order (brew → shell → git → dotfiles → python → ai)
-- **macOS Only**: This setup is specifically designed for macOS
-- **GNU Stow Required**: All configuration management relies on GNU Stow for symlinks
-- **Python Default**: Default Python version is 3.14, with 3.12 and 3.13 also available
-- **Agent Integration**: Works with OpenCode, GitHub Copilot, Cursor, and other AI coding tools
-
-## Key Tools Installed
-
-### Core Development
-- **Python**: uv, poetry, pipx, direnv
-- **Git**: git, git-lfs, gh (GitHub CLI)
-- **Containers**: docker-desktop, kubectl, k9s, helm
-- **Cloud**: azure-cli, kubelogin
-
-### Modern CLI
-- **Shell**: zsh, starship, fzf
-- **Search**: ripgrep, fd
-- **File Tools**: bat, eza, jq, yq
-- **TUI**: lazygit, lazydocker, k9s
-
-### AI Tools
-- **Assistants**: opencode, copilot-cli, ollama
-- **Skills**: Custom skills via git submodule + official via npm
-
-## File Structure Details
-
-| Path | Purpose | Agent Action |
-|------|---------|--------------|
-| `Brewfile` | All package definitions | Read before adding tools |
-| `config/*/` | Tool configurations | Modify instead of `~/.*` files |
-| `lib/logs.sh` | Logging functions | Use for consistent output |
-| `install/*.sh` | Setup scripts | Understand before modifying |
-| `.envrc.local` | Local secrets | Create for API keys (gitignored) |
-
-## Success Indicators
-
-✅ **Installation Complete When**:
-- All 6 install scripts complete without errors
-- `stow -n -v -d config -t "$HOME" zsh starship git opencode zed` shows no conflicts
-- `python --version` shows 3.14 (or desired version)
-- `gh auth status` shows authenticated
-- Starship prompt is active in terminal
-
-✅ **Environment Ready When**:
-- Python environments auto-activate in projects
-- Custom agent skills are accessible
-- All symlinks resolve correctly: `ls -la ~ | grep "\.dotfiles"`
-- Container tools work: `docker version`, `kubectl version`
-
----
-
-**Last Updated**: 2026-02-18
-**Format**: AGENTS.md v2.0 Standard
-**Compatible With**: OpenCode, GitHub Copilot, Cursor, Zed, Claude Code, and other AI coding agents
+Do not assume that commented tools, absent directories, or uncalled scripts are
+part of a supported installation. In particular, there is no active
+`agent_skills` system in the bootstrap flow.
