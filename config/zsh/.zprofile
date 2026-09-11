@@ -36,7 +36,7 @@ export NODE_OPTIONS="--max-old-space-size=4096"
 export PYTHONDONTWRITEBYTECODE=1  # Don't create .pyc files
 
 # UV configuration
-export UV_PYTHON_PREFERENCE=only-managed  # Use uv-managed Python versions
+# export UV_PYTHON_PREFERENCE=only-managed  # Use uv-managed Python versions
 
 # ===== PATH Configuration =====
 # Add local bin to PATH

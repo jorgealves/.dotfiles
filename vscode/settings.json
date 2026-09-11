@@ -52,4 +52,9 @@
     "**/.forgejo/workflows/*.yaml",
   ],
   "chat.viewSessions.orientation": "stacked",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "python.analysis.diagnosticsSource": "Pylance + Pyright",
+  "terminal.integrated.stickyScroll.enabled": false,
 }

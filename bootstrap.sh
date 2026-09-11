@@ -9,7 +9,9 @@ source "$ROOT_DIR/lib/logs.sh"
 clear
 log_header "Bootstraping your DevEnv on Macos 🍎"
 
-"$ROOT_DIR/install/brew.sh"
+brew update
+brew upgrade
+brew bundle --file="$ROOT_DIR/Brewfile"
 mise bootstrap plan
 mise bootstrap dotfiles status
 mise bootstrap --update --force-dotfiles

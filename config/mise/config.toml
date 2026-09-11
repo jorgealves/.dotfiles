@@ -16,31 +16,48 @@ dotfiles.root = "~/projects/.dotfiles"
 
 [env]
 MISE_BREW_CASK_OPT_APPDIR = "$HOME/Applications"
+_.python.venv = { path = ".venv", create = true }
 
 [bootstrap.macos.dock]
 autohide = true
 orientation = "bottom"
 magnification = true
 
+[bootstrap.brew]
+adopt = true
+
+[bootstrap.brew.taps]
+"homebrew/cask" = "latest"
+"homebrew/core" = "latest"
+"homebrew/cask-fonts" = "latest"
+"cloudsmith-io/cloudsmith-cli" = "https://github.com/cloudsmith-io/homebrew-cloudsmith-cli.git"
+
 [bootstrap.packages]
+# Git
 "brew:git" = "latest"
 "brew:git-lfs" = "latest"
 "brew:gh" = "latest"
+"brew:gitleaks" = "latest"
+
+# Github related tools
 "brew:act" = "latest"
+"brew:dependabot" = "latest"
+
+# Bash related tools
+"brew:bash" = "latest"
+"brew:bash-completion@2" = "latest"
+# ZSH related tools
 "brew:zsh-autosuggestions" = "latest"
 "brew:zsh-syntax-highlighting" = "latest"
 "brew:zsh-completions" = "latest"
 "brew:starship" = "latest"
-"brew:bash" = "latest"
-"brew:bash-completion@2" = "latest"
+
+# General command-line tools
 "brew:fzf" = "latest"
 "brew:bat" = "latest"
 "brew:fd" = "latest"
 "brew:eza" = "latest"
-"brew:tmux" = "latest"
-"brew:neovim" = "latest"
 "brew:jless" = "latest"
-"brew:pre-commit" = "latest"
 "brew:shellcheck" = "latest"
 "brew:shfmt" = "latest"
 "brew:jq" = "latest"
@@ -51,30 +68,78 @@ magnification = true
 "brew:ripgrep" = "latest"
 "brew:zoxide" = "latest"
 "brew:htop" = "latest"
+
+# Terminal multiplexer
+"brew:tmux" = "latest"
 "brew:herdr" = "latest"
+# Code editor
+"brew:neovim" = "latest"
+# Kubernetes
 "brew:kubernetes-cli" = "latest"
 "brew:k9s" = "latest"
 "brew:helm" = "latest"
 "brew:helmfile" = "latest"
 "brew:kubectx" = "latest"
-"brew:k6" = "latest"
 "brew:kind" = "latest"
 "brew:popeye" = "latest"
+# Load testing tools
+"brew:k6" = "latest"
+# Cloud tools
+"brew:azure-cli" = "latest"
+# AI terminal and desktop tools
 "brew:opencode" = "latest"
+"brew-cask:chatgpt" = "latest"
+"brew-cask:copilot-cli" = "latest"
+# "brew:ollama" = "latest"
+# "brew-cask:lm-studio" = "latest"
+# "brew-cask:claude-code" = "latest"
+# "brew-cask:claude" = "latest"
+# Fonts
 "brew-cask:font-fira-code-nerd-font" = "latest"
 "brew-cask:font-jetbrains-mono-nerd-font" = "latest"
+# Security tools
 "brew:bitwarden-cli" = "latest"
+"brew-cask:1password-cli" = "latest"
 "brew:pinentry-mac" = "latest"
 "brew:gnupg" = "latest"
-"brew:gitleaks" = "latest"
 "brew:trivy" = "latest"
+"brew-cask:nordlayer" = "latest"
+# Productivity tools
+"brew-cask:obsidian" = "latest"
+"brew-cask:miro" = "latest"
+"brew-cask:figma" = "latest"
 # "brew-cask:meetily" = "latest"
-# "brew-cask:slack" = "latest"
-# "brew-cask:zoom" = "latest"
-# "brew-cask:whatsapp" = "latest"
-# "brew-cask:visual-studio-code" = "latest"
-# "brew-cask:docker-desktop" = "latest"
 
+# Communication tools
+"brew-cask:postman" = "latest"
+"brew-cask:slack" = "latest"
+"brew-cask:whatsapp" = "latest"
+# "brew-cask:zoom" = "latest"
+# "brew-cask:discord" = "latest"
+
+# Development tools
+"brew-cask:docker-desktop" = "latest"
+"brew-cask:pgadmin4" = "latest"
+"brew-cask:iterm2" = "latest"
+"brew-cask:microsoft-azure-storage-explorer" = "latest"
+"brew:pre-commit" = "latest"
+
+# Code Editors
+"brew-cask:visual-studio-code" = "latest"
+# "brew-cask:zed" = "latest"
+# "brew-cask:cursor" = "latest"
+
+#Browsers
+"brew-cask:google-chrome" = "latest"
+"brew-cask:microsoft-edge" = "latest"
+
+# MacOS Applications
+"brew-cask:uhk-agent" = "latest"
+"brew-cask:rectangle" = "latest"
+"brew-cask:monitorcontrol" = "latest"
+# "brew-cask:granola" ="latest"
+# "brew:synergy-core" = "latest"
+# "brew-cask:raspbery-pi-imager" = "latest"
 
 [dotfiles]
 "~/.ssh" = { source = "~/projects/.dotfiles/config/.ssh", mode = "symlink" }
