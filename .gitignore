@@ -40,3 +40,8 @@ client_*.Brewfile
 
 # ssh
 config/.ssh/
+
+# Private local configuration files
+.gitconfig.private
+.gitconfig_*
+*.local.*

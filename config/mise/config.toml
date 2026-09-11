@@ -30,7 +30,6 @@ adopt = true
 "homebrew/cask" = "latest"
 "homebrew/core" = "latest"
 "homebrew/cask-fonts" = "latest"
-"cloudsmith-io/cloudsmith-cli" = "https://github.com/cloudsmith-io/homebrew-cloudsmith-cli.git"
 
 [bootstrap.packages]
 # Git
@@ -84,11 +83,9 @@ adopt = true
 "brew:popeye" = "latest"
 # Load testing tools
 "brew:k6" = "latest"
-# Cloud tools
-"brew:azure-cli" = "latest"
 # AI terminal and desktop tools
 "brew:opencode" = "latest"
-"brew-cask:chatgpt" = "latest"
+# "brew-cask:chatgpt" = "latest"
 "brew-cask:copilot-cli" = "latest"
 # "brew:ollama" = "latest"
 # "brew-cask:lm-studio" = "latest"
@@ -99,29 +96,29 @@ adopt = true
 "brew-cask:font-jetbrains-mono-nerd-font" = "latest"
 # Security tools
 "brew:bitwarden-cli" = "latest"
-"brew-cask:1password-cli" = "latest"
+# "brew-cask:1password-cli" = "latest"
 "brew:pinentry-mac" = "latest"
 "brew:gnupg" = "latest"
 "brew:trivy" = "latest"
-"brew-cask:nordlayer" = "latest"
+# "brew-cask:nordlayer" = "latest"
 # Productivity tools
 "brew-cask:obsidian" = "latest"
-"brew-cask:miro" = "latest"
-"brew-cask:figma" = "latest"
+# "brew-cask:miro" = "latest"
+# "brew-cask:figma" = "latest"
 # "brew-cask:meetily" = "latest"
 
 # Communication tools
-"brew-cask:postman" = "latest"
-"brew-cask:slack" = "latest"
+# "brew-cask:postman" = "latest"
+# "brew-cask:slack" = "latest"
 "brew-cask:whatsapp" = "latest"
 # "brew-cask:zoom" = "latest"
-# "brew-cask:discord" = "latest"
+"brew-cask:discord" = "latest"
 
 # Development tools
 "brew-cask:docker-desktop" = "latest"
-"brew-cask:pgadmin4" = "latest"
-"brew-cask:iterm2" = "latest"
-"brew-cask:microsoft-azure-storage-explorer" = "latest"
+# "brew-cask:pgadmin4" = "latest"
+# "brew-cask:iterm2" = "latest"
+# "brew-cask:microsoft-azure-storage-explorer" = "latest"
 "brew:pre-commit" = "latest"
 
 # Code Editors
@@ -131,7 +128,7 @@ adopt = true
 
 #Browsers
 "brew-cask:google-chrome" = "latest"
-"brew-cask:microsoft-edge" = "latest"
+# "brew-cask:microsoft-edge" = "latest"
 
 # MacOS Applications
 "brew-cask:uhk-agent" = "latest"
@@ -142,6 +139,7 @@ adopt = true
 # "brew-cask:raspbery-pi-imager" = "latest"
 
 [dotfiles]
+"~/.config/mise" = { source = "~/projects/.dotfiles/config/mise", mode = "symlink" }
 "~/.ssh" = { source = "~/projects/.dotfiles/config/.ssh", mode = "symlink" }
 "~/.config/git" = { source = "~/projects/.dotfiles/config/git", mode = "symlink" }
 "~/.gitconfig*" = { source = "~/projects/.dotfiles/config/.gitconfig*", mode = "symlink" }
@@ -155,18 +153,14 @@ adopt = true
 
 [tools]
 # Programming languages
-python = ["3.10", "3.11", "3.12", "3.13", "3.14"]
+python = ["3.12","3.13","3.14"]
 node = ["22", "lts"]
 go = "latest"
 rust = "latest"
-#
-# # Python
+# Python
 uv = { version = "latest", depends = [
   "python",
 ] } # Universal virtual environment manager
-pipx = { version = "latest", depends = [
-  "python",
-] } # Install and run Python applications in isolated environments
 poetry = { version = "latest", depends = [
   "python",
 ] } # Python dependency management and packaging
