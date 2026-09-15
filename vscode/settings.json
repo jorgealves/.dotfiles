@@ -57,4 +57,7 @@
   },
   "python.analysis.diagnosticsSource": "Pylance + Pyright",
   "terminal.integrated.stickyScroll.enabled": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
 }
