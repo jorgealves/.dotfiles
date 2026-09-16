@@ -27,10 +27,12 @@ if ! command -v mise &>/dev/null; then
   brew install mise
 fi
 
-log_info "Here's what mise is planning 🛫..."
+log_info "Here's the overall plan for mise bootstrap 📝 ..."
 mise bootstrap plan
-log_info "Executing mise bootstrap... 🚀"
+log_info "Refreshing mise bootstrap plan... 🔄"
 mise bootstrap --update --force-dotfiles --prompt-secrets
+log_info "Upgrading mise bootstrap packages... 📦"
+mise bootstrap packages upgrade -y
 log_info "Mise bootstrap completed. 👍"
 # "$ROOT_DIR/install/ai.sh"
 
