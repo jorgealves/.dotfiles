@@ -1,6 +1,8 @@
 [settings]
 cache_prune_age = "7d"
 color_theme = "default"
+idiomatic_version_file = true
+idiomatic_version_file_enable_tools = ["python", "node"]
 locked = false
 locked_verify_provenance = false
 lockfile = false
@@ -16,7 +18,6 @@ dotfiles.root = "~/projects/.dotfiles"
 
 [env]
 MISE_BREW_CASK_OPT_APPDIR = "$HOME/Applications"
-_.python.venv = { path = ".venv", create = true }
 
 [bootstrap.macos.dock]
 autohide = true
@@ -32,19 +33,17 @@ adopt = true
 "homebrew/cask-fonts" = "latest"
 
 [bootstrap.packages]
+
 # Git
 "brew:git" = "latest"
 "brew:git-lfs" = "latest"
 "brew:gh" = "latest"
 "brew:gitleaks" = "latest"
 
-# Github related tools
-"brew:act" = "latest"
-"brew:dependabot" = "latest"
-
 # Bash related tools
 "brew:bash" = "latest"
 "brew:bash-completion@2" = "latest"
+
 # ZSH related tools
 "brew:zsh-autosuggestions" = "latest"
 "brew:zsh-syntax-highlighting" = "latest"
@@ -71,62 +70,61 @@ adopt = true
 # Terminal multiplexer
 "brew:tmux" = "latest"
 "brew:herdr" = "latest"
-# Code editor
-"brew:neovim" = "latest"
+
 # Kubernetes
 "brew:kubernetes-cli" = "latest"
+"brew:kubectx" = "latest"
 "brew:k9s" = "latest"
 "brew:helm" = "latest"
 "brew:helmfile" = "latest"
-"brew:kubectx" = "latest"
-"brew:kind" = "latest"
 "brew:popeye" = "latest"
+"brew:kind" = "latest"
+
 # Load testing tools
 "brew:k6" = "latest"
+
 # AI terminal and desktop tools
 "brew:opencode" = "latest"
-# "brew-cask:chatgpt" = "latest"
 "brew-cask:copilot-cli" = "latest"
+# "brew-cask:chatgpt" = "latest"
 # "brew:ollama" = "latest"
 # "brew-cask:lm-studio" = "latest"
 # "brew-cask:claude-code" = "latest"
 # "brew-cask:claude" = "latest"
+
 # Fonts
 "brew-cask:font-fira-code-nerd-font" = "latest"
 "brew-cask:font-jetbrains-mono-nerd-font" = "latest"
+
 # Security tools
 "brew:bitwarden-cli" = "latest"
-# "brew-cask:1password-cli" = "latest"
 "brew:pinentry-mac" = "latest"
 "brew:gnupg" = "latest"
 "brew:trivy" = "latest"
-# "brew-cask:nordlayer" = "latest"
+
 # Productivity tools
 "brew-cask:obsidian" = "latest"
-# "brew-cask:miro" = "latest"
-# "brew-cask:figma" = "latest"
+"brew-cask:opal-app" = "latest"
 # "brew-cask:meetily" = "latest"
 
 # Communication tools
-# "brew-cask:postman" = "latest"
-# "brew-cask:slack" = "latest"
 "brew-cask:whatsapp" = "latest"
-# "brew-cask:zoom" = "latest"
 "brew-cask:discord" = "latest"
 
 # Development tools
 "brew-cask:docker-desktop" = "latest"
-# "brew-cask:pgadmin4" = "latest"
-# "brew-cask:iterm2" = "latest"
-# "brew-cask:microsoft-azure-storage-explorer" = "latest"
 "brew:pre-commit" = "latest"
+# Github related tools
+"brew:act" = "latest"
+"brew:dependabot" = "latest"
 
 # Code Editors
+"brew:neovim" = "latest"
 "brew-cask:visual-studio-code" = "latest"
 # "brew-cask:zed" = "latest"
 # "brew-cask:cursor" = "latest"
 
-#Browsers
+# Browsers
 "brew-cask:google-chrome" = "latest"
 # "brew-cask:microsoft-edge" = "latest"
 
@@ -153,7 +151,7 @@ adopt = true
 
 [tools]
 # Programming languages
-python = ["3.12","3.13","3.14"]
+python = ["3.12", "3.13", "3.14"]
 node = ["22", "lts"]
 go = "latest"
 rust = "latest"

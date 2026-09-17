@@ -60,4 +60,10 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
+  "chat.tools.urls.autoApprove": {
+    "https://code.visualstudio.com": true,
+    "https://github.com/microsoft/vscode/wiki/*": true,
+    "https://docs.python.org": true,
+    "https://docs.astral.sh": true,
+  },
 }
