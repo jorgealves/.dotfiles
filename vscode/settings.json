@@ -66,4 +66,5 @@
     "https://docs.python.org": true,
     "https://docs.astral.sh": true,
   },
+  "window.density.layout": "compact",
 }
