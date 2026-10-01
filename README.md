@@ -58,6 +58,8 @@ that file are not part of the installation.
 - The optional local zsh configuration is
   `~/.config/zsh/.zprofile.local`. Read the tracked `.example` file before
   creating your own.
+- `scripts/open-work.sh` reads one app name per line from the ignored
+  `scripts/starting-apps.local`. Create that list separately on each machine.
 
 See [SECURITY.md](SECURITY.md) for the policy and [AGENTS.md](AGENTS.md) for
 the maintenance guide.

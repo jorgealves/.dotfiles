@@ -65,6 +65,17 @@
     "https://github.com/microsoft/vscode/wiki/*": true,
     "https://docs.python.org": true,
     "https://docs.astral.sh": true,
+    "https://packaging.python.org": {
+      "approveRequest": false,
+      "approveResponse": true,
+    },
   },
   "window.density.layout": "compact",
+  "vsicons.dontShowNewVersionMessage": true,
+  "window.autoDetectColorScheme": true,
+  "window.confirmBeforeClose": "keyboardOnly",
+  "window.density.editorTabHeight": "compact",
+  "window.menuStyle": "inherit",
+  "window.titleBarStyle": "native",
+  "window.title": "${rootName}${separator}${profileName}",
 }
