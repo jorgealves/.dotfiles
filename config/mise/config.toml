@@ -210,4 +210,4 @@ run = "docker system prune -af --volumes"
 
 [tasks.open-initial-apps]
 description = "Open initial applications"
-run = "./scripts/open-work.sh"
+run = "bash ~/projects/.dotfiles/scripts/open-work.sh"
