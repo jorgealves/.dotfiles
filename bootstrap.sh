@@ -36,4 +36,6 @@ mise bootstrap packages upgrade -y
 log_info "Mise bootstrap completed. 👍"
 # "$ROOT_DIR/install/ai.sh"
 
+mise prune
+
 log_success "DevEnv bootstrapped successfully 🎉"
