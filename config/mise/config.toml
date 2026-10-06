@@ -110,7 +110,7 @@ adopt = true
 
 # Communication tools
 "brew-cask:whatsapp" = "latest"
-"brew-cask:discord" = "latest"
+# "brew-cask:discord" = "latest"
 
 # Development tools
 "brew-cask:docker-desktop" = "latest"
