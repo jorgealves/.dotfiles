@@ -105,7 +105,7 @@ adopt = true
 # Productivity tools
 "brew-cask:obsidian" = "latest"
 "brew-cask:opal-app" = "latest"
-"brew:synergy-core" = "latest"
+# "brew:synergy-core" = "latest"
 # "brew-cask:meetily" = "latest"
 
 # Communication tools
