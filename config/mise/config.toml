@@ -144,7 +144,8 @@ adopt = true
 "~/.gitconfig*" = { source = "~/projects/.dotfiles/config/.gitconfig*", mode = "symlink" }
 "~/.zshenv" = { source = "~/projects/.dotfiles/config/zsh/.zshenv", mode = "symlink" }
 "~/.config/zsh" = { source = "~/projects/.dotfiles/config/zsh", mode = "symlink" }
-"~/Library/Application Support/Code/User/*.json" = { source = "~/projects/.dotfiles/vscode/*.json", mode = "symlink" }
+"~/Library/Application Support/Code/User/settings.json" = { source = "~/projects/.dotfiles/vscode/settings.json", mode = "symlink" }
+"~/Library/Application Support/Code/User/extensions.json" = { source = "~/projects/.dotfiles/vscode/extensions.json", mode = "symlink" }
 "~/.config/opencode" = { source = "~/projects/.dotfiles/config/opencode", mode = "symlink" }
 "~/.config/starship.toml" = { source = "~/projects/.dotfiles/config/starship.toml", mode = "symlink" }
 "~/.config/nvim" = { source = "~/projects/.dotfiles/config/nvim", mode = "symlink" }
