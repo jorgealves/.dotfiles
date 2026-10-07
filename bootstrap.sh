@@ -34,6 +34,8 @@ mise bootstrap --update --force-dotfiles --prompt-secrets
 log_info "Upgrading mise bootstrap packages... 📦"
 mise bootstrap packages upgrade -y
 log_info "Mise bootstrap completed. 👍"
+log_info "Update runtime tools... 🔧"
+mise upgrade
 # "$ROOT_DIR/install/ai.sh"
 
 mise prune
