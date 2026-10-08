@@ -15,6 +15,7 @@ status.show_env = true
 status.show_tools = true
 status.truncate = false
 dotfiles.root = "~/projects/.dotfiles"
+experimental = true
 
 [env]
 MISE_BREW_CASK_OPT_APPDIR = "$HOME/Applications"
@@ -208,6 +209,9 @@ find = 'fd'
 description = "Clean up Docker system"
 run = "docker system prune -af --volumes"
 
+[tasks.full-upgrade]
+description = "Upgrade everything from mise"
+run = "bash ~/projects/.dotfiles/bootstrap.sh"
 
 [tasks.open-initial-apps]
 description = "Open initial applications"
