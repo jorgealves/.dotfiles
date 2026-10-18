@@ -52,6 +52,7 @@ adopt = true
 "brew:starship" = "latest"
 
 # General command-line tools
+"brew:mise" = "latest"
 "brew:fzf" = "latest"
 "brew:bat" = "latest"
 "brew:fd" = "latest"
