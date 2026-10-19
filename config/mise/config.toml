@@ -139,6 +139,10 @@ adopt = true
 # "brew:synergy-core" = "latest"
 # "brew-cask:raspbery-pi-imager" = "latest"
 
+[bootstrap.hooks]
+post-tools = "mise run vscode-extensions"
+
+
 [dotfiles]
 "~/.config/mise" = { source = "~/projects/.dotfiles/config/mise", mode = "symlink" }
 "~/.ssh" = { source = "~/projects/.dotfiles/config/.ssh", mode = "symlink" }
@@ -217,3 +221,7 @@ run = "bash ~/projects/.dotfiles/bootstrap.sh"
 [tasks.open-initial-apps]
 description = "Open initial applications"
 run = "bash ~/projects/.dotfiles/scripts/open-work.sh"
+
+[tasks.vscode-extensions]
+description = "Install recommended VS Code extensions"
+run = "jq -r '.recommendations[]' ~/projects/.dotfiles/vscode/extensions.json | xargs -n1 code --force --install-extension"
