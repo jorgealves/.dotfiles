@@ -69,6 +69,10 @@
       "approveRequest": false,
       "approveResponse": true,
     },
+    "https://gunicorn.org/en/stable/settings.html#timeout": {
+      "approveRequest": true,
+      "approveResponse": false,
+    },
   },
   "window.density.layout": "compact",
   "vsicons.dontShowNewVersionMessage": true,

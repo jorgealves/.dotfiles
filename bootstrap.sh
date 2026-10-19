@@ -38,6 +38,8 @@ log_info "Update runtime tools... 🔧"
 mise upgrade
 # "$ROOT_DIR/install/ai.sh"
 
+log_info "Cleaning up unused packages... 🧹"
 mise prune
+mise bootstrap packages prune
 
 log_success "DevEnv bootstrapped successfully 🎉"
