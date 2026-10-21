@@ -39,7 +39,6 @@ adopt = true
 "brew:git" = "latest"
 "brew:git-lfs" = "latest"
 "brew:gh" = "latest"
-"brew:gitleaks" = "latest"
 
 # Bash related tools
 "brew:bash" = "latest"
@@ -58,8 +57,6 @@ adopt = true
 "brew:fd" = "latest"
 "brew:eza" = "latest"
 "brew:jless" = "latest"
-"brew:shellcheck" = "latest"
-"brew:shfmt" = "latest"
 "brew:jq" = "latest"
 "brew:yq" = "latest"
 "brew:httpie" = "latest"
@@ -71,7 +68,6 @@ adopt = true
 
 # Terminal multiplexer
 "brew:tmux" = "latest"
-"brew:herdr" = "latest"
 
 # Kubernetes
 "brew:kubernetes-cli" = "latest"
@@ -89,7 +85,10 @@ adopt = true
 "brew:opencode" = "latest"
 "brew-cask:copilot-cli" = "latest"
 # "brew-cask:chatgpt" = "latest"
-# "brew:ollama" = "latest"
+"brew:ollama" = "latest"
+"brew:llmfit" = "latest"
+"brew:mlx" = "latest"
+"brew:llama.cpp" = "latest"
 # "brew-cask:lm-studio" = "latest"
 # "brew-cask:claude-code" = "latest"
 # "brew-cask:claude" = "latest"
@@ -102,12 +101,10 @@ adopt = true
 "brew:bitwarden-cli" = "latest"
 "brew:pinentry-mac" = "latest"
 "brew:gnupg" = "latest"
-"brew:trivy" = "latest"
 
 # Productivity tools
 "brew-cask:obsidian" = "latest"
 "brew-cask:opal-app" = "latest"
-# "brew:synergy-core" = "latest"
 # "brew-cask:meetily" = "latest"
 
 # Communication tools
@@ -116,7 +113,7 @@ adopt = true
 
 # Development tools
 "brew-cask:docker-desktop" = "latest"
-"brew:pre-commit" = "latest"
+
 # Github related tools
 "brew:act" = "latest"
 "brew:dependabot" = "latest"
@@ -139,9 +136,12 @@ adopt = true
 # "brew:synergy-core" = "latest"
 # "brew-cask:raspbery-pi-imager" = "latest"
 
-[bootstrap.hooks]
-post-tools = "mise run vscode-extensions"
-
+# Local CodeReviewer
+"brew:gitleaks" = "latest"
+"brew:shellcheck" = "latest"
+"brew:shfmt" = "latest"
+"brew:trivy" = "latest"
+"brew:pre-commit" = "latest"
 
 [dotfiles]
 "~/.config/mise" = { source = "~/projects/.dotfiles/config/mise", mode = "symlink" }
@@ -221,7 +221,3 @@ run = "bash ~/projects/.dotfiles/bootstrap.sh"
 [tasks.open-initial-apps]
 description = "Open initial applications"
 run = "bash ~/projects/.dotfiles/scripts/open-work.sh"
-
-[tasks.vscode-extensions]
-description = "Install recommended VS Code extensions"
-run = "jq -r '.recommendations[]' ~/projects/.dotfiles/vscode/extensions.json | xargs -n1 code --force --install-extension"
