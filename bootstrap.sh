@@ -1,10 +1,8 @@
 #!/bin/bash
 
-# Bootstrap script for setting up the development environment on macOS
-# - First it verifies that Homebrew is installed
-# - Then it updates and upgrades Homebrew
-# - Install mise-en-place
-# - Sets up dotfiles and other configurations using mise
+# Bootstrap and upgrade script for the development environment on macOS
+# - Verify Homebrew and install mise when necessary
+# - Apply mise bootstrap and update managed tools
 
 set -euo pipefail # Enable strict mode
 
@@ -18,9 +16,6 @@ if ! command -v brew &>/dev/null; then
   log_error "Homebrew is not installed. Please install Homebrew first."
   exit 1
 fi
-
-brew update
-brew upgrade
 
 if ! command -v mise &>/dev/null; then
   log_warning "mise-en-place is not installed. Installing ..."
@@ -36,10 +31,15 @@ mise bootstrap packages upgrade -y
 log_info "Mise bootstrap completed. 👍"
 log_info "Update runtime tools... 🔧"
 mise upgrade
-# "$ROOT_DIR/install/ai.sh"
 
 log_info "Cleaning up unused packages... 🧹"
 mise prune
 mise bootstrap packages prune
+
+if [[ "${DOTFILES_INSTALL_AI_SKILLS:-0}" == "1" ]]; then
+  bash "$ROOT_DIR/scripts/configure_ai.sh" install
+fi
+
+bash "$ROOT_DIR/scripts/open_apps.sh"
 
 log_success "DevEnv bootstrapped successfully 🎉"

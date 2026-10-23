@@ -23,9 +23,10 @@ cd ~/projects/.dotfiles
 ./bootstrap.sh
 ```
 
-The bootstrap updates and upgrades Homebrew, installs mise when necessary, and
-runs `mise bootstrap --update --force-dotfiles --prompt-secrets`. It therefore
-changes packages and files on the machine, and may request secrets.
+The bootstrap installs mise when necessary, runs
+`mise bootstrap --update --force-dotfiles --prompt-secrets`, upgrades managed
+tools, prunes unused packages, and opens the configured initial applications.
+It changes packages and files on the machine, and may request secrets.
 
 ## Inspecting the plan
 
@@ -48,6 +49,31 @@ The exact list, including casks, is in
 [`config/mise/config.toml`](config/mise/config.toml). Commented entries in
 that file are not part of the installation.
 
+## Agent skills
+
+Repository-owned skills live in `agents/skills/<name>/SKILL.md` and are
+versioned with this repository. `config/agents/skills` lists additional public
+skill sources. To add machine-specific private sources, create the ignored
+`config/agents/skills.local` file with one local directory or authenticated Git
+source per line; blank lines and lines beginning with `#` are ignored. Keep
+credentials in Git's credential helper or SSH agent, not in the source list.
+
+The Skills CLI installs skills globally for Codex into `~/.agents/skills`;
+OpenCode also discovers that directory. Run these mise tasks explicitly:
+
+```bash
+mise run skills-install
+mise run skills-update
+mise run skills-list
+```
+
+The general bootstrap leaves skills alone by default. To opt into installing
+them as part of a full bootstrap, run:
+
+```bash
+DOTFILES_INSTALL_AI_SKILLS=1 mise run full-upgrade
+```
+
 ## Local configuration and security
 
 - Do not include secrets, private keys, or customer data in the repository.
@@ -58,7 +84,7 @@ that file are not part of the installation.
 - The optional local zsh configuration is
   `~/.config/zsh/.zprofile.local`. Read the tracked `.example` file before
   creating your own.
-- `scripts/open-work.sh` reads one app name per line from the ignored
+- `scripts/open_apps.sh` reads one app name per line from the ignored
   `scripts/starting-apps.local`. Create that list separately on each machine.
 
 See [SECURITY.md](SECURITY.md) for the policy and [AGENTS.md](AGENTS.md) for

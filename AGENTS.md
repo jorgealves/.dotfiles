@@ -19,15 +19,17 @@ repository, dependencies, or files outside this repository.
 
 ```text
 .
-├── bootstrap.sh             # Updates Homebrew and applies mise bootstrap
+├── bootstrap.sh             # Applies mise bootstrap and updates managed tools
 ├── config/
-│   ├── mise/config.toml     # Packages, runtimes, and dotfile mappings
+│   ├── agents/skills        # Versioned remote skill sources
+│   ├── mise/config.toml     # Packages, runtimes, tasks, and dotfile mappings
 │   ├── zsh/                 # ZDOTDIR, profile, and interactive shell
 │   ├── nvim/                # LazyVim configuration
 │   ├── opencode/            # OpenCode configuration
 │   ├── git/ and .gitconfig  # Git exclusions and configuration
 │   └── starship.toml        # Starship prompt
-├── install/ai.sh            # Standalone script; bootstrap does not call it
+├── agents/skills/           # Repository-owned, version-controlled skills
+├── scripts/configure_ai.sh  # Explicit install/update commands for AI skills
 └── lib/                     # Logging and small shell helpers
 ```
 
@@ -46,9 +48,23 @@ mise bootstrap status
 mise bootstrap plan
 ```
 
-`./bootstrap.sh` is mutating: it updates and upgrades Homebrew, may install
-mise, and applies bootstrap with `--update`, `--force-dotfiles`, and
+`./bootstrap.sh` is mutating: it may install mise, applies bootstrap with
+`--update`, `--force-dotfiles`, and
 `--prompt-secrets`.
+
+AI skills are managed separately from the general bootstrap:
+
+```bash
+mise run skills-install
+mise run skills-update
+mise run skills-list
+```
+
+Repository-owned skills live in `agents/skills/<name>/SKILL.md`. Public skill
+sources are listed in `config/agents/skills`, one source per line. Optional
+machine-specific sources can be listed in the ignored
+`config/agents/skills.local`. The installer targets Codex's global
+`~/.agents/skills`; OpenCode also discovers that shared directory.
 
 For hook checks:
 
@@ -89,8 +105,9 @@ Read [SECURITY.md](SECURITY.md) before changing exclusion or security rules.
 The current mappings cover mise, SSH, Git exclusions, `.gitconfig`, zsh,
 VS Code, OpenCode, Starship, Neovim, and tmux. Active packages include
 Git/GitHub CLI, Python, Node.js, Go, Rust, Docker Desktop, Kubernetes tools,
-OpenCode, and Copilot CLI; the TOML remains the complete declaration.
+OpenCode, Copilot CLI, and the npm `skills` CLI; the TOML remains the complete
+declaration.
 
-Do not assume that commented tools, absent directories, or uncalled scripts are
-part of a supported installation. In particular, there is no active
-`agent_skills` system in the bootstrap flow.
+Do not assume that commented tools or uncalled scripts are part of a supported
+installation. Skill installation uses explicit mise tasks; the bootstrap only
+installs skills when `DOTFILES_INSTALL_AI_SKILLS=1` is set.

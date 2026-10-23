@@ -73,7 +73,6 @@
       "approveResponse": false,
     },
   },
-  "window.density.layout": "compact",
   "vsicons.dontShowNewVersionMessage": true,
   "window.autoDetectColorScheme": true,
   "window.confirmBeforeClose": "keyboardOnly",
@@ -82,4 +81,5 @@
   "window.titleBarStyle": "native",
   "window.title": "${rootName}${separator}${profileName}",
   "chat.viewSessions.orientation": "stacked",
+  "window.density.layout": "compact",
 }

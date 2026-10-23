@@ -170,6 +170,9 @@ uv = { version = "latest", depends = [
 poetry = { version = "latest", depends = [
   "python",
 ] } # Python dependency management and packaging
+"npm:skills" = { version = "1.7.2", depends = [
+  "node",
+] } # Skills npm package manager
 
 [shell_alias]
 # file management
@@ -209,7 +212,6 @@ cat = 'bat'
 grep = 'rg'
 find = 'fd'
 
-
 [tasks.docker-sysclean]
 description = "Clean up Docker system"
 run = "docker system prune -af --volumes"
@@ -218,6 +220,18 @@ run = "docker system prune -af --volumes"
 description = "Upgrade everything from mise"
 run = "bash ~/projects/.dotfiles/bootstrap.sh"
 
+[tasks.skills-install]
+description = "Install repository and machine-local skills for Codex and OpenCode"
+run = "bash ~/projects/.dotfiles/scripts/configure_ai.sh install"
+
+[tasks.skills-update]
+description = "Update installed skills and sync local skill sources"
+run = "bash ~/projects/.dotfiles/scripts/configure_ai.sh update"
+
+[tasks.skills-list]
+description = "List globally installed skills"
+run = "mise exec -- skills list --global"
+
 [tasks.open-initial-apps]
 description = "Open initial applications"
-run = "bash ~/projects/.dotfiles/scripts/open-work.sh"
+run = "bash ~/projects/.dotfiles/scripts/open_apps.sh"
