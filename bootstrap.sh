@@ -36,9 +36,8 @@ log_info "Cleaning up unused packages... 🧹"
 mise prune
 mise bootstrap packages prune
 
-if [[ "${DOTFILES_INSTALL_AI_SKILLS:-0}" == "1" ]]; then
-  bash "$ROOT_DIR/scripts/configure_ai.sh" install
-fi
+log_info "Updating AI skills... 🤖"
+bash "$ROOT_DIR/scripts/configure_ai.sh" update
 
 bash "$ROOT_DIR/scripts/open_apps.sh"
 

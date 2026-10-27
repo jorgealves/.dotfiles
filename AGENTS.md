@@ -52,7 +52,8 @@ mise bootstrap plan
 `--update`, `--force-dotfiles`, and
 `--prompt-secrets`.
 
-AI skills are managed separately from the general bootstrap:
+The full bootstrap updates AI skills after updating and pruning mise tools and
+packages. To manage skills independently, use:
 
 ```bash
 mise run skills-install
@@ -109,5 +110,5 @@ OpenCode, Copilot CLI, and the npm `skills` CLI; the TOML remains the complete
 declaration.
 
 Do not assume that commented tools or uncalled scripts are part of a supported
-installation. Skill installation uses explicit mise tasks; the bootstrap only
-installs skills when `DOTFILES_INSTALL_AI_SKILLS=1` is set.
+installation. The bootstrap updates globally installed skills and syncs the
+configured repository and machine-local sources.

@@ -67,12 +67,10 @@ mise run skills-update
 mise run skills-list
 ```
 
-The general bootstrap leaves skills alone by default. To opt into installing
-them as part of a full bootstrap, run:
-
-```bash
-DOTFILES_INSTALL_AI_SKILLS=1 mise run full-upgrade
-```
+The full bootstrap updates globally installed skills and then syncs the
+repository and machine-local sources after mise tools and packages have been
+updated and pruned. The explicit tasks above are also available when you only
+want to manage skills.
 
 ## Local configuration and security
 
