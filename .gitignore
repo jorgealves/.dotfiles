@@ -41,6 +41,9 @@ client_*.Brewfile
 # ssh
 config/.ssh/
 
+# gh CLI auth state (no symlink/dotfiles mapping; config.yml is still versioned)
+config/gh/hosts.yml
+
 # Private local configuration files
 .gitconfig.private
 .gitconfig_*

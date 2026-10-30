@@ -235,3 +235,7 @@ run = "mise exec -- skills list --global"
 [tasks.open-initial-apps]
 description = "Open initial applications"
 run = "bash ~/projects/.dotfiles/scripts/open_apps.sh"
+
+[tasks.upgrade-and-open-apps]
+description = "Upgrade everything and open initial applications"
+run = "bash ~/projects/.dotfiles/bootstrap.sh && bash ~/projects/.dotfiles/scripts/open_apps.sh"

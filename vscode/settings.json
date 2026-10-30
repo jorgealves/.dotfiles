@@ -72,6 +72,10 @@
       "approveRequest": true,
       "approveResponse": false,
     },
+    "https://code.claude.com": {
+      "approveRequest": false,
+      "approveResponse": true,
+    },
   },
   "vsicons.dontShowNewVersionMessage": true,
   "window.autoDetectColorScheme": true,
@@ -80,6 +84,6 @@
   "window.menuStyle": "inherit",
   "window.titleBarStyle": "native",
   "window.title": "${rootName}${separator}${profileName}",
-  "chat.viewSessions.orientation": "stacked",
   "window.density.layout": "compact",
+  "chat.viewSessions.orientation": "stacked",
 }

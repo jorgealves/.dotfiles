@@ -38,7 +38,4 @@ mise bootstrap packages prune
 
 log_info "Updating AI skills... 🤖"
 bash "$ROOT_DIR/scripts/configure_ai.sh" update
-
-bash "$ROOT_DIR/scripts/open_apps.sh"
-
 log_success "DevEnv bootstrapped successfully 🎉"
